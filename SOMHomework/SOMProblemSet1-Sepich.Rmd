@@ -1,0 +1,95 @@
+---
+title: "Science of Music: Problem Set 1"
+subtitle: "Due Monday Sept 2; Joseph Sepich (jps6444)"
+output:
+  pdf_document: 
+    toc: true
+    toc_depth: 2
+    number_sections: true
+    keep_tex: true
+  html_notebook: default
+---
+
+
+Directions: Save this worksheet with the filename “SOMProblemSet1-(lastname)”. Enter your answers directly into the document and save, then upload it into Canvas. Clearly show your work. If you are using an equation, write the equation down, then plug in values you are using on the next line.  When you are finished with a problem, draw a box around your final result or highlight it.  Leave at least a couple of spaces on the paper before starting your next problem.  Every answer should include the appropriate units.  Remember to submit your homework by 10pm Monday.  No homework will be accepted late, so get it done early.
+
+A note about collaboration vs. plagiarism 
+As with all homework assignments, you should work on each problem on your own.  After having done that, you may seek guidance from other students or professors.  But that help should come in the form of a discussion of the problem, not simply looking at the other person's work.  You should then go and work the problem by yourself. You may compare final answers.  Whenever you received significant assistance, it is your obligation to write a note on your solution to that individual problem that gives credit to that other individual.  
+Final note on collaboration: You may not get help from any written work of students that have previously taken this class.  Of course this is on your honor…and it is our expectation!
+
+# Convert the following speeds into kilometers per hour (km/hr) from miles per hour (mph):
+
+We know that the conversion rate from mile to kilometer is 1 mile to 1.60934 kilometers.
+
+## a) 35 mph
+
+\[\frac{35 mi}{1 hour} * \frac{1.60934 km}{1 mi} = 56.3269 mph\]
+
+This means that 35 miles per hour is equivalent to 56.3269 kilometers per hour.
+
+## b) 75 mph
+
+We can once again multiply 75 by 1.60934 to get 75 mph to be equivalent to 120.701 kilometers per hour.
+
+## c) 760 mph
+
+We can once again multiply 760 by 1.60934 to get 760 mph to be equivalent to 1223.1 kilometers per hour.
+
+# Convert the following speeds into meters per second (m/s):
+
+We know that the conversion rate from mile to meters is 1 mile to 1609.34 meters. We also know that one hour is equivalent to 360 seconds. Let's use the same conversion method from before.
+
+## a) 35 mph
+
+\[\frac{35 mi}{1 hour} * \frac{1609.34 m}{1 mi} * \frac{1 hour}{3600 sec} = \frac{35 mi}{1 hour} * 0.447 = 15.6464 m/s\]
+
+This means that 35 miles per hour is equivalent to 15.6464 meters per second.
+
+## b) 75 mph
+
+We can once again multiply 75 by 0.447 to get 75 mph to be equivalent to 33.528 meters per second.
+
+## c) 760 mph
+
+We can once again multiply 760 by 0.447 to get 760 mph to be equivalent to 339.75 meters per second.
+
+#  Pretend you are 6 kilometers (km) from where a lightning bolt strikes.  The cracking sound produced will travel at the speed of sound, whereas the light will travel at the speed of light (300,000,000 m/s).
+
+## a)  How long does it take the sound to get to you?  (Assume that the speed of sound is the value given on page 9 of our text by Lapp for room temperature.)
+
+## b)  How long does it take the light to get to you?
+
+#  A conductor taps on his music stand and hears an echo from the back of the auditorium 0.4 seconds later.  Given the speed of sound, what is the length of the auditorium?  (Assume that the room is dry and has a temperature of 20C – approximately “Room temperature.”)
+
+# Miscellaneous Questions
+
+## a)  How many square inches are in a square foot?
+
+## b)  How many cubic centimeters (cm3) in a cubic meter (m3)?
+
+## c)  How many milliliters (ml) in a liter (l)?
+
+## d)  How many cm3 in a ml?
+
+## e)  How many liters in a cubic meter?
+
+# The Blue Band drum major is standing with you in the end zone. He signals two drummers to start tapping the beat at the speed that he is indicating with his hands – one drumstroke per second. One drummer is right in front of you and the other one is 100 yards away from in the other end zone. So, given the relatively slow speed of sound, their tapping will sound out of phase to you. By how many milliseconds will the two placements of beats differ?
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
