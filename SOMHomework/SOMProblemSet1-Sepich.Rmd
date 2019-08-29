@@ -3,7 +3,7 @@ title: "Science of Music: Problem Set 1"
 subtitle: "Due Monday Sept 2; Joseph Sepich (jps6444)"
 output:
   pdf_document: 
-    toc: true
+    toc: false
     toc_depth: 2
     number_sections: true
     keep_tex: true
@@ -53,13 +53,23 @@ We can once again multiply 75 by 0.447 to get 75 mph to be equivalent to 33.528 
 
 We can once again multiply 760 by 0.447 to get 760 mph to be equivalent to 339.75 meters per second.
 
-#  Pretend you are 6 kilometers (km) from where a lightning bolt strikes.  The cracking sound produced will travel at the speed of sound, whereas the light will travel at the speed of light (300,000,000 m/s).
+# Problem 3
+
+Pretend you are 6 kilometers (km) from where a lightning bolt strikes.  The cracking sound produced will travel at the speed of sound, whereas the light will travel at the speed of light (300,000,000 m/s).
+
+For this problem I will use the value of the speed of sound to be 343.6 m/s.
 
 ## a)  How long does it take the sound to get to you?  (Assume that the speed of sound is the value given on page 9 of our text by Lapp for room temperature.)
 
+Using our value for the speed of sound we know that the sound will travel 6 km at 343.6 m/s. This means that it will be travelling at 0.3436 km/s. Using our formula $d = rt$ we can calulate t (or time) by $t = \frac{d}{r}$. This will give us $\frac6{0.3436} = 17.4622$. The sound will take 17.4622 seconds to reach you.
+
 ## b)  How long does it take the light to get to you?
 
-#  A conductor taps on his music stand and hears an echo from the back of the auditorium 0.4 seconds later.  Given the speed of sound, what is the length of the auditorium?  (Assume that the room is dry and has a temperature of 20C – approximately “Room temperature.”)
+Using the value of 300,000,000 m/s that is given we can change this to be 300,000 km/s. The light will travel at this speed for 6 km, so we can the equation again $\frac6{300,000} = 0.00002$. This means the light will get to you in 0.00002 seconds. This is almost instantly versus the 17 seconds the sound takes.
+
+# Problem 4
+
+A conductor taps on his music stand and hears an echo from the back of the auditorium 0.4 seconds later.  Given the speed of sound, what is the length of the auditorium?  (Assume that the room is dry and has a temperature of 20C – approximately “Room temperature.”)
 
 # Miscellaneous Questions
 
@@ -73,7 +83,9 @@ We can once again multiply 760 by 0.447 to get 760 mph to be equivalent to 339.7
 
 ## e)  How many liters in a cubic meter?
 
-# The Blue Band drum major is standing with you in the end zone. He signals two drummers to start tapping the beat at the speed that he is indicating with his hands – one drumstroke per second. One drummer is right in front of you and the other one is 100 yards away from in the other end zone. So, given the relatively slow speed of sound, their tapping will sound out of phase to you. By how many milliseconds will the two placements of beats differ?
+# Problem 6
+
+The Blue Band drum major is standing with you in the end zone. He signals two drummers to start tapping the beat at the speed that he is indicating with his hands – one drumstroke per second. One drummer is right in front of you and the other one is 100 yards away from in the other end zone. So, given the relatively slow speed of sound, their tapping will sound out of phase to you. By how many milliseconds will the two placements of beats differ?
 
 
 

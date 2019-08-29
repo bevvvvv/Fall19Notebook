@@ -1,0 +1,224 @@
+\documentclass[]{article}
+\usepackage{lmodern}
+\usepackage{amssymb,amsmath}
+\usepackage{ifxetex,ifluatex}
+\usepackage{fixltx2e} % provides \textsubscript
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+\else % if luatex or xelatex
+  \ifxetex
+    \usepackage{mathspec}
+  \else
+    \usepackage{fontspec}
+  \fi
+  \defaultfontfeatures{Ligatures=TeX,Scale=MatchLowercase}
+\fi
+% use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+% use microtype if available
+\IfFileExists{microtype.sty}{%
+\usepackage{microtype}
+\UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\usepackage[margin=1in]{geometry}
+\usepackage{hyperref}
+\hypersetup{unicode=true,
+            pdftitle={Science of Music: Problem Set 1},
+            pdfborder={0 0 0},
+            breaklinks=true}
+\urlstyle{same}  % don't use monospace font for urls
+\usepackage{graphicx,grffile}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+\IfFileExists{parskip.sty}{%
+\usepackage{parskip}
+}{% else
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt plus 2pt minus 1pt}
+}
+\setlength{\emergencystretch}{3em}  % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{5}
+% Redefines (sub)paragraphs to behave more like sections
+\ifx\paragraph\undefined\else
+\let\oldparagraph\paragraph
+\renewcommand{\paragraph}[1]{\oldparagraph{#1}\mbox{}}
+\fi
+\ifx\subparagraph\undefined\else
+\let\oldsubparagraph\subparagraph
+\renewcommand{\subparagraph}[1]{\oldsubparagraph{#1}\mbox{}}
+\fi
+
+%%% Use protect on footnotes to avoid problems with footnotes in titles
+\let\rmarkdownfootnote\footnote%
+\def\footnote{\protect\rmarkdownfootnote}
+
+%%% Change title format to be more compact
+\usepackage{titling}
+
+% Create subtitle command for use in maketitle
+\newcommand{\subtitle}[1]{
+  \posttitle{
+    \begin{center}\large#1\end{center}
+    }
+}
+
+\setlength{\droptitle}{-2em}
+
+  \title{Science of Music: Problem Set 1}
+    \pretitle{\vspace{\droptitle}\centering\huge}
+  \posttitle{\par}
+  \subtitle{Due Monday Sept 2; Joseph Sepich (jps6444)}
+  \author{}
+    \preauthor{}\postauthor{}
+    \date{}
+    \predate{}\postdate{}
+  
+
+\begin{document}
+\maketitle
+
+Directions: Save this worksheet with the filename
+``SOMProblemSet1-(lastname)''. Enter your answers directly into the
+document and save, then upload it into Canvas. Clearly show your work.
+If you are using an equation, write the equation down, then plug in
+values you are using on the next line. When you are finished with a
+problem, draw a box around your final result or highlight it. Leave at
+least a couple of spaces on the paper before starting your next problem.
+Every answer should include the appropriate units. Remember to submit
+your homework by 10pm Monday. No homework will be accepted late, so get
+it done early.
+
+A note about collaboration vs.~plagiarism As with all homework
+assignments, you should work on each problem on your own. After having
+done that, you may seek guidance from other students or professors. But
+that help should come in the form of a discussion of the problem, not
+simply looking at the other person's work. You should then go and work
+the problem by yourself. You may compare final answers. Whenever you
+received significant assistance, it is your obligation to write a note
+on your solution to that individual problem that gives credit to that
+other individual.\\
+Final note on collaboration: You may not get help from any written work
+of students that have previously taken this class. Of course this is on
+your honor\ldots{}and it is our expectation!
+
+\section{Convert the following speeds into kilometers per hour (km/hr)
+from miles per hour
+(mph):}\label{convert-the-following-speeds-into-kilometers-per-hour-kmhr-from-miles-per-hour-mph}
+
+We know that the conversion rate from mile to kilometer is 1 mile to
+1.60934 kilometers.
+
+\subsection{a) 35 mph}\label{a-35-mph}
+
+\[\frac{35 mi}{1 hour} * \frac{1.60934 km}{1 mi} = 56.3269 mph\]
+
+This means that 35 miles per hour is equivalent to 56.3269 kilometers
+per hour.
+
+\subsection{b) 75 mph}\label{b-75-mph}
+
+We can once again multiply 75 by 1.60934 to get 75 mph to be equivalent
+to 120.701 kilometers per hour.
+
+\subsection{c) 760 mph}\label{c-760-mph}
+
+We can once again multiply 760 by 1.60934 to get 760 mph to be
+equivalent to 1223.1 kilometers per hour.
+
+\section{Convert the following speeds into meters per second
+(m/s):}\label{convert-the-following-speeds-into-meters-per-second-ms}
+
+We know that the conversion rate from mile to meters is 1 mile to
+1609.34 meters. We also know that one hour is equivalent to 360 seconds.
+Let's use the same conversion method from before.
+
+\subsection{a) 35 mph}\label{a-35-mph-1}
+
+\[\frac{35 mi}{1 hour} * \frac{1609.34 m}{1 mi} * \frac{1 hour}{3600 sec} = \frac{35 mi}{1 hour} * 0.447 = 15.6464 m/s\]
+
+This means that 35 miles per hour is equivalent to 15.6464 meters per
+second.
+
+\subsection{b) 75 mph}\label{b-75-mph-1}
+
+We can once again multiply 75 by 0.447 to get 75 mph to be equivalent to
+33.528 meters per second.
+
+\subsection{c) 760 mph}\label{c-760-mph-1}
+
+We can once again multiply 760 by 0.447 to get 760 mph to be equivalent
+to 339.75 meters per second.
+
+\section{Problem 3}\label{problem-3}
+
+Pretend you are 6 kilometers (km) from where a lightning bolt strikes.
+The cracking sound produced will travel at the speed of sound, whereas
+the light will travel at the speed of light (300,000,000 m/s).
+
+For this problem I will use the value of the speed of sound to be 343.6
+m/s.
+
+\subsection{a) How long does it take the sound to get to you? (Assume
+that the speed of sound is the value given on page 9 of our text by Lapp
+for room
+temperature.)}\label{a-how-long-does-it-take-the-sound-to-get-to-you-assume-that-the-speed-of-sound-is-the-value-given-on-page-9-of-our-text-by-lapp-for-room-temperature.}
+
+Using our value for the speed of sound we know that the sound will
+travel 6 km at 343.6 m/s. This means that it will be travelling at
+0.3436 km/s. Using our formula \(d = rt\) we can calulate t (or time) by
+\(t = \frac{d}{r}\). This will give us \(\frac6{0.3436} = 17.4622\). The
+sound will take 17.4622 seconds to reach you.
+
+\subsection{b) How long does it take the light to get to
+you?}\label{b-how-long-does-it-take-the-light-to-get-to-you}
+
+Using the value of 300,000,000 m/s that is given we can change this to
+be 300,000 km/s. The light will travel at this speed for 6 km, so we can
+the equation again \(\frac6{300,000} = 0.00002\). This means the light
+will get to you in 0.00002 seconds. This is almost instantly versus the
+17 seconds the sound takes.
+
+\section{Problem 4}\label{problem-4}
+
+A conductor taps on his music stand and hears an echo from the back of
+the auditorium 0.4 seconds later. Given the speed of sound, what is the
+length of the auditorium? (Assume that the room is dry and has a
+temperature of 20C -- approximately ``Room temperature.'')
+
+\section{Miscellaneous Questions}\label{miscellaneous-questions}
+
+\subsection{a) How many square inches are in a square
+foot?}\label{a-how-many-square-inches-are-in-a-square-foot}
+
+\subsection{b) How many cubic centimeters (cm3) in a cubic meter
+(m3)?}\label{b-how-many-cubic-centimeters-cm3-in-a-cubic-meter-m3}
+
+\subsection{c) How many milliliters (ml) in a liter
+(l)?}\label{c-how-many-milliliters-ml-in-a-liter-l}
+
+\subsection{d) How many cm3 in a ml?}\label{d-how-many-cm3-in-a-ml}
+
+\subsection{e) How many liters in a cubic
+meter?}\label{e-how-many-liters-in-a-cubic-meter}
+
+\section{Problem 6}\label{problem-6}
+
+The Blue Band drum major is standing with you in the end zone. He
+signals two drummers to start tapping the beat at the speed that he is
+indicating with his hands -- one drumstroke per second. One drummer is
+right in front of you and the other one is 100 yards away from in the
+other end zone. So, given the relatively slow speed of sound, their
+tapping will sound out of phase to you. By how many milliseconds will
+the two placements of beats differ?
+
+
+\end{document}
