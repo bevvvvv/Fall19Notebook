@@ -1,0 +1,37 @@
+---
+title: "Programming Language Concepts Homework 1"
+subtitle: "Due Friday Sept 13; Joseph Sepich (jps6444)"
+output:
+  pdf_document: 
+    toc: false
+    toc_depth: 2
+    number_sections: true
+    keep_tex: true
+  html_notebook: default
+---
+
+
+# Problem 1
+
+Add parentheses to the following lambda terms so that the grouping of sub-terms becomes explicit. For example, the term $\lambda x.x \lambda y.y$ with parentheses is $\lambda x.(x (\lambda y.y))$.
+
+## a)
+
+\[\lambda x.\lambda y.\lambda z.x y z\]
+\[\lambda x.(\lambda y.(\lambda z.((x y) z)))\]
+
+## b)
+
+\[\]
+\[\]
+
+## c)
+
+\[\]
+\[\]
+
+
+
+
+
+
