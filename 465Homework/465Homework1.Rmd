@@ -47,7 +47,9 @@ Therefor if a is even abd b is odd, then gcd(a, b) = gcd($\frac{a}{2}$, b).
 1. By the definition of odd we can state that a = 2n + 1 and b = 2m + 1, where n and m are both integers.
 2. a - b = (2n + 1) - (2m + 1) = 2n - 2m + 1 - 1 = 2(n-m). This must be greater than 0, since a >= b.
 3. a - b is therefore by definition an even number since 2(n - m) can be written as 2x = (a-b) where x is the integer n - m.
-4. 
+4. Definition of gcd means that d | a and d | b, where d is an integer. This means $a = d * z$ and $b = d * y $ where z and y are integers.
+5. Through step 4 b - a = d(z - y), so d must also divide the integer (z - y). This means gcd(a, b) = gcd(a-b, b).
+6. Since we determined in step 3 a-b is even (and b is even) and in step 5 gcd(a, b) = gcd(a-b, b), then through the proof in part b of the problem we can conclude that gcd(a, b) = gcd($\frac{a-b}2$, b).
 
 
 \pagebreak
@@ -84,6 +86,33 @@ int gcd(int a, int b) {
 
 Now let us asses running time. We are assuming testing parity and halving are in unit time, so let's focus on subtraction. As we can recall a positive integer a has at most log(a) bits, and here a is the larger number. Subtraction two n bit integer taskes O(n) time, so here it would take us O(log(a)) time. Therefore the algorithm meets the requirements of the problem.
 
+\pagebreak
+
+# Problem 3
+
+a) $f(n) = \Omega(g(n))$, this is true because we know with polynomials, the higher degree will always grow faster.
+
+b) $f(n) = \Theta(g(n))$, this is true because $2^{n-1} = 2 * 2^n$ and we know that coefficients do not make a difference in larger values of n.
+
+c) $f(n) = \Omega(g(n))$, this is true because f(n) has an exponent which grows, while g(n) has a constant exponent, therefore f(n) must grow faster.
+
+d) $f(n) = \Omega(g(n))$, this is true because in g(n) the 2^n^ term is dominant. While 2^n^ and 3^n^ both have the same exponent term of n, the integer that has the exponent is greater in f(n).
+
+e) $f(n) = \Theta(g(n))$, this is true because you can transform the exponent on each into a coefficient, due to properties of logarithms, then change the c you put in front of g(n) to obtain an identical function.
+
+f) $f(n) = \Omega(g(n))$, this is true because f(n) is growing a constant rate, while g(n) is growing at less than a constant rate.
+
+g) $f(n) = O(g(n))$, this is true because for each additional n, f(n) is multiplied by 2, but g(n) is multiplied by n, so it must be growing faster.
+
+h) $f(n) = O(g(n))$, this is true because by the logarithm properties you are comparing $nlog(e)$ and $nlog(n)$, and since we don't look at coefficients for growth rates you are comparing n and $nlog(n)$, so while f(n) grows at a constant rate, g(n) is a function that increases at an increasing rate.
+
+i) $f(n) = \Theta(g(n))$, this is true because n in each equation is the dominating term. This makes both equations $\Theta(n)$, since log(n) grows more slowly than n.
+
+j) $f(n) = \Theta(g(n))$, this is true because of the same concept in the last part. n grows faster than both log(n) and n^0.5^. If you chose c to be 5, then they would be identical equations.
+
+\pagebreak
+
+# Problem 4
 
 
 
