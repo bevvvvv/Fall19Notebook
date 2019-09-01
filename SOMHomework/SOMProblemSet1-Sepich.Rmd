@@ -25,15 +25,15 @@ We know that the conversion rate from mile to kilometer is 1 mile to 1.60934 kil
 
 \[\frac{35 mi}{1 hour} * \frac{1.60934 km}{1 mi} = 56.3269 mph\]
 
-This means that 35 miles per hour is equivalent to 56.3269 kilometers per hour.
+This means that 35 miles per hour is equivalent to **56.3269 kilometers per hour**.
 
 ## b) 75 mph
 
-We can once again multiply 75 by 1.60934 to get 75 mph to be equivalent to 120.701 kilometers per hour.
+We can once again multiply 75 by 1.60934 to get 75 mph to be equivalent to **120.701 kilometers per hour**.
 
 ## c) 760 mph
 
-We can once again multiply 760 by 1.60934 to get 760 mph to be equivalent to 1223.1 kilometers per hour.
+We can once again multiply 760 by 1.60934 to get 760 mph to be equivalent to **1223.1 kilometers per hour**.
 
 # Convert the following speeds into meters per second (m/s):
 
@@ -43,15 +43,15 @@ We know that the conversion rate from mile to meters is 1 mile to 1609.34 meters
 
 \[\frac{35 mi}{1 hour} * \frac{1609.34 m}{1 mi} * \frac{1 hour}{3600 sec} = \frac{35 mi}{1 hour} * 0.447 = 15.6464 m/s\]
 
-This means that 35 miles per hour is equivalent to 15.6464 meters per second.
+This means that 35 miles per hour is equivalent to **15.6464 meters per second**.
 
 ## b) 75 mph
 
-We can once again multiply 75 by 0.447 to get 75 mph to be equivalent to 33.528 meters per second.
+We can once again multiply 75 by 0.447 to get 75 mph to be equivalent to **33.528 meters per second**.
 
 ## c) 760 mph
 
-We can once again multiply 760 by 0.447 to get 760 mph to be equivalent to 339.75 meters per second.
+We can once again multiply 760 by 0.447 to get 760 mph to be equivalent to **339.75 meters per second**.
 
 # Problem 3
 
@@ -61,11 +61,11 @@ For this problem I will use the value of the speed of sound to be 343.6 m/s.
 
 ## a)  How long does it take the sound to get to you?  (Assume that the speed of sound is the value given on page 9 of our text by Lapp for room temperature.)
 
-Using our value for the speed of sound we know that the sound will travel 6 km at 343.6 m/s. This means that it will be travelling at 0.3436 km/s. Using our formula $d = rt$ we can calulate t (or time) by $t = \frac{d}{r}$. This will give us $\frac6{0.3436} = 17.4622$. The sound will take 17.4622 seconds to reach you.
+Using our value for the speed of sound we know that the sound will travel 6 km at 343.6 m/s. This means that it will be travelling at 0.3436 km/s. Using our formula $d = rt$ we can calulate t (or time) by $t = \frac{d}{r}$. This will give us $\frac6{0.3436} = 17.4622$. The sound will take **17.4622 seconds** to reach you.
 
 ## b)  How long does it take the light to get to you?
 
-Using the value of 300,000,000 m/s that is given we can change this to be 300,000 km/s. The light will travel at this speed for 6 km, so we can the equation again $\frac6{300,000} = 0.00002$. This means the light will get to you in 0.00002 seconds. This is almost instantly versus the 17 seconds the sound takes.
+Using the value of 300,000,000 m/s that is given we can change this to be 300,000 km/s. The light will travel at this speed for 6 km, so we can the equation again $\frac6{300,000} = 0.00002$. This means the light will get to you in **0.00002 seconds**. This is almost instantly versus the 17 seconds the sound takes.
 
 # Problem 4
 
@@ -77,35 +77,35 @@ Given these assumptions we will once again use the speed of sound to be 343.6 m/
 \[d = 343.6 * 0.4\]
 \[d = 137.44\]
 
-This means the total distance travelled was 137.44 meters, but we must remember that this is twice the length of the auditorium. This gives us the conclusion that the length of the auditorium must be 68.72.
+This means the total distance travelled was 137.44 meters, but we must remember that this is twice the length of the auditorium. This gives us the conclusion that the length of the auditorium must be **68.72 meters**.
 
 # Miscellaneous Questions
 
 ## a)  How many square inches are in a square foot?
 
-A square foot is a 1 foot by 1 foot area. We know that a single foot is equal to 12 inches. That means that a square foot area is also 12 inches by 12 inches. If we multiply these values together we can conclude that one square foot is equal to 144 square inches.
+A square foot is a 1 foot by 1 foot area. We know that a single foot is equal to 12 inches. That means that a square foot area is also 12 inches by 12 inches. If we multiply these values together we can conclude that one square foot is equal to **144 square inches**.
 
 ## b)  How many cubic centimeters (cm^3^) in a cubic meter (m^3^)?
 
-A cubic meter is a 1 m x 1 m x 1 m volume. We know that a single meter is equal to 100 centimeters. That means that a cubic meter volume is also 100 cm x 100 cm x 100 cm. If we multiply these values together we can conclude that one cubic meter is equal to 1,000,000 cubic centimeters.
+A cubic meter is a 1 m x 1 m x 1 m volume. We know that a single meter is equal to 100 centimeters. That means that a cubic meter volume is also 100 cm x 100 cm x 100 cm. If we multiply these values together we can conclude that one cubic meter is equal to **1,000,000 cubic centimeters**.
 
 ## c)  How many milliliters (ml) in a liter (l)?
 
-Using the prefix milli we know that a liter contains 1000 milliliters.
+Using the prefix milli we know that a liter contains **1,000 milliliters**.
 
 ## d)  How many cm^3^ in a ml?
 
-A cubic centimer and a millitliter are the same unit of measurement. Therefore a ml contains 1 cm^3^.
+A cubic centimer and a millitliter are the same unit of measurement. Therefore a ml contains **1 cm^3^**.
 
 ## e)  How many liters in a cubic meter?
 
-We declared int the last problem that a cubic centimeter is 1 milliliter. We also stated that 1 liter is 1000 mililiters, so 1 liter must be 1000 cubic centimeters. We also know that a cubic meter contains 1,000,000 cubic centimeters, so we can then conclude that 1,000,000 cubic centimeters / 1,000 cubic centimeters means a cubic meter contains 1,000 liters.
+We declared int the last problem that a cubic centimeter is 1 milliliter. We also stated that 1 liter is 1000 mililiters, so 1 liter must be 1000 cubic centimeters. We also know that a cubic meter contains 1,000,000 cubic centimeters, so we can then conclude that 1,000,000 cubic centimeters / 1,000 cubic centimeters means a cubic meter contains **1,000 liters**.
 
 # Problem 6
 
 The Blue Band drum major is standing with you in the end zone. He signals two drummers to start tapping the beat at the speed that he is indicating with his hands – one drumstroke per second. One drummer is right in front of you and the other one is 100 yards away from in the other end zone. So, given the relatively slow speed of sound, their tapping will sound out of phase to you. By how many milliseconds will the two placements of beats differ?
 
-Once again let us use the speed of sound to be 343.6 m/s. We can convert the 100 yard distance to 91.44 meters, since 1 yard is 0.9144 meters. Knowing this we can use our drt formula to calculate the time delay of the further drummer to be $t = \frac{d}{r} = \frac{91.44}{343.6} = 0.266 s$ or 266 milliseconds. If we can assume the first drummer has 0 delay then the beat placement will be off by 266 milliseconds or roughly a quarter of a second.
+Once again let us use the speed of sound to be 343.6 m/s. We can convert the 100 yard distance to 91.44 meters, since 1 yard is 0.9144 meters. Knowing this we can use our drt formula to calculate the time delay of the further drummer to be $t = \frac{d}{r} = \frac{91.44}{343.6} = 0.266 s$ or 266 milliseconds. If we can assume the first drummer has 0 delay then the beat placement will be off by **266 milliseconds** or roughly a quarter of a second.
 
 
 

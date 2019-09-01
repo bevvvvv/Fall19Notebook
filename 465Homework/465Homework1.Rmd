@@ -1,0 +1,46 @@
+---
+title: "Data Structures and Algorithms Homework 1"
+subtitle: "Due Wednesday Sept 4; Joseph Sepich (jps6444)"
+output:
+  pdf_document: 
+    toc: false
+    toc_depth: 2
+    number_sections: true
+    keep_tex: true
+  html_notebook: default
+---
+
+# Problem 1
+
+I understand the course policies.
+
+\pagebreak
+
+# Problem 2
+
+## Part a. Prove that if a and b are even, then gcd(a, b) = 2gcd(a/2, b/2)
+
+1. By the definition of even we can state that a = 2n and b = 2m, where n and m are both integers.
+2. Using the definition in step 1 we can write gcd(a, b) = gcd(2n, 2m).
+3. Since 2 is a common divisor we can also write gcd(2n, 2m) = 2gcd(n, m).
+4. Using step 1, we also know that n = $\frac{a}{2}$ and m = $\frac{b}{2}$.
+5. Plugging step 4 into the equalities in step 2 and 3 we get gcd(a, b) = gcd(2n, 2m) = 2gcd(n, m) = 2gcd($\frac{a}{2}$, $\frac{b}{2}$). 
+
+Therefore if a and b are both even, gcd(a, b) = 2gcd($\frac{a}{2}$, $\frac{b}{2}$)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
