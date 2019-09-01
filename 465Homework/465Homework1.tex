@@ -118,7 +118,35 @@ b/2)}\label{part-a.-prove-that-if-a-and-b-are-even-then-gcda-b-2gcda2-b2}
 \end{enumerate}
 
 Therefore if a and b are both even, gcd(a, b) = 2gcd(\(\frac{a}{2}\),
-\(\frac{b}{2}\))
+\(\frac{b}{2}\)).
+
+\pagebreak
+
+\subsection{Part b. Prove that if a is even and b is odd, then gcd(a, b)
+= gcd(a/2,
+b)}\label{part-b.-prove-that-if-a-is-even-and-b-is-odd-then-gcda-b-gcda2-b}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  By the definition of even we can state that a = 2n, where n is an
+  integer.
+\item
+  Using the definition in step 1 we can write gcd(a, b) = gcd(2n, b).
+\item
+  Since b is odd, it cannot be divided by 2, so the 2 in the term 2n is
+  unnecessary information (cannot contribute to the gcd). We can then
+  write gcd(a, b) = gcd(n, b).
+\item
+  Using step 1, we also know that n = \(\frac{a}{2}\).
+\item
+  Plugging step 4 into the equalities in step 2 and 3 we get gcd(a, b) =
+  gcd(2n, b) = gcd(n, b) = gcd(\(\frac{a}{2}\), b).
+\end{enumerate}
+
+Therefor if a is even abd b is odd, then gcd(a, b) =
+gcd(\(\frac{a}{2}\), b).
 
 
 \end{document}

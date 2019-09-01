@@ -256,12 +256,63 @@ $(document).ready(function () {
 <li>Using step 1, we also know that n = <span class="math inline">\(\frac{a}{2}\)</span> and m = <span class="math inline">\(\frac{b}{2}\)</span>.</li>
 <li>Plugging step 4 into the equalities in step 2 and 3 we get gcd(a, b) = gcd(2n, 2m) = 2gcd(n, m) = 2gcd(<span class="math inline">\(\frac{a}{2}\)</span>, <span class="math inline">\(\frac{b}{2}\)</span>).</li>
 </ol>
-<p>Therefore if a and b are both even, gcd(a, b) = 2gcd(<span class="math inline">\(\frac{a}{2}\)</span>, <span class="math inline">\(\frac{b}{2}\)</span>)</p>
+<p>Therefore if a and b are both even, gcd(a, b) = 2gcd(<span class="math inline">\(\frac{a}{2}\)</span>, <span class="math inline">\(\frac{b}{2}\)</span>).</p>
+
+</div>
+<div id="part-b.-prove-that-if-a-is-even-and-b-is-odd-then-gcda-b-gcda2-b" class="section level2">
+<h2>Part b. Prove that if a is even and b is odd, then gcd(a, b) = gcd(a/2, b)</h2>
+<ol style="list-style-type: decimal">
+<li>By the definition of even we can state that a = 2n, where n is an integer.</li>
+<li>Using the definition in step 1 we can write gcd(a, b) = gcd(2n, b).</li>
+<li>Since b is odd, it cannot be divided by 2, so the 2 in the term 2n is unnecessary information (cannot contribute to the gcd). We can then write gcd(a, b) = gcd(n, b).</li>
+<li>Using step 1, we also know that n = <span class="math inline">\(\frac{a}{2}\)</span>.</li>
+<li>Plugging step 4 into the equalities in step 2 and 3 we get gcd(a, b) = gcd(2n, b) = gcd(n, b) = gcd(<span class="math inline">\(\frac{a}{2}\)</span>, b).</li>
+</ol>
+<p>Therefor if a is even abd b is odd, then gcd(a, b) = gcd(<span class="math inline">\(\frac{a}{2}\)</span>, b).</p>
+
+</div>
+<div id="part-c.-prove-that-if-a-and-b-are-both-odd-and-a-b-then-gcda-b-gcda-b2-b" class="section level2">
+<h2>Part c. Prove that if a and b are both odd and a &gt;= b, then gcd(a, b) = gcd((a-b)/2, b)</h2>
+<ol style="list-style-type: decimal">
+<li>By the definition of odd we can state that a = 2n + 1 and b = 2m + 1, where n and m are both integers.</li>
+<li>a - b = (2n + 1) - (2m + 1) = 2n - 2m + 1 - 1 = 2(n-m). This must be greater than 0, since a &gt;= b.</li>
+<li>a - b is therefore by definition an even number since 2(n - m) can be written as 2x = (a-b) where x is the integer n - m.</li>
+<li></li>
+</ol>
+
+</div>
+<div id="part-d." class="section level2">
+<h2>Part d.</h2>
+<p>We know that by the defintion of gcd</p>
+<pre><code>int gcd(int a, int b) {
+    // input a &gt;= b
+    int d = 1;
+    if (a == b) return a;
+    bool a = isEven(a);  // test parity of variables
+    bool b = isEven(b); // unit time
+    while (a &gt; 0 &amp;&amp; b &gt; 0) {
+      if (a is odd and b is even) { // 2 is not a common divisor (part b)
+        a = a / 2;
+      } else if (a is even and b is odd) { // 2 is not a common divisor (part b)
+        b = b / 2;
+      } else if (a is odd and b is odd) { // part c
+        a = (a - b) / 2; // our input requires a &gt; b
+      } else { // both a and b are even, so both can be divded by 2 (as in part a)
+        a = a / 2;
+        b = b / 2;
+        d += 1;
+      }
+    }
+    // d is how many times divided by 2
+    // a is non even part of gcd
+    return a * 2^d;
+}</code></pre>
+<p>Now let us asses running time. We are assuming testing parity and halving are in unit time, so let’s focus on subtraction. As we can recall a positive integer a has at most log(a) bits, and here a is the larger number. Subtraction two n bit integer taskes O(n) time, so here it would take us O(log(a)) time. Therefore the algorithm meets the requirements of the problem.</p>
 <!-- rnb-text-end -->
 </div>
 </div>
 
-<div id="rmd-source-code">LS0tDQp0aXRsZTogIkRhdGEgU3RydWN0dXJlcyBhbmQgQWxnb3JpdGhtcyBIb21ld29yayAxIg0Kc3VidGl0bGU6ICJEdWUgV2VkbmVzZGF5IFNlcHQgNDsgSm9zZXBoIFNlcGljaCAoanBzNjQ0NCkiDQpvdXRwdXQ6DQogIHBkZl9kb2N1bWVudDogDQogICAgdG9jOiBmYWxzZQ0KICAgIHRvY19kZXB0aDogMg0KICAgIG51bWJlcl9zZWN0aW9uczogdHJ1ZQ0KICAgIGtlZXBfdGV4OiB0cnVlDQogIGh0bWxfbm90ZWJvb2s6IGRlZmF1bHQNCi0tLQ0KDQojIFByb2JsZW0gMQ0KDQpJIHVuZGVyc3RhbmQgdGhlIGNvdXJzZSBwb2xpY2llcy4NCg0KXHBhZ2VicmVhaw0KDQojIFByb2JsZW0gMg0KDQojIyBQYXJ0IGEuIFByb3ZlIHRoYXQgaWYgYSBhbmQgYiBhcmUgZXZlbiwgdGhlbiBnY2QoYSwgYikgPSAyZ2NkKGEvMiwgYi8yKQ0KDQoxLiBCeSB0aGUgZGVmaW5pdGlvbiBvZiBldmVuIHdlIGNhbiBzdGF0ZSB0aGF0IGEgPSAybiBhbmQgYiA9IDJtLCB3aGVyZSBuIGFuZCBtIGFyZSBib3RoIGludGVnZXJzLg0KMi4gVXNpbmcgdGhlIGRlZmluaXRpb24gaW4gc3RlcCAxIHdlIGNhbiB3cml0ZSBnY2QoYSwgYikgPSBnY2QoMm4sIDJtKS4NCjMuIFNpbmNlIDIgaXMgYSBjb21tb24gZGl2aXNvciB3ZSBjYW4gYWxzbyB3cml0ZSBnY2QoMm4sIDJtKSA9IDJnY2QobiwgbSkuDQo0LiBVc2luZyBzdGVwIDEsIHdlIGFsc28ga25vdyB0aGF0IG4gPSAkXGZyYWN7YX17Mn0kIGFuZCBtID0gJFxmcmFje2J9ezJ9JC4NCjUuIFBsdWdnaW5nIHN0ZXAgNCBpbnRvIHRoZSBlcXVhbGl0aWVzIGluIHN0ZXAgMiBhbmQgMyB3ZSBnZXQgZ2NkKGEsIGIpID0gZ2NkKDJuLCAybSkgPSAyZ2NkKG4sIG0pID0gMmdjZCgkXGZyYWN7YX17Mn0kLCAkXGZyYWN7Yn17Mn0kKS4gDQoNClRoZXJlZm9yZSBpZiBhIGFuZCBiIGFyZSBib3RoIGV2ZW4sIGdjZChhLCBiKSA9IDJnY2QoJFxmcmFje2F9ezJ9JCwgJFxmcmFje2J9ezJ9JCkNCg0KDQoNCg0KDQoNCg0KDQoNCg0KDQoNCg0KDQoNCg0KDQo=</div>
+<div id="rmd-source-code">LS0tDQp0aXRsZTogIkRhdGEgU3RydWN0dXJlcyBhbmQgQWxnb3JpdGhtcyBIb21ld29yayAxIg0Kc3VidGl0bGU6ICJEdWUgV2VkbmVzZGF5IFNlcHQgNDsgSm9zZXBoIFNlcGljaCAoanBzNjQ0NCkiDQpvdXRwdXQ6DQogIHBkZl9kb2N1bWVudDogDQogICAgdG9jOiBmYWxzZQ0KICAgIHRvY19kZXB0aDogMg0KICAgIG51bWJlcl9zZWN0aW9uczogdHJ1ZQ0KICAgIGtlZXBfdGV4OiB0cnVlDQogIGh0bWxfbm90ZWJvb2s6IGRlZmF1bHQNCi0tLQ0KDQojIFByb2JsZW0gMQ0KDQpJIHVuZGVyc3RhbmQgdGhlIGNvdXJzZSBwb2xpY2llcy4NCg0KXHBhZ2VicmVhaw0KDQojIFByb2JsZW0gMg0KDQojIyBQYXJ0IGEuIFByb3ZlIHRoYXQgaWYgYSBhbmQgYiBhcmUgZXZlbiwgdGhlbiBnY2QoYSwgYikgPSAyZ2NkKGEvMiwgYi8yKQ0KDQoxLiBCeSB0aGUgZGVmaW5pdGlvbiBvZiBldmVuIHdlIGNhbiBzdGF0ZSB0aGF0IGEgPSAybiBhbmQgYiA9IDJtLCB3aGVyZSBuIGFuZCBtIGFyZSBib3RoIGludGVnZXJzLg0KMi4gVXNpbmcgdGhlIGRlZmluaXRpb24gaW4gc3RlcCAxIHdlIGNhbiB3cml0ZSBnY2QoYSwgYikgPSBnY2QoMm4sIDJtKS4NCjMuIFNpbmNlIDIgaXMgYSBjb21tb24gZGl2aXNvciB3ZSBjYW4gYWxzbyB3cml0ZSBnY2QoMm4sIDJtKSA9IDJnY2QobiwgbSkuDQo0LiBVc2luZyBzdGVwIDEsIHdlIGFsc28ga25vdyB0aGF0IG4gPSAkXGZyYWN7YX17Mn0kIGFuZCBtID0gJFxmcmFje2J9ezJ9JC4NCjUuIFBsdWdnaW5nIHN0ZXAgNCBpbnRvIHRoZSBlcXVhbGl0aWVzIGluIHN0ZXAgMiBhbmQgMyB3ZSBnZXQgZ2NkKGEsIGIpID0gZ2NkKDJuLCAybSkgPSAyZ2NkKG4sIG0pID0gMmdjZCgkXGZyYWN7YX17Mn0kLCAkXGZyYWN7Yn17Mn0kKS4gDQoNClRoZXJlZm9yZSBpZiBhIGFuZCBiIGFyZSBib3RoIGV2ZW4sIGdjZChhLCBiKSA9IDJnY2QoJFxmcmFje2F9ezJ9JCwgJFxmcmFje2J9ezJ9JCkuDQoNClxwYWdlYnJlYWsNCg0KIyMgUGFydCBiLiBQcm92ZSB0aGF0IGlmIGEgaXMgZXZlbiBhbmQgYiBpcyBvZGQsIHRoZW4gZ2NkKGEsIGIpID0gZ2NkKGEvMiwgYikNCg0KMS4gQnkgdGhlIGRlZmluaXRpb24gb2YgZXZlbiB3ZSBjYW4gc3RhdGUgdGhhdCBhID0gMm4sIHdoZXJlIG4gaXMgYW4gaW50ZWdlci4NCjIuIFVzaW5nIHRoZSBkZWZpbml0aW9uIGluIHN0ZXAgMSB3ZSBjYW4gd3JpdGUgZ2NkKGEsIGIpID0gZ2NkKDJuLCBiKS4NCjMuIFNpbmNlIGIgaXMgb2RkLCBpdCBjYW5ub3QgYmUgZGl2aWRlZCBieSAyLCBzbyB0aGUgMiBpbiB0aGUgdGVybSAybiBpcyB1bm5lY2Vzc2FyeSBpbmZvcm1hdGlvbiAoY2Fubm90IGNvbnRyaWJ1dGUgdG8gdGhlIGdjZCkuIFdlIGNhbiB0aGVuIHdyaXRlIGdjZChhLCBiKSA9IGdjZChuLCBiKS4NCjQuIFVzaW5nIHN0ZXAgMSwgd2UgYWxzbyBrbm93IHRoYXQgbiA9ICRcZnJhY3thfXsyfSQuDQo1LiBQbHVnZ2luZyBzdGVwIDQgaW50byB0aGUgZXF1YWxpdGllcyBpbiBzdGVwIDIgYW5kIDMgd2UgZ2V0IGdjZChhLCBiKSA9IGdjZCgybiwgYikgPSBnY2QobiwgYikgPSBnY2QoJFxmcmFje2F9ezJ9JCwgYikuDQoNClRoZXJlZm9yIGlmIGEgaXMgZXZlbiBhYmQgYiBpcyBvZGQsIHRoZW4gZ2NkKGEsIGIpID0gZ2NkKCRcZnJhY3thfXsyfSQsIGIpLg0KDQpccGFnZWJyZWFrDQoNCiMjIFBhcnQgYy4gUHJvdmUgdGhhdCBpZiBhIGFuZCBiIGFyZSBib3RoIG9kZCBhbmQgYSA+PSBiLCB0aGVuIGdjZChhLCBiKSA9IGdjZCgoYS1iKS8yLCBiKQ0KDQoxLiBCeSB0aGUgZGVmaW5pdGlvbiBvZiBvZGQgd2UgY2FuIHN0YXRlIHRoYXQgYSA9IDJuICsgMSBhbmQgYiA9IDJtICsgMSwgd2hlcmUgbiBhbmQgbSBhcmUgYm90aCBpbnRlZ2Vycy4NCjIuIGEgLSBiID0gKDJuICsgMSkgLSAoMm0gKyAxKSA9IDJuIC0gMm0gKyAxIC0gMSA9IDIobi1tKS4gVGhpcyBtdXN0IGJlIGdyZWF0ZXIgdGhhbiAwLCBzaW5jZSBhID49IGIuDQozLiBhIC0gYiBpcyB0aGVyZWZvcmUgYnkgZGVmaW5pdGlvbiBhbiBldmVuIG51bWJlciBzaW5jZSAyKG4gLSBtKSBjYW4gYmUgd3JpdHRlbiBhcyAyeCA9IChhLWIpIHdoZXJlIHggaXMgdGhlIGludGVnZXIgbiAtIG0uDQo0LiANCg0KDQpccGFnZWJyZWFrDQoNCiMjIFBhcnQgZC4gDQoNCldlIGtub3cgdGhhdCBieSB0aGUgZGVmaW50aW9uIG9mIGdjZA0KDQpgYGB7fQ0KaW50IGdjZChpbnQgYSwgaW50IGIpIHsNCiAgICAvLyBpbnB1dCBhID49IGINCiAgICBpbnQgZCA9IDE7DQogICAgaWYgKGEgPT0gYikgcmV0dXJuIGE7DQogICAgYm9vbCBhID0gaXNFdmVuKGEpOyAgLy8gdGVzdCBwYXJpdHkgb2YgdmFyaWFibGVzDQogICAgYm9vbCBiID0gaXNFdmVuKGIpOyAvLyB1bml0IHRpbWUNCiAgICB3aGlsZSAoYSA+IDAgJiYgYiA+IDApIHsNCiAgICAgIGlmIChhIGlzIG9kZCBhbmQgYiBpcyBldmVuKSB7IC8vIDIgaXMgbm90IGEgY29tbW9uIGRpdmlzb3IgKHBhcnQgYikNCiAgICAgICAgYSA9IGEgLyAyOw0KICAgICAgfSBlbHNlIGlmIChhIGlzIGV2ZW4gYW5kIGIgaXMgb2RkKSB7IC8vIDIgaXMgbm90IGEgY29tbW9uIGRpdmlzb3IgKHBhcnQgYikNCiAgICAgICAgYiA9IGIgLyAyOw0KICAgICAgfSBlbHNlIGlmIChhIGlzIG9kZCBhbmQgYiBpcyBvZGQpIHsgLy8gcGFydCBjDQogICAgICAgIGEgPSAoYSAtIGIpIC8gMjsgLy8gb3VyIGlucHV0IHJlcXVpcmVzIGEgPiBiDQogICAgICB9IGVsc2UgeyAvLyBib3RoIGEgYW5kIGIgYXJlIGV2ZW4sIHNvIGJvdGggY2FuIGJlIGRpdmRlZCBieSAyIChhcyBpbiBwYXJ0IGEpDQogICAgICAgIGEgPSBhIC8gMjsNCiAgICAgICAgYiA9IGIgLyAyOw0KICAgICAgICBkICs9IDE7DQogICAgICB9DQogICAgfQ0KICAgIC8vIGQgaXMgaG93IG1hbnkgdGltZXMgZGl2aWRlZCBieSAyDQogICAgLy8gYSBpcyBub24gZXZlbiBwYXJ0IG9mIGdjZA0KICAgIHJldHVybiBhICogMl5kOw0KfQ0KYGBgDQoNCk5vdyBsZXQgdXMgYXNzZXMgcnVubmluZyB0aW1lLiBXZSBhcmUgYXNzdW1pbmcgdGVzdGluZyBwYXJpdHkgYW5kIGhhbHZpbmcgYXJlIGluIHVuaXQgdGltZSwgc28gbGV0J3MgZm9jdXMgb24gc3VidHJhY3Rpb24uIEFzIHdlIGNhbiByZWNhbGwgYSBwb3NpdGl2ZSBpbnRlZ2VyIGEgaGFzIGF0IG1vc3QgbG9nKGEpIGJpdHMsIGFuZCBoZXJlIGEgaXMgdGhlIGxhcmdlciBudW1iZXIuIFN1YnRyYWN0aW9uIHR3byBuIGJpdCBpbnRlZ2VyIHRhc2tlcyBPKG4pIHRpbWUsIHNvIGhlcmUgaXQgd291bGQgdGFrZSB1cyBPKGxvZyhhKSkgdGltZS4gVGhlcmVmb3JlIHRoZSBhbGdvcml0aG0gbWVldHMgdGhlIHJlcXVpcmVtZW50cyBvZiB0aGUgcHJvYmxlbS4NCg0KDQoNCg0KDQoNCg0KDQoNCg0KDQoNCg0KDQoNCg0KDQo=</div>
 
 
 
