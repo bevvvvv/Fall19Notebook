@@ -114,6 +114,8 @@ j) $f(n) = \Theta(g(n))$, this is true because of the same concept in the last p
 
 # Problem 4
 
+## Part a.
+
 
 
 
