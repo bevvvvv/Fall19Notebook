@@ -275,5 +275,196 @@ requirements of the problem.
 
 \subsection{Part a.}\label{part-a.}
 
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Recall we talked about multiplication in lecture. Using our standard
+  multiplication algorithm it takes \(\Theta(n^2)\) time. This is
+  because for each new digit, another row is added from having to
+  multiply another digit with the second number. You also then have to
+  add up the new parts in the addition part of the algorithm.
+\item
+  Since we are summing up 1 through n, we are doing the multiplcation
+  (squaring step) from step 1 n times. This means we are going to be
+  performing n*n\textsuperscript{2} operations.
+\end{enumerate}
+
+Therefore the running time must be \(\Theta(n^3)\).
+
+\pagebreak
+
+\subsection{Part b.}\label{part-b.}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  For this statement we can expand on the previous proof.
+\item
+  Agains we are doing n operations of k\textsuperscript{j}.
+\item
+  k\textsuperscript{j} must be \(\Theta(n^j)\), because performing a
+  multiplication of x and x (to be y) will be n\textsuperscript{2}.
+\item
+  Once you have the answer to x andx from step 3, you can say that if
+  you have k\textsuperscript{j} where j is a multiple of two, you can
+  dececrease it to (x and x)\textsuperscript{j/2}, and so on. You can do
+  this until you have to multiply by x again, if the exponent is odd.
+  This would make it so you have n\textsuperscript{2} running time,
+  making it j operations.
+\item
+  If we combine step 4 and 2 we can conclude that the summation will
+  take \(\Theta(n^{j+1})\) running time.
+\end{enumerate}
+
+\pagebreak
+
+\subsection{Part c.}\label{part-c.}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  The summation in this problem is also known as the harmonic series.
+\item
+  We know that the integral of \(\frac1{x} = ln(n)\), so we can use this
+  to show that the partial sum of the series is bound by ln(n).
+\item
+  The sum of
+  \(\frac{1}{x+1} \leq \int\frac1{x}dx = ln(n) \leq \Sigma \frac1{x}\).
+\end{enumerate}
+
+Therefore the harmonic series must be bound as \(\Theta(log(n))\).
+
+\pagebreak
+
+\subsection{Part d.}\label{part-d.-1}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  By definition \(log(n!) = log(1) + log(2) + ... + log(n)\).
+\item
+  Upper bound we know that \(log(n!)\) as written above
+  \(\leq log(n) + log(n) + log(n) = n*log(n)\).
+\item
+  The partial sum of \(log(n!) = log(n/2) + ... + log(n)\) is then
+  \(\leq log(n!)\), which we know by definition of partial sum.
+\item
+  We can also say the given partial sum
+  \(\geq log(n/2) + log(n/2) + ... + log(n/2) = n/2 * log(n/2)\), which
+  follows the \(n * log(n)\) structure.
+\end{enumerate}
+
+Therefore since \(log(n!)\) is upper and lower bounded by \(nlog(n)\) it
+must be \(\Theta(n*log(n))\).
+
+StackOverflow was referenced to completed this problem.
+
+\pagebreak
+
+\subsection{Part e.}\label{part-e.}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  In the summation, c is a constant, where i (its exponent) is being
+  incremented in the summation.
+\item
+  If c \textgreater{} 1, the series is increasing and follows the proof
+  in part b of this problem. By the statement in part b the running time
+  must be \(\Theta(c^k)\), with no + 1, since the series starts at 0.
+\item
+  If c == 1, the running time is linear, since one is merely summing up
+  1, k times.
+\item
+  If c \textless{} 1, then c is will create a similar series to the
+  harmonic series, but the series will be decreasing and convergent, so
+  one knows the summation equation to sum the series, making it unit
+  time.
+\end{enumerate}
+
+\pagebreak
+
+\section{Problem 5}\label{problem-5}
+
+\subsection{1.}\label{section}
+
+\begin{itemize}
+\tightlist
+\item
+  An outer loop does n iterations
+\item
+  An inner loop does (n-i) / 5 iterations
+\end{itemize}
+
+The second bullet point is true, since j is initialized to be i, and is
+incremented by 5 each time. These two statements imply a running time of
+n * (n-i) / 5 = \(\frac15n^2-ni\). We know that in this running time the
+n\textsuperscript{2} term dominates, so it is \(\Theta(n^2)\).
+
+\pagebreak
+
+\subsection{2.}\label{section-1}
+
+\begin{itemize}
+\tightlist
+\item
+  An outer loop does n iterations
+\item
+  An inner loop does (n-4i) iterations
+\end{itemize}
+
+The second bullet point is true, since j is intialized to 4i, but still
+increments only 1 every loop. Since it is intialized to 4i, it will not
+run those 4i times. These two statements imply a running time of
+\(n * (n-4i) = n^2-4ni\), which is a running time of \(\Theta(n^2)\),
+with the dominant n\textsuperscript{2} term.
+
+\pagebreak
+
+\subsection{3.}\label{section-2}
+
+\begin{itemize}
+\tightlist
+\item
+  An outer loop does n iterations
+\item
+  An inner loop does n-i\textsuperscript{5} iterations
+\end{itemize}
+
+You could flip the algorithm to have the same running time where the
+inner loops says:
+
+\begin{verbatim}
+j := i^5;
+while j < n do
+  j := j + 1;
+end
+\end{verbatim}
+
+This means we once again have \(\Theta(n^2)\), since the running time is
+\(n*(n-i^5)=n^2-ni^5\).
+
+\pagebreak
+
+\subsection{4.}\label{section-3}
+
+\begin{itemize}
+\tightlist
+\item
+  An outer loop does n iterations
+\item
+  An inner loop does \(\frac{log_2(n)}{4}\) iterations.
+\end{itemize}
+
+The second bullet point is true, because j starts at 2, increments by
+itself to the 4th, but only goes until i. This means it will go from 2
+to 16 to 256 to 4096 and so on. These two statements imply
+\(n * \frac{log_2(n)}{4} = \Theta(nlog(n))\)
+
 
 \end{document}
