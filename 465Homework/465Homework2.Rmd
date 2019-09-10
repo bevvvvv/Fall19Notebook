@@ -72,6 +72,111 @@ For the polynomial p(x) = x^n^, Horner's rule will execute 2n additions/multipli
 
 # Problem 3
 
+Input:
+
+* array A; size m; sorted numbers
+* array B; size n; sorted numbers
+* integer k
+
+Ouput:
+
+* k-th smallest element from A U B.
+
+Want O(logn + logm) or O(log(nm)) running time.
+
+
+```{}
+
+KSmall(int[] A, int[] B, int k) {
+l
+}
+
+```
+
+\pagebreak
+
+# Problem 4
+
+## Part a
+
+$T(n) = 11T(\frac{n}{5}) + 13n^{1.3}$
+
+Let's use the master theorem.
+
+$a = 11, b = 5, d = 1.3$
+$log_ba = log_511 = 1.49 > d = 1.3$
+
+Using case two we know $\Theta(n) = \Theta(n^{log_ba}) = \Theta(n^{1.49})$
+
+\pagebreak
+
+## Part b
+
+$T(n) = 2T(\frac{n}4) + nlog(n)$
+
+We know that in this algorithm we have a recurrence that divides the problem into 2 subproblems of size $\frac{n}{4}$. Each problem at that level has the work of nlog(n) implying the total work on each level is $4 * (\frac{n}{4}log(\frac{n}4)) = nlog(\frac{n}4)$. We also know that the total number of levels would be on the order of $log_4(n)$. Knowing the height of the tree and work on each level we can conclude a running time of $\Theta(nlog(n)log(\frac{n}4))$
+
+\pagebreak
+
+## Part c
+
+$T(n) = 5T(\frac{n}{3} + log^2(n)$
+
+We know that in this algorithm we have a recurrence that divides the problem into 5 subproblems of size $\frac{n}3$. Each problem at that level has the work of log^2(n) implying the total work on each level is $5 * (log^2(\frac{n}3))$. We also know that the total number of levels would be on the order of $log_3(n)$. Knowing the height of the tree and work on each level we can conclude a running time of $\Theta(log(n)log^2(\frac{n}3))$.
+
+\pagebreak
+
+## Part d
+
+$T(n) = T(\frac{n}2) + 1.5^n$
+
+We know that in this algorithm we have a recurrence that divides the problem into 1 subproblem of size $\frac{n}2$. Each problem at that level has the work of $1.5^n$ implying the total work on each level is $1.5^{\frac{n}2}$. We also know that the total number of levels would be on the order of $log(n)$. Knowing the height of the tree and work on each level we can conclude a running time of $\Theta(1.5^nlog(n))$.
+
+\pagebreak
+
+## Part e
+
+$T(n) = T(\sqrt{n}) + \Theta(loglog(n))$
+
+We know that in this algorithm we have a recurrence that divides the problem into 1 subproblme of size $\sqrt{n}$. Each problem at that level ahs the work of $\Theta(loglog(n))$ implying the total work on each level is $\Theta(loglog(\sqrt{n}))$. We also know that the total number of levels would be on the order of loglog(n). Knowing the height of the tree and work on each level we can conclude a running time of $\Theta(loglog^2(n))$.
+
+\pagebreak
+
+## Part f
+
+\pagebreak
+
+## Part g
+
+\pagebreak
+
+## Part h
+
+\pagebreak
+
+## Part i
+
+\pagebreak
+
+## Part j
+
+\pagebreak
+
+
+# Problem 5
+
+Input:
+
+* matrix H_k; size 2^k^ by 2^k^
+* vector v; size 2^k^
+
+
+Output:
+
+* vector b
+
+Let's recall the standard method of calculating vector-matrix multiplcation. Using i as row and j as column index, $b(i) = \sum_{z=1}^{2^k}\sum_{x=1}^{2^k}H_k(z,x)*v(x)$. Using this "brute force" algorithm it would take you n by n multiplications and slightly less summations to calculate the answer. This would be O(n^2), but we can do better.
+
 
 
 
