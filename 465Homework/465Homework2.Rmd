@@ -1,0 +1,100 @@
+---
+title: "Data Structures and Algorithms Homework 2"
+subtitle: "Due Wednesday Sept 11; Joseph Sepich (jps6444)"
+output:
+  pdf_document: default
+    toc: false
+    toc_depth: 2
+    number_sections: true
+    keep_tex: false
+---
+
+# Problem 1
+
+1. $n^{\frac{1}{log(n)}}$
+2. $log(log(n))$
+3. $\sqrt{log(n)}$
+4. $log^2(n)$
+5. $n^2$
+6. $n^3$
+7. $n^{log(log(n))}$
+8. $(\sqrt{2})^{log(n)}$
+9. $2^{\sqrt{2log(n)}}$
+10. $2^{log(n)}$
+11. $(\frac{3}{2})^n$
+12. $n2^n$
+13. $2^{2^n}$
+14. $2^{2^{2n+1}}$
+15. $log(n)!$
+16. $log(n!)$
+17. $n!$
+
+
+Collaborators: None
+
+\pagebreak
+
+# Problem 2
+
+## Part a
+
+How many sums and multiplications would it take to "brute force" calculating a polynomial?
+
+We are working in big O notation, so we will consider the worst case scenario. In this scenario we will have n additions between the n+1 terms in the polynomial. Each of these n+1 terms will also have a multiplcation, except for the fist making it n multiplcations. However this number assumes we know x^k^. Computing the exponential terms would require additional steps taking 0 then 1 then 2 then 3 all the way up to n multiplications. This would in fact create $\sum_{i=1}^{n} i  + n$ total multiplcations. This gives us a total of $n + 1 + n + \frac{n(n+1)}{2}$ from Gauss's formula to sum consecutive whole numbers. This gives us a running time of O(n^2^).
+
+Collaborators: None
+
+\pagebreak
+
+## Part b
+
+Horner's rule works backwards. This algorithm works off the fact that with each new term, it has an additional value of x~0~. Let's work from Horner's rule back to a polynomial. 
+
+1. The algorithm begins with $z = a_n$.
+2. Next step: $z = a_n * x_0 + a_{n-1}$.
+3. Next step $z = (a_n * x_0 + a_{n-1}) * x_0 = a_n * x_0^2 + a_{n-1} * x_0 $.
+4. At this point you can see that x_0 is distributed over the rest of the calculated polynomial on each step. The loop goes from n-1 to 0, which totals to n iterations. With n iterations the term a~n~ would be multiplied by x~0~ n times, which is the same as a~n~ * $x_0^n$.
+5. Therefore Horner's rule must calculate the value of p(x~0~) if you continue the process described in step 4 for each term below it.
+
+\pagebreak
+
+## Part c
+
+Horner's rule iterates from n-1 to 0 for a total of n iterations. There is exactly 1 summation and 1 multiplication in each iteration. This implies a running time of $n + n = 2n$ for a big O of O(n).
+
+\pagebreak
+
+## Part d
+
+For the polynomial p(x) = x^n^, Horner's rule will execute 2n additions/multiplications; however this particular polynomial is only a single term from a polynomial. Horner's will be adding 0 for each constant every time, and merely be multiplying x~0~ to a beginning number of a~n~ = 1. A more efficient algorithm for this particular polynomial would be to calculate $x^n$ using the divide and conquer approach we talked about in class. This method would only take O(nlog(n)) time.
+
+\pagebreak
+
+# Problem 3
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
