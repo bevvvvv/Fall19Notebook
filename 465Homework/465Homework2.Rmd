@@ -175,7 +175,9 @@ Output:
 
 * vector b
 
-Let's recall the standard method of calculating vector-matrix multiplcation. Using i as row and j as column index, $b(i) = \sum_{z=1}^{2^k}\sum_{x=1}^{2^k}H_k(z,x)*v(x)$. Using this "brute force" algorithm it would take you n by n multiplications and slightly less summations to calculate the answer. This would be O(n^2), but we can do better.
+Let's recall the standard method of calculating vector-matrix multiplcation. Using i as row and j as column index, $b(i) = \sum_{z=1}^{2^k}\sum_{x=1}^{2^k}H_k(z,x)*v(x)$. Using this "brute force" algorithm it would take you n by n multiplications and slightly less summations to calculate the answer. This would be O(n^2^), but we can do better. As stated we are working with Hadamard matrices, not an unknow matrix. These matrices following the recursive pattern detail above.
+
+Since the matrix H~k~ is comprised of 4 submatrices of H~k-1~, we can divide the problme into 4 smaller subproblems. We can actually take this further and only use 2 subproblems, because 3 of the matrices are identical, and one is the negative value of the others. Knowing that the size of the matrix is n = 2^k^, we know the subproblem size is n/2. ($2^{k-1} = \frac{2^k}{2} = \frac{n}2$). The only thing we don't know yet is the work of at each level, but we know that the work comes with combinging the answers, since we can reduce down to a 1x1 matrix to perform a single multiplcation. Combining the answers would then take linear time. Therefore our running time recursively can be described as $T(n) = 2T(\frac{n}{2}) + O(n)$. Solving the running time with the Master theorem, we have $a = 2, b = 2, d = 1$. $log_ba = log_22 = 1 = d = 1$. We can then use case 2: $\Theta(nlog(n))$
 
 
 
