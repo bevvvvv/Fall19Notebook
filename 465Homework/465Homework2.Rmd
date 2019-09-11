@@ -56,17 +56,25 @@ Horner's rule works backwards. This algorithm works off the fact that with each 
 4. At this point you can see that x_0 is distributed over the rest of the calculated polynomial on each step. The loop goes from n-1 to 0, which totals to n iterations. With n iterations the term a~n~ would be multiplied by x~0~ n times, which is the same as a~n~ * $x_0^n$.
 5. Therefore Horner's rule must calculate the value of p(x~0~) if you continue the process described in step 4 for each term below it.
 
+Collaborators: None
+
 \pagebreak
 
 ## Part c
 
 Horner's rule iterates from n-1 to 0 for a total of n iterations. There is exactly 1 summation and 1 multiplication in each iteration. This implies a running time of $n + n = 2n$ for a big O of O(n).
 
+Collaborators: None
+
+
 \pagebreak
 
 ## Part d
 
 For the polynomial p(x) = x^n^, Horner's rule will execute 2n additions/multiplications; however this particular polynomial is only a single term from a polynomial. Horner's will be adding 0 for each constant every time, and merely be multiplying x~0~ to a beginning number of a~n~ = 1. A more efficient algorithm for this particular polynomial would be to calculate $x^n$ using the divide and conquer approach we talked about in class. This method would only take O(nlog(n)) time.
+
+Collaborators: None
+
 
 \pagebreak
 
@@ -86,7 +94,6 @@ Want O(logn + logm) or O(log(nm)) running time. We know the naive brute force ap
 
 
 ```{}
-
 KSmall(int[] A, int[] B, int i, int j, int k) {
   // Start with base case
   // Assume i is index of A, and j is index of B
@@ -120,8 +127,9 @@ KSmall(int[] A, int[] B, int i, int j, int k) {
       
   return -1;
 }
-
 ```
+
+Collaborators: AlgorithmsAndMe.com
 
 \pagebreak
 
@@ -138,6 +146,9 @@ $log_ba = log_511 = 1.49 > d = 1.3$
 
 Using case two we know $\Theta(n) = \Theta(n^{log_ba}) = \Theta(n^{1.49})$
 
+Collaborators: None
+
+
 \pagebreak
 
 ## Part b
@@ -146,6 +157,9 @@ $T(n) = 2T(\frac{n}4) + nlog(n)$
 
 We know that in this algorithm we have a recurrence that divides the problem into 2 subproblems of size $\frac{n}{4}$. Each problem at that level has the work of nlog(n) implying the total work on each level is $4 * (\frac{n}{4}log(\frac{n}4)) = nlog(\frac{n}4)$. We also know that the total number of levels would be on the order of $log_4(n)$. Knowing the height of the tree and work on each level we can conclude a running time of $\Theta(nlog(n)log(\frac{n}4))$
 
+Collaborators: None
+
+
 \pagebreak
 
 ## Part c
@@ -153,6 +167,9 @@ We know that in this algorithm we have a recurrence that divides the problem int
 $T(n) = 5T(\frac{n}{3} + log^2(n)$
 
 We know that in this algorithm we have a recurrence that divides the problem into 5 subproblems of size $\frac{n}3$. Each problem at that level has the work of log^2(n) implying the total work on each level is $5 * (log^2(\frac{n}3))$. We also know that the total number of levels would be on the order of $log_3(n)$. Knowing the height of the tree and work on each level we can conclude a running time of $\Theta(log(n)log^2(\frac{n}3))$.
+
+Collaborators: None
+
 
 \pagebreak
 
@@ -170,6 +187,9 @@ $T(n) = T(\sqrt{n}) + \Theta(loglog(n))$
 
 We know that in this algorithm we have a recurrence that divides the problem into 1 subproblme of size $\sqrt{n}$. Each problem at that level ahs the work of $\Theta(loglog(n))$ implying the total work on each level is $\Theta(loglog(\sqrt{n}))$. We also know that the total number of levels would be on the order of loglog(n). Knowing the height of the tree and work on each level we can conclude a running time of $\Theta(loglog^2(\sqrt{n}))$.
 
+Collaborators: None
+
+
 \pagebreak
 
 ## Part f
@@ -186,6 +206,9 @@ $T(n) = T(n/2 + \sqrt{n}) + 230$
 
 Since the work at each step takes a constant amount of time, only the height of the recurrence tree matters. We know that it would be $\Theta(log(n))$ for T(n/2) and $\Theta(loglog(n))$ for $\sqrt{n}$, so we can then conclude the running time of this recurrnce would be $\Theta(log(n) + log(log(n)))$.
 
+Collaborators: None
+
+
 \pagebreak
 
 ## Part h
@@ -193,6 +216,9 @@ Since the work at each step takes a constant amount of time, only the height of 
 $T(n) = T(n - 2) + log(n)$
 
 The work at each step is log(n), but the subproblem of each leaf is n-2. The size of this subproblem means the heigh of this tree would be n/2. From this we can conclude a running time of $\Theta(nlog(n))$.
+
+Collaborators: None
+
 
 \pagebreak
 
@@ -202,6 +228,9 @@ $T(n) = T(3n/5) + T(2n/5) + \Theta(n)$
 
 From this recurrence running time we know that each step takes $\Theta(n)$ time to complete. We also know that there are 2 subproblems created at each step, one of size 3n/5 and one of size 2n/5. This would imply a tree height of log(n), which allows us to conclude a running time of $\Theta(nlog(n))$
 
+Collaborators: None
+
+
 \pagebreak
 
 ## Part j
@@ -209,6 +238,8 @@ From this recurrence running time we know that each step takes $\Theta(n)$ time 
 $T(n) = \sqrt{n}T(\sqrt{n}) + 30n$
 
 From this recurrence running time we know that each step has 30n steps of work. We also know that there are $\sqrt{n}$ subproblems of $\sqrt(n)$ in size. This implies a height of log(log(n)). From here we can conclude a running time of $\Theta(nlog(log(n)))$
+
+Collaborators: None
 
 \pagebreak
 
@@ -228,6 +259,9 @@ Output:
 Let's recall the standard method of calculating vector-matrix multiplcation. Using i as row and j as column index, $b(i) = \sum_{z=1}^{2^k}\sum_{x=1}^{2^k}H_k(z,x)*v(x)$. Using this "brute force" algorithm it would take you n by n multiplications and slightly less summations to calculate the answer. This would be O(n^2^), but we can do better. As stated we are working with Hadamard matrices, not an unknow matrix. These matrices following the recursive pattern detail above.
 
 Since the matrix H~k~ is comprised of 4 submatrices of H~k-1~, we can divide the problme into 4 smaller subproblems. We can actually take this further and only use 2 subproblems, because 3 of the matrices are identical, and one is the negative value of the others. Knowing that the size of the matrix is n = 2^k^, we know the subproblem size is n/2. ($2^{k-1} = \frac{2^k}{2} = \frac{n}2$). The only thing we don't know yet is the work of at each level, but we know that the work comes with combinging the answers, since we can reduce down to a 1x1 matrix to perform a single multiplcation. Combining the answers would then take linear time. Therefore our running time recursively can be described as $T(n) = 2T(\frac{n}{2}) + O(n)$. Solving the running time with the Master theorem, we have $a = 2, b = 2, d = 1$. $log_ba = log_22 = 1 = d = 1$. We can then use case 2: $\Theta(nlog(n))$
+
+Collaborators: None
+
 
 
 
