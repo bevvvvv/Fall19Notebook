@@ -2,7 +2,7 @@
 title: "Data Structures and Algorithms Homework 2"
 subtitle: "Due Wednesday Sept 11; Joseph Sepich (jps6444)"
 output:
-  pdf_document: default
+  pdf_document:
     toc: false
     toc_depth: 2
     number_sections: true
