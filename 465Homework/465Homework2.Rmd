@@ -82,13 +82,43 @@ Ouput:
 
 * k-th smallest element from A U B.
 
-Want O(logn + logm) or O(log(nm)) running time.
+Want O(logn + logm) or O(log(nm)) running time. We know the naive brute force approach would be to merge like in merge sort, but this would only be O(n + m) time, which is not quick enough. The requested running time looks similar to a binary search, so let's perform a divide and conquer approach.
 
 
 ```{}
 
-KSmall(int[] A, int[] B, int k) {
-l
+KSmall(int[] A, int[] B, int i, int j, int k) {
+  // Start with base case
+  // Assume i is index of A, and j is index of B
+  // i + j = k-1 at zero based indexing
+  
+  int[] temp;
+
+  lenA = len(A);
+  lenB = len(B0);
+
+  if(lenA + lenB < k) return -1; // kth element of union DNE
+
+  iMin = 0;
+  iMax = min(lenA, k-1);
+
+  i = 0;
+  j = 0;
+
+  
+  i = (iMin + iMax) / 2; // middle of array
+  j = k - 1 - i; // from equation stated before
+  
+  if (B[j - 1] > A[i]) {
+      return KSmall(A[i+1:k],B,k);
+  } else if (i > 0 && A[i - 1] > B[j]) {
+      return KSmall(A[0:i],B,k);
+  } else {
+      // i is perfect
+     return Integer.min(A[i], B[j]);
+  }
+      
+  return -1;
 }
 
 ```
