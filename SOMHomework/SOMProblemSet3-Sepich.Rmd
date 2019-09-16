@@ -41,13 +41,19 @@ The fundamental wavelegth of an open open pipe is about double the length of the
 
 A bass clarinet (length, approx. 40 inches) behaves acoustically as an open-closed pipe. What is its fundamental wavelength (in meters), and its fundamental frequency?
 
+The fundamental wavelength in an open-close pipe is 4 times thelength of the pipe: $\lambda = 4 * 40 = 160$. The fundamental wavelegnth is 160 inches or **4.064m** (by multiplying by 39.37). Assuming a speed of sound of 343 m/s we can then calculate the fundamental frequency to be $f_1 = \frac{343}{4.064} = 84.40$, **84.40 Hz**.
+
 # Problem 5
 
 What frequency is an octave above a fundamental frequency of 262 Hz? (Hint: What is the ratio that resuilts in an octave?)
 
+An octave is 2:1 ratio, so an octave about the fundamental of 262 Hz is **524Hz**, which would be the second harmonic of an open-open pipe or string.
+
 # Problem 6
 
 What frequency is a perfect fifth above 300 Hz? 
+
+A fifth is a 3:2 ratio, and would be the third haromic if 300 Hz was the second in an open-open pipe. This makes the perfect fifth from 300Hz, **450Hz**.
 
 # Problem 7
 
