@@ -14,7 +14,7 @@ Directions: Save this worksheet with the filename SOMProblemSet3-(lastname). Be 
 
 # Problem 1
 
-It's pretty obvious that if you walked into class and saw a small trumpet and a large tuba sitting next to each other, and the musicians came in to play them, the tuba's various notes (and the fundamental frequency produced by its length) would generally be lower¦octave(s) lower.  Why? What is it about the tuba's construction that causes lower notes? Be more specific than because it's longer.
+It's pretty obvious that if you walked into class and saw a small trumpet and a large tuba sitting next to each other, and the musicians came in to play them, the tuba's various notes (and the fundamental frequency produced by its length) would generally be lower?octave(s) lower.  Why? What is it about the tuba's construction that causes lower notes? Be more specific than because it's longer.
 
 A tuba and a trumpet are both essentially long vibrating pipes that have been wrapped up, so they're not ridiculously long. As we know from the past two lectures the frequency of a pipe depends on the wavelength. In this case both are open-open pipes, whose fundamental frequency follows the equation $f_1 = \frac{V_{air}}{2L}$. You can see from this equation that as the length (L) of the pipe gets larger, the frequency gets lower. Logically this makes sense, because the instrument is creating vibrations, and the bigger instrument will be able to create a wave with a longer wavelength, which correlates to the frequency.
 
@@ -70,11 +70,18 @@ The fundamental frequency is **110Hz** as stated. The second harmonic would be 2
 
 Find videos of two of these instruments: Hurdy-Gurdy, Sackbut, Erhu, and Shawm. Describe their timbre using the musical adjectives sheet found in our Canvas files page.
 
+**Sackbut**: The sackbut seems like a transition from the Trumpet to the Trombone. It has a brassy tone to it and in both videos I watched they noted the ability to play quietyly and loudly. Although brassy it has a rich tone to it that brass instruments tend to have. The video I watched of an actual song the instrument seems very majestic and exalted, which makes sense since the piece they were playing takes place in a church.
+
+https://www.youtube.com/watch?v=jPJNJr6iBrs
+https://www.youtube.com/watch?v=XO4ciBWblx0
+
+**Erhu**: While the sackbut is a brass instrument, the erhu is a string instrument. The erhu felt very sharp and dissonant to me, which likely has to do with its eastern origins. You could see the resonator on the ehru very clearly as the string is attached to a stick body with a large bulb on the end. While the sackbut felt majestic, the ehru felt nasaly and solemn. The shrill sound of it made it feel cold compared to the warm sound of the sackbut. One thing both instruments have in common is the ability to smoothly transition between notes.
+
+https://www.youtube.com/watch?v=YJ2O7vQfeiE
+
 # Problem 10
 
-On the musical grand staff below, write the name of each pitch. Then, find and circle the three adjacent notes that best represent an open-open pipe's fundamental first overtone second overtone relationship. 
-
-![](ProblemSet3Staff.png)
+On the musical grand staff below, write the name of each pitch. Then, find and circle the three adjacent notes that best represent an open-open pipe's fundamental first overtone second overtone relationship. ![](ProblemSet3Staff.png)
 
 
 
