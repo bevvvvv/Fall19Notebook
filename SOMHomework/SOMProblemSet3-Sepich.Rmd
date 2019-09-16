@@ -25,15 +25,17 @@ An uncoiled French horn would be about 13 feet long. Treated as an open-open pip
 
 \[\lambda = 2 * length = 2 * 13 = 26 ft\]
 
-The speed of sound in air $V_{air}$ is approximately 343 m/s and the conversion of 26 feet to meters is 26 / 3.281 = 7.9248 meters.
+The speed of sound in air $V_{air}$ is approximately 343 m/s and the conversion of **26 feet** to meters is 26 / 3.281 = 7.9248 meters.
 
 \[f_1 = \frac{343}{7.9248} = 43.28 Hz\]
 
-The fundamental frequency of a french horn is 43.28 Hz. This makes the second harmonic 2x greater or 86.56 Hz. The third harmonic would then be 3x greater than the fundamental or 129.85 Hz. This seems rather low for the actual range the French Horn likes to play in. I am guessing that this means the fundamental is the bottom of the range of the instrument.
+The fundamental frequency of a french horn is **43.28 Hz**. This makes the second harmonic 2x greater or **86.56 Hz**. The third harmonic would then be 3x greater than the fundamental or **129.85 Hz**. This seems rather low for the actual range the French Horn likes to play in. I am guessing that this means the fundamental is the bottom of the range of the instrument.
 
 # Problem 3
 
 By contrast, a piccolo is about 32 cm long. Treated as an open-open pipe, what would its fundamental wavelength (in meters) be? What frequency (in Hertz (Hz)) would that be? And, what frequency would the second haermonic be? And, the third?
+
+The fundamental wavelegth of an open open pipe is about double the length of the instrument, so a piccolo would be $\lambda = 2 * L = 2 * 32 = 64$ cm. In other words the wavelength is **0.64m**. With a sound speed of 343 m/s this makes the fundamental frequency $f_1 = \frac{343}{0.64} = 535.94 Hz$. This fundamental frequency of **535.94Hz** is much higher than the French Horn. This fundamental has a second harmonic of **1071.88Hz** and third harmonic of **1607.81Hz**.
 
 # Problem 4
 
