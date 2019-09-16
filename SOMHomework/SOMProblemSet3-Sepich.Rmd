@@ -17,9 +17,19 @@ Directions: Save this worksheet with the filename “SOMProblemSet3-(lastname)�
 
 It’s pretty obvious that if you walked into class and saw a small trumpet and a large tuba sitting next to each other, and the musicians came in to play them, the tuba’s various notes (and the fundamental frequency produced by its length) would generally be lower…octave(s) lower.  Why? What is it about the tuba’s construction that causes lower notes? Be more specific than “because it’s longer…”
 
+A tuba and a trumpet are both essentially long vibrating pipes that have been wrapped up, so they're not ridiculously long. As we know from the past two lectures the frequency of a pipe depends on the wavelength. In this case both are open-open pipes, whose fundamental frequency follows the equation $f_1 = \frac{V_{air}}{2L}$. You can see from this equation that as the length (L) of the pipe gets larger, the frequency gets lower. Logically this makes sense, because the instrument is creating vibrations, and the bigger instrument will be able to create a wave with a longer wavelength, which correlates to the frequency.
+
 # Problem 2
 
 An uncoiled French horn would be about 13 feet long. Treated as an open-open pipe, what would its fundamental wavelength (in meters) be? What frequency (in Hertz (Hz)) would that be? And, what frequency would the second harmonic be? And, the third?
+
+\[\lambda = 2 * length = 2 * 13 = 26 ft\]
+
+The speed of sound in air $V_{air}$ is approximately 343 m/s and the conversion of 26 feet to meters is 26 / 3.281 = 7.9248 meters.
+
+\[f_1 = \frac{343}{7.9248} = 43.28 Hz\]
+
+The fundamental frequency of a french horn is 43.28 Hz. This makes the second harmonic 2x greater or 86.56 Hz. The third harmonic would then be 3x greater than the fundamental or 129.85 Hz. This seems rather low for the actual range the French Horn likes to play in. I am guessing that this means the fundamental is the bottom of the range of the instrument.
 
 # Problem 3
 
