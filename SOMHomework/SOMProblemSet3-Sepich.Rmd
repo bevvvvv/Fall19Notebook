@@ -2,20 +2,19 @@
 title: "Science of Music: Problem Set 3"
 subtitle: "Due Monday Sept 18; Joseph Sepich (jps6444)"
 output:
-  pdf_document: 
+  pdf_document:
     toc: false
     toc_depth: 2
     number_sections: true
-    keep_tex: true
-  html_notebook: default
+    keep_tex: false
 ---
 
-Directions: Save this worksheet with the filename “SOMProblemSet3-(lastname)”. Be completely sure that you have used the number 3 in the filename. Enter your answers directly into the document and save, then upload it into Canvas. Clearly show your work. If you are using an equation, write the equation down, then plug in values you are using on the next line.  When you are finished with a problem, draw a box around your final result or highlight it.  Leave at least a couple of spaces on the paper before starting your next problem.  Every answer should include the appropriate units. Remember to submit your homework by 10pm Monday.  No homework will be accepted late, so get it done early.
+Directions: Save this worksheet with the filename SOMProblemSet3-(lastname). Be completely sure that you have used the number 3 in the filename. Enter your answers directly into the document and save, then upload it into Canvas. Clearly show your work. If you are using an equation, write the equation down, then plug in values you are using on the next line.  When you are finished with a problem, draw a box around your final result or highlight it.  Leave at least a couple of spaces on the paper before starting your next problem.  Every answer should include the appropriate units. Remember to submit your homework by 10pm Monday.  No homework will be accepted late, so get it done early.
 
 
 # Problem 1
 
-It’s pretty obvious that if you walked into class and saw a small trumpet and a large tuba sitting next to each other, and the musicians came in to play them, the tuba’s various notes (and the fundamental frequency produced by its length) would generally be lower…octave(s) lower.  Why? What is it about the tuba’s construction that causes lower notes? Be more specific than “because it’s longer…”
+It's pretty obvious that if you walked into class and saw a small trumpet and a large tuba sitting next to each other, and the musicians came in to play them, the tuba's various notes (and the fundamental frequency produced by its length) would generally be lower�octave(s) lower.  Why? What is it about the tuba's construction that causes lower notes? Be more specific than because it's longer.
 
 A tuba and a trumpet are both essentially long vibrating pipes that have been wrapped up, so they're not ridiculously long. As we know from the past two lectures the frequency of a pipe depends on the wavelength. In this case both are open-open pipes, whose fundamental frequency follows the equation $f_1 = \frac{V_{air}}{2L}$. You can see from this equation that as the length (L) of the pipe gets larger, the frequency gets lower. Logically this makes sense, because the instrument is creating vibrations, and the bigger instrument will be able to create a wave with a longer wavelength, which correlates to the frequency.
 
@@ -57,11 +56,15 @@ A fifth is a 3:2 ratio, and would be the third haromic if 300 Hz was the second 
 
 # Problem 7
 
-The speed of sound in Helium at 0 degrees Celsius is 970 m/sec.  When played using helium, the fundamental frequency of a clarinet, approx. 150 Hz., would sound much higher since helium’s speed of sound is faster than air at that temperature (only 331 m/sec). What would the new fundamental frequency be? 
+The speed of sound in Helium at 0 degrees Celsius is 970 m/sec.  When played using helium, the fundamental frequency of a clarinet, approx. 150 Hz., would sound much higher since helium's speed of sound is faster than air at that temperature (only 331 m/sec). What would the new fundamental frequency be? 
+
+The fundamental frequency in air would follow the formula used for a closed-open pipe of $f_1 = \frac{V_{air}}{4L}$. This means that the frequency is directly correlated to the speed of sound. Since $970 / 331 = 2.93$, we can divide the frequency by 2.93 to get the new fundamental. This value would be 150 / 2.93 = **51.19Hz**.
 
 # Problem 8
 
 If you pluck a string and hear an A (110 Hz), what are the frequencies of the first four harmonics (the first three overtones) including the fundamental?
+
+The fundamental frequency is **110Hz** as stated. The second harmonic would be 2 times greater or **220Hz**. The third harmonic would be 3 times greater than the fundamental, which is **330Hz**. The fourth harmonic would be 4 times greater than the first harmonic or **440Hz** (2 octaves).
 
 # Problem 9
 
@@ -69,7 +72,7 @@ Find videos of two of these instruments: Hurdy-Gurdy, Sackbut, Erhu, and Shawm. 
 
 # Problem 10
 
-On the musical grand staff below, write the name of each pitch. Then, find and circle the three adjacent notes that best represent an open-open pipe’s “fundamental – first overtone – second overtone” relationship. 
+On the musical grand staff below, write the name of each pitch. Then, find and circle the three adjacent notes that best represent an open-open pipe's fundamental first overtone second overtone relationship. 
 
 ![](ProblemSet3Staff.png)
 
