@@ -11,7 +11,7 @@
 
 (define (funcompose lst) (lambda (x) (fold-right evaluate x lst))); fold list into composition
 
-; Problme 3
+; Problem 3
 ; merge from merge sort
 (define (merge l r)
 	(if (null? l) r
@@ -22,7 +22,12 @@
 				(cons (car r) (merge l (cdr r)))
 				(cons (car l) (merge (cdr l) r))))))
 
-
+; Problem 4
+(define (findMax lst)
+	(if (null? lst) 0
+		(if (null? (cdr lst)) (car lst)
+			(if (> (findMax '(car lst)) (findMax (cdr lst))) (findMax '(car lst))
+				(findMax (cdr lst))))))
 
 
 
