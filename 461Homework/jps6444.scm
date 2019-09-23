@@ -7,13 +7,13 @@
 
 ; Problem 2
 ; inductive function composition
-(define (evaluate inner outer) (eval (list inner outer)); define composition
+(define (evaluate inner outer) (eval (list inner outer))); define composition
 
 (define (funcompose lst) (lambda (x) (fold-right evaluate x lst))); fold list into composition
 
 ; Problem 3
 ; merge from merge sort
-(define (merge l r)
+(define (merge l r) 
 	(if (null? l) r
 		; l is not null		
 		(if (null? r) l
@@ -25,9 +25,9 @@
 ; Problem 4
 (define (findMax lst)
 	(if (null? lst) 0
-		(if (null? (cdr lst)) (car lst)
-			(if (> (findMax '(car lst)) (findMax (cdr lst))) (findMax '(car lst))
-				(findMax (cdr lst))))))
+		(if (number? lst) lst
+			(if (null? (cdr lst)) (if (list? car lst) (findMax (car lst)) (car lst))
+				(max (findMax (car lst)) (findMax (cdr lst)))))))
 
 
 
