@@ -7,9 +7,9 @@
 
 ; Problem 2
 ; inductive function composition
-(define (evaluate inner outer) (eval '(outer inner))); define composition
+(define (evaluate inner outer) (eval (list inner outer)); define composition
 
-(define (funcompose lst) (lambda (x) (fold-left evaluate x lst))); fold list into composition
+(define (funcompose lst) (lambda (x) (fold-right evaluate x lst))); fold list into composition
 
 
 
