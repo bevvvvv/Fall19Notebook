@@ -11,6 +11,8 @@ output:
 
 # Problem 1 Pre and Post Processing
 
+Collaborators: Wikipedia Minimum Spanning Tree
+
 ## Part 1a
 
 The property that post(u) < post(v) makes v an ancestor of v false. If u and v are both connected to a and you start exploring from a with all the edges ({a, u}, {a, v}), then u and v siblings in the tree and v is not an ancestor of u. In this case we would have pre(u)<post(u)<pre(v)<post(v), so post(u)<post(v).
@@ -144,10 +146,23 @@ Since this algorithm is merely DFS with a different coefficient, since it has a 
 
 ## Part 5b
 
-Once you know that a path exists and you are looking for the minimum fuel tank, you are now looking at all the possible paths from s to t, because each path would require different mileage. For this you would have to find the maximum value of l_e_ for each path that is available from s to t.
+Finding a minimum tank capacity path can be modeled as a shortest path algorithm, because we want the shortest distance between each city. To do this we can construct a Minimum Spanning Tree and then find the path from s to t.
 
-Our algorithm involves running the previous algorithm and 
-
+```{}
+FindMin(G, s, t, L) {
+  sort(G.E, L) # sort edges in ascending order: O(ElogE) time
+  
+  edgeCount = 0
+  edgeIndex = 0
+  while (edgeCount < |V| - 1) {
+    edge = G.E[0] # smallest edge first
+    
+    
+    visited = DFS(G) # search graph
+    if ( )
+  }
+}
+```
 
 
 
