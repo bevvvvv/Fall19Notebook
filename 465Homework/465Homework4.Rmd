@@ -73,9 +73,15 @@ In the ordering of this DAG, it is always possible to swap two consecutive nodes
 
 ## Part 4a
 
+The roads in the city of Computopia are in the form of a directed graph with the intersections as nodes and roads as edges. The mayor has claimed that any intersection can be reached by starting at any other intersection. This implies that the entire city is one strongly connected component where any U and V have a path from U to V and V to U. We can use our algorithm for finding a strongly connected sink component. To do this we reverse all the edges and run DFS. The vertex with the highest post number is in a source strongly connected component on the reversed graph, but in a sink strongly connected component on the regular graph. If we run DFS from this point and obtain every node in the graph, then we know that the graph has to be a singly strongly connected component, and the mayor's claim holds. Since this algorithm just requires a run of DFS twice to determine the truth value of the original statement, the running time must be 2*O(|v| + |E|) = O(|V| + |E|), which is linear time.
+
 \pagebreak
 
 ## Part 4b
+
+The mayor's new claim revolves around the town-hall. She says that if you start at the node that is the town-hall, then no matter when you go you can always end at the town hall. This implies that the town-hall is contained in the sink strongly connected component of the graph of roads and intersections. To determine this you can run DFS on the reverse graph and start at the town-hall. If the town-hall has the largest post-number, then it must be in a source strongly connected component of the reversed graph; however there could be multiple source components, but this is okay. In order to figure out if the town-hall is in a source component. Then if the town-hall pre and post numbers are not contained within any previously found source component intervals, then it cannot be a child, so you can remove the source component you found and run the algorithm again. If the town-hall is never in the source component, then the mayor is wrong, however if the town-hall is in a source component, on this reverse graph, then it must be in a sink strongly connected component on the non-reversed graph and would evalute to true.
+
+This algorithm for the more specific claim, would have the same growth rate as the previous (linear), but would have a greater coefficient, because it would invovle running DFS more times in the worst case scenario, since there is more to validate.
 
 \pagebreak
 
