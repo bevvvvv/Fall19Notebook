@@ -65,6 +65,8 @@ The sources of the DAG are A and B. The sinks of the DAG are G and H.
 
 ## Part 3d
 
+In the ordering of this DAG, it is always possible to swap two consecutive nodes that are not connected by edge. An example of this would be A and B, D and E, or G and H. This means that there are 8 possible ways to order the topological sort or 2^3.
+
 \pagebreak
 
 # Problem 4 One-Way Streets
