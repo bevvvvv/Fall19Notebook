@@ -13,11 +13,13 @@ output:
 
 ## Part 1a
 
-DFS works by going depth first as the name states. This means that in order to explor a connected node you are finding it in a recursive stack. If a node U was a child of a node V, then the only way for that to happen would be for the DFS algorithm to call explore on U from the explore function of V. You can see that in a stack the existence of the property that post(u) < post(v) implies v is an ancestor of u can be shown inductively. First of all U and V are already determined to have an edge between them, so they must be on the same tree. If they didn't have an edge then it would be possible that u and v are just not connected and you explored one first. Our base case would be U is the direct child of V. As stated before this means U would have been called from the explore V function if post(u) = post(v) - 1. If we assume then going off this base case that post(u) = post(v) - k implies U is a descendant of V, then we can see that post(u) = post(v) - (k+1). This value is also post(v) - (k + 1) = post(v) - k -1 and we said in our base case this means that post(v) - k - 1 is a child of post(v) - k, so u must always be a descendant of v if post(u) < post(v).
+The property that post(u) < post(v) makes v an ancestor of v false. If u and v are both connected to a and you start exploring from a with all the edges ({a, u}, {a, v}), then u and v siblings in the tree and v is not an ancestor of u. In this case we would have pre(u)<post(u)<pre(v)<post(v), so post(u)<post(v).
 
 \pagebreak
 
 ## Part 1b
+
+We can piggyback off of part a for this problem. If our question in a tree is "is u an ancestor of v", then we can run DFS on the tree and record all the pre and post numbers. If the post number of v is less than the post number of u, then we know that u and v could be siblings, but if pre(u)<pre(v)<post(v)<post(u) then we know u must be an ancestor of v. If v starts and ends while u is running, then v must be lower in the recursive stack and therefore a descendant of u. We know they are not siblings because then you would have pre(u)<post(u)<pre(v)<post(v). This means we can run DFS to solve the problem, which is a linear time algorithm.
 
 \pagebreak
 
@@ -143,6 +145,8 @@ Since this algorithm is merely DFS with a different coefficient, since it has a 
 ## Part 5b
 
 Once you know that a path exists and you are looking for the minimum fuel tank, you are now looking at all the possible paths from s to t, because each path would require different mileage. For this you would have to find the maximum value of l_e_ for each path that is available from s to t.
+
+Our algorithm involves running the previous algorithm and 
 
 
 
