@@ -26,7 +26,7 @@
 (define (findMax lst)
 	(if (null? lst) 0
 		(if (number? lst) lst
-			(if (null? (cdr lst)) (if (list? car lst) (findMax (car lst)) (car lst))
+			(if (null? (cdr lst)) (if (list? (car lst)) (findMax (car lst)) (car lst))
 				(max (findMax (car lst)) (findMax (cdr lst)))))))
 
 ; Problem 5
