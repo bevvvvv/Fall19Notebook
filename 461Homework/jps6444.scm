@@ -59,6 +59,13 @@
 	(define (orFunc l r) (or l r))
 	(fold-left orFunc #f lst))
 
+; Part d
+; removeDup function
+(define (removeDup lst)
+	(define (addToList elem l)
+		(if (null? l) (cons elem l) (if (= (car l) elem) l (cons elem l))))
+	(fold-right addToList '() lst))
+
 
 
 
