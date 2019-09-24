@@ -13,6 +13,8 @@ output:
 
 ## Part 1a
 
+DFS works by going depth first as the name states. This means that in order to explor a connected node you are finding it in a recursive stack. If a node U was a child of a node V, then the only way for that to happen would be for the DFS algorithm to call explore on U from the explore function of V. You can see that in a stack the existence of the property that post(u) < post(v) implies v is an ancestor of u can be shown inductively. First of all U and V are already determined to have an edge between them, so they must be on the same tree. If they didn't have an edge then it would be possible that u and v are just not connected and you explored one first. Our base case would be U is the direct child of V. As stated before this means U would have been called from the explore V function if post(u) = post(v) - 1. If we assume then going off this base case that post(u) = post(v) - k implies U is a descendant of V, then we can see that post(u) = post(v) - (k+1). This value is also post(v) - (k + 1) = post(v) - k -1 and we said in our base case this means that post(v) - k - 1 is a child of post(v) - k, so u must always be a descendant of v if post(u) < post(v).
+
 \pagebreak
 
 ## Part 1b
@@ -89,11 +91,58 @@ This algorithm for the more specific claim, would have the same growth rate as t
 
 ## Part 5a
 
+Is there a feasible rouute from s to t?
+
+You can easily model a DFS algorithm to understand if s to t is a plausible route. Run a standard DFS algortihm, but do not add the next city node as a child, unless the length value of the edge is less than or equal to your max range. Then you can check to seed if the pre and post number of s encompasses the pre and post number of t. 
+
+```{}
+clock = 1
+
+# G is a graph
+# L is max range
+# s is source city
+# t is target city
+findRoute(G, L, s, t) {
+  visited = new boolean[|V|] # array for storing pre and post numbers
+  pre = new int[|V|]
+  post = new int[|V|]
+  pre[s] = clock
+  clock++
+  foreach {s, v} that is an edge {
+    if (lengths[{s, v}] <= L && !visited[v]) { ## CHECK FOR MILEAGE
+      Explore(G, v, visited)
+    }
+  }
+  post[s] = clock
+  
+  if (pre[s] < pre[t] && post[s] > post[t]) { ## CHECK FOR CHILD
+    return true
+  }
+  return false
+}
+
+Explore(G, s, visited) {
+  visited[s] = true
+  pre[s] = clock
+  clock++
+  foreach {s, v} that is an edge{
+    if (lengths[{s, v}] <= L && !visited[v]) { ## CHECK FOR MILEAGE
+      Explore(G, v, visited)
+    }
+  post[s] = clock
+  clock++
+  }
+}
+
+```
+
+Since this algorithm is merely DFS with a different coefficient, since it has a different number of steps in each function, it is by definition O(|V| + |E|). The worst case is all vertices are visited and each edge is traversed,
+
 \pagebreak
 
 ## Part 5b
 
-
+Once you know that a path exists and you are looking for the minimum fuel tank, you are now looking at all the possible paths from s to t, because each path would require different mileage. For this you would have to find the maximum value of l_e_ for each path that is available from s to t.
 
 
 
