@@ -53,6 +53,11 @@
 	(define (increment x) (+ 1 x))
 	(map increment lst))
 
+; Part c
+; lstOR function
+(define (lstOR lst)
+	(define (orFunc l r) (or l r))
+	(fold-left orFunc #f lst))
 
 
 
