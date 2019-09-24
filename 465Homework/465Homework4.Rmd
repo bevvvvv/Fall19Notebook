@@ -154,15 +154,40 @@ FindMin(G, s, t, L) {
   
   edgeCount = 0
   edgeIndex = 0
+  verticesConnected = new boolean[|V|] ; true if given vertex is connected (also mst vertices)
+  mstEdges = list<edges>()
+  
   while (edgeCount < |V| - 1) {
     edge = G.E[0] # smallest edge first
     
+    x = G.E[0][0] # first vertex in edge
+    y = G.E[0][1] # second vertex in edge
     
-    visited = DFS(G) # search graph
-    if ( )
+    if (verticesConnected[x] != true && verticesConnected[y] != true) {
+      verticesConnected[x] = true
+      verticesConnceted[y] = true
+      mstEdges.add({x,y})
+      edgeCount++
+    }
+    
   }
+  
+  ; we now have MST
+  
+  preNums = DFS(MST, s, L) ; run DFS from s
+  
+  foreach V in verticesConnected {
+    if (pre(v) > pre(t)) {
+      verticeConnected.Remove(V)
+      mstEdges.Remove(v)
+    }
+  }
+  
+  return L[mstEdges[length(mstEdges)]] # mstEdges is an ascending list, last item will be max
 }
 ```
+
+The longest part of this algorithm would be the sorting of the edges, so it would grow at O(ElogE).
 
 
 
