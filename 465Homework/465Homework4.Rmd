@@ -21,6 +21,12 @@ output:
 
 # Problem 2 Funny Money
 
+To find a combination to obtain a 10$ bill, we can create a DFS tree. Since there are only two options, connected to each node, it the tree is a binary tree. Leaves occur when both choice nodes already appeared as an ancestor to that node. We want a node that gives us [10, 11], since that means we currently can get a 10 dollar bill. An example of the tree can be found below.
+
+![](./FunnyMoneyDFS.png){ height=50%, width=50%}
+
+According to this DFS tree I made of the possible options, there is no way to obtain a $10 bill through the printing machine starting with a 1 dollar bill.
+
 \pagebreak
 
 # Problem 3 Topological Ordering
