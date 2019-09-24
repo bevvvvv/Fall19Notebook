@@ -29,7 +29,16 @@
 			(if (null? (cdr lst)) (if (list? car lst) (findMax (car lst)) (car lst))
 				(max (findMax (car lst)) (findMax (cdr lst)))))))
 
+; Problem 5
+(define (depthOfList lst)
+	(define (depthCounter lst count)
+		(cond
+			((null? lst) count) ; base case
+			((not (list? (car lst))) (depthCounter (cdr lst) count)) ; first element is not a list
+			(else (depthCounter (car lst) (+ count 1)))))
+	(if (list? lst) (depthCounter lst 1) 0))
 
+; Problem 6
 
 
 
