@@ -40,6 +40,18 @@
 
 ; Problem 6
 
+; Part a
+; newlength function
+(define (newlength lst)
+	(define (countLst count lst)
+			(if (null? lst) (+ 0 count) (+ 1 count)))
+	(fold-left countLst 0 lst))
+
+; Part b
+; addOne function
+(define (addOne lst)
+	(define (increment x) (+ 1 x))
+	(map increment lst))
 
 
 
