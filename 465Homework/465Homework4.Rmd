@@ -1,0 +1,95 @@
+---
+title: "Data Structures and Algorithms Homework 4"
+subtitle: "Due Wednesday Sept 25; Joseph Sepich (jps6444)"
+output:
+  pdf_document:
+    toc: false
+    toc_depth: 2
+    number_sections: true
+    keep_tex: false
+---
+
+# Problem 1 Pre and Post Processing
+
+## Part 1a
+
+\pagebreak
+
+## Part 1b
+
+\pagebreak
+
+# Problem 2 Funny Money
+
+\pagebreak
+
+# Problem 3 Topological Ordering
+
+## Part 3a
+
+* A - [1, 14]
+* B - [15, 16]
+* C - [2, 13]
+* D - [3, 10]
+* E - [11, 12]
+* F - [4, 9]
+* G - [5, 6]
+* H - [7, 8]
+
+\pagebreak
+
+## Part 3b
+
+The sources of the DAG are A and B. The sinks of the DAG are G and H.
+
+\pagebreak
+
+## Part 3c
+
+1. B
+2. A
+3. C
+4. E
+5. D
+6. F
+7. H
+8. G
+
+\pagebreak
+
+## Part 3d
+
+\pagebreak
+
+# Problem 4 One-Way Streets
+
+## Part 4a
+
+\pagebreak
+
+## Part 4b
+
+\pagebreak
+
+# Problem 5 City Hopping
+
+## Part 5a
+
+\pagebreak
+
+## Part 5b
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
