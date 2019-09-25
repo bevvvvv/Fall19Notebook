@@ -168,6 +168,109 @@ Privacy Invasive Technology
 
 # Economics of Privacy
 
+Sumamry
+
+* Data vs Decisional Privacy
+* Collection
+* Accessor Usage
+* Dissemination of Data
+
+Key Questions
+
+* Adversarial Model: Who is the adversary? What is their space of actions?
+* Mechanisms: Are the right mechanisms in place to achieve the privacy goal?
+* Incentives: Will human and economic factors favor or disfavor the privacy goal?
+
+Economics of Privacy
+
+* Cost and benefits associated with protection or disclosure of data
+* Data subject
+* Data holder
+* society as a whole
+
+On a societal level the cost of privacy is not realized until the data is disclosed. On an individual level however the individual has some privacy control on their personal sphere. Even though individuals are in control of their data, there is inconsistent behavior. People **want** privacy, but often are not willing to **take steps** to protect it. Some possible reasons are they do not care, the cost of protection is too high, they don't understand the implications of their behavior, or they want immediate gratification and the cost is not a tangible concept.
+
+Sample experiment using gift cards illustrated the **endowment effect**. This effect states that if a person perceives to already posses something they want to retain what they already have.
+
+Does control enhance or reduce privacy? It is important that individuals have control, but think of the airplane versus the car. When you are in a car you are in control and feel safer, but statistically are in much more danger. This could be the same when it comes to privacy controls.
+
+Key takeways are that people often don't understand the implications of their actions. When making cost benefit analysis people can only see the tangible consequences in front of them and often do not understand the full spectrum of outcomes that can come from their actions. This is also a reason why sometimes people are perceived to act irrationally.
+
+## Privacy Laws around the World
+
+Laws and regulations around the world vary. The US has a "patchwork quilt" when it comes to privacy laws and regulations. Laws and regulations are sector specific and often have minimal protections. Some regulators in the US are teh Federal Trade Commission and the Federal Communications Commission.
+
+## Fair Information Practice Principles (FIPS)
+
+1. Collection Limitation
+2. Data Quality
+3. Purpose Specification
+4. Use limitation
+5. Security Safeguards
+6. Openness
+7. Individual Participation
+8. Accountability
+
+# Laws and Directives
+
+## European Data Protection
+
+In Europe each country has their own commissions, but there is also a single law governing the entire union created in 2018: GDPR, General Data and Privacy Regulations.
+
+### GDPR
+
+* Doesn't matter where data is processed
+    + Origin of data is Europe
+* Explicit Consent must be given
+* Data management
+* Retained control
+* Care for sensitive data
+* Similar pillars to FIPS
+
+## FIPS
+
+### Collection Limitation
+
+Collection limitation states that data must be collected for a specific purpose, so don't collect data not useful for that purpose.
+
+### Data Quality
+
+The data that is stored should stay consistent and accurate.
+
+### Purpose Specification
+
+Data is collection for a specific purpose.
+
+### Use Limitation
+
+The data is only used for the intended purpose.
+
+### Security Safeguards
+
+The proper security protections should be put in place to prevent data leaks.
+
+### Openness
+
+Data holders must be open about their policies.
+
+### Individual Participation
+
+Users should help contribute to data management.
+
+### Accountability
+
+The data holder is responsible for their actions.
+
+## Privacy Risks in E-Commerce
+
+* Unsolicited Marketing
+* Subpoena
+* Government Surveillance
+
+
+One should start privacy analysis by identifying risks. What are the consequences and who could obtain the data?
+
+# Protecting Sensitive Data
 
 
 
