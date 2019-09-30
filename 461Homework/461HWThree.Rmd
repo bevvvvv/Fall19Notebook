@@ -30,13 +30,13 @@ output:
 
 This set will be infinite, so I will write down the 7 shortest.
 
-1. "aaab"
-2. "abbb"
-3. "aaaaab"
-4. "aaabbb"
-5. "abbbbb"
-6. "aaaaaaab"
-7. "aaaaabbb"
+1. "ab"
+2. "aaab"
+3. "abbb"
+4. "aaaaab"
+5. "aaabbb"
+6. "abbbbb"
+7. "aaaaaaab"
 
 # Problem 2
 
@@ -47,6 +47,23 @@ Write a regular expression with non empty binaries that start and end with the s
 ```L(R) = ((1(1|0)*1)|(0(1|0)*0))```
 
 ## Part 2
+
+Write a regular expression for declartions of variables of type int.
+
+```L(R) = int\sID(,ID)*=N(,(ID|N))*```
+
+THIS IS NOT CORRECT, DOES NOT MATCH NUMBER OF VARIABLES DECCLARED
+
+# Problem 3
+
+# Problem 4
+
+# Paroblem 5
+
+## Part 1
+
+## Part 2
+
 
 
 
