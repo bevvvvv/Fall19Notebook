@@ -57,7 +57,7 @@ $$
 
 # Problem 4
 
-
+The method suggested by Prof F. Lake surely works. We can prove this by induction. At a base case we have standard Dijsktra where all edge weights are greater than or equal to 1. We know that Dijkstra works in this case. For our inductive hypothesis let's assume the min edge weight is 1 - k < 0 works with Dijkstra's algorithm if we add k so our min edge weight is 1 - k + k = 1. If we then have an edge weight of 1 - (k + 1) < 0, we would have to add k + 1, which still preserves the relative weights of each edge, therefore the claim that you can transform all the edge weights by a constant to make them positive so Dijkstra will work is a valid method.
 
 
 
