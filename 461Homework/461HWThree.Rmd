@@ -1,0 +1,63 @@
+---
+title: "Programming Language Concepts Homework 3"
+subtitle: "Due Wednesday Oct 2; Joseph Sepich (jps6444)"
+output:
+  pdf_document:
+    toc: false
+    toc_depth: 2
+    number_sections: true
+    keep_tex: false
+---
+
+# Problem 1
+
+## Part 1
+
+```L(R) = (a|b)(a|b)(a|b)```
+
+1. "aaa"
+2. "aab"
+3. "aba"
+4. "abb"
+5. "baa"
+6. "bab"
+7. "bba"
+8. "bbb"
+
+## Part 2
+
+```L(R) = a(aa|bb)*b```
+
+This set will be infinite, so I will write down the 7 shortest.
+
+1. "aaab"
+2. "abbb"
+3. "aaaaab"
+4. "aaabbb"
+5. "abbbbb"
+6. "aaaaaaab"
+7. "aaaaabbb"
+
+# Problem 2
+
+## Part 1
+
+Write a regular expression with non empty binaries that start and end with the same digit.
+
+```L(R) = ((1(1|0)*1)|(0(1|0)*0))```
+
+## Part 2
+
+
+
+
+
+
+
+
+
+
+
+
+
+
