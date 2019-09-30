@@ -61,7 +61,7 @@ $$
 
 # Problem 4
 
-The method suggested by Prof F. Lake surely works. We can prove this by induction. At a base case we have standard Dijsktra where all edge weights are greater than or equal to 1. We know that Dijkstra works in this case. For our inductive hypothesis let's assume the min edge weight is 1 - k < 0 works with Dijkstra's algorithm if we add k so our min edge weight is 1 - k + k = 1. If we then have an edge weight of 1 - (k + 1) < 0, we would have to add k + 1, which still preserves the relative weights of each edge, therefore the claim that you can transform all the edge weights by a constant to make them positive so Dijkstra will work is a valid method.
+The method suggested by Prof F. Lake does not work. With negative edges Dijkstra's method breaks, because it is based on the idea that all future edges will cause in increase to distance. For example, if I have a graph with nodes (A, B, C) and edges [(A,B), (A,C), (B,C)] with weights [10, 5, -6]. The shortest path from A to C is 4 from A to B then B to C, so the shorest path must go through B, but if we add 7 to each edge and run Dijstra we get distances of 0 for A, 7 for B, and 12 for C from directly A to C, since with positives values A to B to C has a distance of 1 + 17 = 18. Therefore Prof Lake's method is not valid.
 
 
 
