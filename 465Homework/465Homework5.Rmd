@@ -12,7 +12,7 @@ output:
 
 # Problem 1 
 
-
+A back edge in a BFS algorithm would designate a cycle in a directed graph. This cycle would include the ancestor through the descendant in the tree. This means all one has to do is run a BFS algorithm, which takes O(|V| + |E|) time and look for edges (v, w) that have depth(v) > depth (w) (back edge). If this edge has depth(w) - depth(v) % 2 == 1 then you can increment the count of number of odd-length cycles. This second part of the algorithm looking for the odd-length cycle is a single loop through the edges so the algorithm takes O(|V| + 2|E|) time or O(|V| + |E|) time, which is linear.
 
 \pagebreak
 
