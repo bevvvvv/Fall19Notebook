@@ -1,0 +1,69 @@
+---
+title: "Data Structures and Algorithms Homework 5"
+subtitle: "Due Wednesday Oct 2; Joseph Sepich (jps6444)"
+output:
+  pdf_document:
+    toc: false
+    toc_depth: 2
+    number_sections: true
+    keep_tex: false
+---
+
+
+# Problem 1 
+
+\pagebreak
+
+# Problem 2
+
+## Part a
+
+\pagebreak
+
+## Part b
+
+\pagebreak
+
+# Problem 3
+
+## Part a
+
+\begin{center}
+\begin{tabular}{ |c|c|c| } 
+ \hline
+ cell1 & cell2 & cell3 \\ 
+ cell4 & cell5 & cell6 \\ 
+ cell7 & cell8 & cell9 \\ 
+ \hline
+\end{tabular}
+\end{center}
+
+\pagebreak
+
+## Part b
+
+\pagebreak
+
+# Problem 4
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
