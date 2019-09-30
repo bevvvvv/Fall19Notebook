@@ -12,6 +12,8 @@ output:
 
 # Problem 1 
 
+
+
 \pagebreak
 
 # Problem 2
@@ -23,6 +25,8 @@ In BFS it is impossible to have a forward edge, because the algorithm searches b
 \pagebreak
 
 ## Part b
+
+To determine edge type in the BFS tree you can run BFS and use the edges and depth values from the algorithm. If there exists an edge (v, w) and depth(v) + 1 = depth(w), then v (v, w) is a tree edge, which can be classified as such during the run of the BFS algorithm. Any edge (v, w) with depth(v) = depth(w) or depth(v) + 1 = depth(w) is a cross edge, if it was not designated a tree edge during the running of the BFS algorithm. A back edge is any of the remaining edges or when the edge (v, w) has depth(v) > depth(w). Since we have a BFS portion in O(|V| + |E|) and portion where we go through the edges in O(|E|) we have a running time of O(|V| + 2|E|) or O(|V| + |E|) running time. A crucial part to differentiating between cross and tree edge is making sure to designate the tree edges while the standard BFS algorithm is running.
 
 \pagebreak
 
