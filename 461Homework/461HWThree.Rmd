@@ -56,11 +56,35 @@ THIS IS NOT CORRECT, DOES NOT MATCH NUMBER OF VARIABLES DECCLARED
 
 # Problem 3
 
+## Part a
+
+Expr -> Expr Expr - | Expr Expr + | Expr Expr * | Expr Expr / | N
+
+## Part b
+
+```{r, out.width = "400px", echo=FALSE}
+knitr::include_graphics("./461HW3AST.PNG")
+```
+
+## Part c
+
+```
+Expr -> Expr Expr + -> Expr Expr Expr * + -> Expr Expr N * + ->
+Expr N N * + -> Expr Expr + N N * + -> Expr N + N N * + ->
+N N + N N * + -> N N + N 6 * + -> N N + 41 6 * + ->
+N 3 + 41 6 * + -> 23 3 + 41 6 * +
+
+```
+
 # Problem 4
+
+Paren -> $\epsilon$ | Paren () | () Paren | ( Paren )
 
 # Paroblem 5
 
 ## Part 1
+
+
 
 ## Part 2
 
