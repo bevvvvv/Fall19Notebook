@@ -52,8 +52,6 @@ Write a regular expression for declartions of variables of type int.
 
 ```L(R) = int\sID(,ID)*=N(,(ID|N))*```
 
-THIS IS NOT CORRECT, DOES NOT MATCH NUMBER OF VARIABLES DECCLARED
-
 # Problem 3
 
 ## Part a
@@ -82,13 +80,21 @@ Paren -> $\epsilon$ | Paren () | () Paren | ( Paren )
 
 # Paroblem 5
 
-## Part 1
+## Part a
 
+This language is ambigious. The definition of F has it on either side of an operator. A revised unambigous grammar would be:
 
+```
+E -> E + F | F
+F -> F * G
+G -> Id | (E)
+```
+
+This creates a left associativity in the grammar for both the + and * multipliers, and the + multiplier has a lower precedence.
 
 ## Part 2
 
-
+This language is unambigous. The union operator has a lower precendence than the intersenction operator. The union operator has right associativity and the intersection operator has a left associativity.
 
 
 
