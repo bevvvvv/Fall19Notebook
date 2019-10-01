@@ -1,0 +1,36 @@
+---
+title: "Science Of Music Study Guide"
+subtitle: "Josepeh Sepich"
+output:
+  pdf_document:
+    toc: false
+    toc_depth: 2
+    number_sections: true
+    keep_tex: false
+---
+
+# What is Sound
+
+
+# Variables to Know
+
+
+# Equations to Know
+
+
+# Sound Intensity Level
+
+
+# The Amazing Ear
+
+
+
+
+
+
+
+
+
+
+
+

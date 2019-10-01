@@ -1,0 +1,42 @@
+---
+title: "Data Structures and Algorithms Study Guide"
+subtitle: "Josepeh Sepich Oct 2"
+output:
+  pdf_document:
+    toc: false
+    toc_depth: 2
+    number_sections: true
+    keep_tex: false
+---
+
+# Running Time
+
+
+
+
+# Master Theorem
+
+
+
+
+# DFS
+
+
+
+
+# BFS
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
