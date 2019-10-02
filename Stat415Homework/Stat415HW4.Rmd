@@ -1,0 +1,37 @@
+---
+title: "Stat/Math 415 Homework 4"
+subtitle: "Due Friday Oct 4; Joseph Sepich (jps6444)"
+output:
+  pdf_document:
+    toc: false
+    toc_depth: 2
+    number_sections: true
+    keep_tex: false
+---
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
