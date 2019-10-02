@@ -42,7 +42,9 @@ Open-Open Pipe fundamental:
 
 The open-open pipe is also called a half wave resonator, strings also follow the half wave resonation pattern. The overtones follow increasing consecutive integer harmonic multiples. Below is an illustration of the half wave resonator sound waves.
 
-![](./HalfWaveResonator.jpg)
+```{r, out.width = "400px", echo=FALSE}
+knitr::include_graphics("./HalfWaveResonator.jpg")
+```
 
 Open-Close Pipe fundamental:
 
@@ -50,7 +52,9 @@ Open-Close Pipe fundamental:
 
 The open-closed pipe is also called a quarter wave resonator. The overtones follow an increasing consecutive odd integer harmonic multiples. Below is an illustration of the quarter wave resonator sound wave.
 
-![](./QuarterWaveResonator.jpg))
+```{r, out.width = "400px", echo=FALSE}
+knitr::include_graphics("./QuarterWaveResonator.jpg")
+```
 
 # Sound Intensity Level
 
