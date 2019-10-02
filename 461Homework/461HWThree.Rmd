@@ -50,7 +50,7 @@ Write a regular expression with non empty binaries that start and end with the s
 
 Write a regular expression for declartions of variables of type int.
 
-```L(R) = int\sID(,ID)*=(ID|N)(,(ID|N))*```
+```L(R) = int\sID(,ID)*=(ID|N)(,(ID|N))*;```
 
 # Problem 3
 
