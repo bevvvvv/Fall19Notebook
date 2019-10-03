@@ -9,6 +9,100 @@ output:
     keep_tex: false
 ---
 
+# Problem 7.2-3
+
+We have the following results
+
+* n = 12
+* $\overline{x} = 65.7$ inches
+* $s_x = 4$ inches
+* m = 15
+* $\overline{y} = 68.2$ inches
+* $s_y = 3$ inches
+
+Find approximate confidence interval for 98% confidence for the difference of means $\mu_x-\mu_y$. Assume population variances are equivalent.
+
+The problem descrption gives us an $\alpha = 0.02$ and calls for using formula 2 with sample pooled variance.
+
+\[S_p = \sqrt{\frac{(n - 1)s_x^2}{n + m - 2}+\frac{(m - 1)s_y^2}{n + m -2}}\]
+\[S_p = \sqrt{\frac{(12 - 1)4^2}{12 + 15 - 2}+\frac{(15 - 1)3^2}{12 + 15 -2}}\]
+\[S_p = \sqrt{\frac{11*16 + 14 * 9}{25}} \approx 3.4756\]
+
+The formula we want to use is:
+
+\[(\overline{x} - \overline{y}) +- t_{\alpha/2}s_p\sqrt{\frac1{n}+\frac1{m}}\]
+
+So we look in the table and see that for a t distribution with n + m -2 = 25 degrees of freedom for 0.02 / 2 = 0.01 as our alpha / 2 value we get $t_{\alpha/2}  = 2.485$.
+
+Plugging our values into our formula we have:
+
+\[(65.7 - 68.2) +- 2.485 * 3.4756\sqrt{\frac1{12}+\frac1{15}}\]
+
+This gives us the bounds **[-2.5 - 3.3450, -2.5 + 3.3450] = [-5.8450, 0.8450]** This would be the 98% confidence interval.
+
+
+# Problem 7.2-6
+
+## Part a
+
+In order to finda 95% confidence interval for the difference in means, we must first calculate our summary statistics for both sample mean and sample variance.
+
+\[\overline{x} = \frac{3.26 + 2.26 + 2.62 + 2.62 + 2.36 + 3.00 + 2.62 + 2.40 + 2.30 + 2.40 }{10}=2.584\]
+\[\overline{y} = \frac{1.80 + 1.46 + 1.54 + 1.42 + 1.32 + 1.56 + 1.36 + 1.64 + 2.00 + 1.54}{10}=1.564\]
+
+To see if we can use t distribution instead of approximation with normal let's check for similar sample varaince:
+
+\[s_x^2 = \frac{(3.26-2.584)^2 + (2.26-2.584)^2 + ... + (2.30-2.584)^2 + (2.40-2.584)^2}{9} \approx 0.10414\]
+\[x_y^2 = \frac{(1.80-1.564)^2 + (1.46-1.564)^2 + ... + (2.00-1.564)^2 + (1.54-1.564)^2}{9}\approx 0.04281\]
+
+Since both variances are similar let's use the following formula:
+
+\[(\overline{x} - \overline{y}) +- t_{\alpha/2}s_p\sqrt{\frac1{n}+\frac1{m}}\]
+
+\[S_p = \sqrt{\frac{(n - 1)s_x^2}{n + m - 2}+\frac{(m - 1)s_y^2}{n + m -2}}\]
+\[S_p = \sqrt{\frac{(10 - 1)0.10414}{10 + 10 - 2}+\frac{(10 - 1)0.04281}{10 + 10 -2}}\approx0.2712\]
+
+Looking at the t distribution table for 10 + 10 - 2 = 18 degrees of freedom for $\alpha/2 = 0.025$ we get t = 2.101.
+
+Plugging our values into our formula we have:
+
+\[(2.584 - 1.564) +- 2.101 * 0.2712\sqrt{\frac1{10}+\frac1{10}}\]
+
+This gives us the bounds **[1.02 - 0.2548, 1.02 + 0.2548] = [0.7652, 1.2748]** This would be the 95% confidence interval.
+
+
+## Part c
+
+The wedge is necessary to do its job. If the wedge was not necessary then the force required to remove the seal with and without the seal would be the same, so the difference in means would be 0. Our 95% confidence interval for the difference in means does not contain 0, so we can say with 95% confidence the the wedge is necessary and is doing its job.
+
+
+# Problem 7.2-9
+
+
+# Problem 7.2-11
+
+# Problem 7.3-3
+
+## Part a
+
+## Part b
+
+
+# Problem 7.3-5
+
+## Part a
+
+## Part b
+
+## Part c
+
+## Part d
+
+# Problme 7.3-9
+
+## Part a
+
+## Part b
 
 
 
