@@ -3,17 +3,73 @@ title: "Science Of Music Study Guide"
 subtitle: "Josepeh Sepich"
 output:
   pdf_document:
-    toc: false
+    toc: true
     toc_depth: 2
     number_sections: true
     keep_tex: false
 ---
 
-# What is Sound
+# Musical Definitions
+
+Please refer to the file on Canvas for the full list of definitions. Below are the definitions the professor highlighted in class.
+
+### Acoustical Beating
+
+The audible vibration created when two or more frequencies, that are not quite in a simple whole number relationship to each other, are sounded together. For example if 100 and 102 Hz are played together you can hear the 2 vibrations per second difference.
+
+### Audiation
+
+"The mind's ear", or the ability to hear previously heard sounds in one's mind.
+
+### Chord
+
+Three or more different pitches occuring simultaneously.
+
+### Consonance and Dissonance
+
+The concept of relatively pleasing sound, due to combinations of particular harmonies, melodic progressions, and/or rhythms. What is consonant or dissonant depends on what is culturally the norm.
+
+### Dynamics
+
+Level(s) of loudness or softness in a piece of music. Italian terms such as forte and piano are used. Adding an "issimo" is a suffix that means even more of that quality and adding "mezzo" means not so much of this. Pianissimo versus mezzo piano.
+
+### Harmony
+
+
+
+### Instrumentation
+
+### Melody
+
+### Music
+
+### Note
+
+### Octave
+
+### Pitch
+
+### Range
+
+### Scale
+
+### Timbre
+
+### Triad
+
+# What are waves
 
 EXPLAIN WHAT WAVES ARE (INCLUDING WAVELENGTH)
 
+## Simple Harmonic Motion
 
+## Amplitude and Frequency
+
+## Standing Waves
+
+## Resonance
+
+### Mechanical Coupling
 
 # Variables to Know
 
@@ -36,6 +92,12 @@ Wavelength:
 
 \[\lambda = \frac{C}{f}\]
 
+Drt equation:
+
+\[d = rt\]
+
+This is common equation where distance is equal to rate times time.
+
 Open-Open Pipe fundamental:
 
 \[f_1 = \frac{C}{2L}\]
@@ -56,10 +118,37 @@ The open-closed pipe is also called a quarter wave resonator. The overtones foll
 knitr::include_graphics("./QuarterWaveResonator.jpg")
 ```
 
+## End Correction
+
 # Sound Intensity Level
+
+## Logarithms
+
+## Decibels
+
+## Hearing Limits
 
 
 # The Amazing Ear
+
+
+# Pitch and Pitch Names
+
+## Pitch versus Frequency
+
+## Musical Staff
+
+## Pitch Names
+
+# Misc
+
+## Timbre
+
+## ADSR
+
+## Combination Tones
+
+## Octave Equivalence
 
 
 
