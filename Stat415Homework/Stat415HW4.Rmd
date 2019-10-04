@@ -78,6 +78,71 @@ The wedge is necessary to do its job. If the wedge was not necessary then the fo
 
 # Problem 7.2-9
 
+## Part a
+
+To find the 90% confidence interval for the mean in difference of percentages of males we must used a paired difference in means approach. To do this we must make the proper calculations for $D = x_1 - x_2$ where $x_2$ is post program for males and $x_1$ is pre program for males.
+
+1. 11.10 - 9.97 = 1.13
+2. 19.50 - 15.80 = 3.70
+3. 14.00 - 13.02 = 0.98
+4. 8.30 - 9.28 = -0.98
+5. 12.40 - 11.51 = 0.89
+6. 7.89 - 7.40 = 0.49
+7. 12.10 - 10.70 = 1.40
+8. 8.30 - 10.40 = -2.10
+9. 12.31 - 11.40 = 0.91
+10. 10.00 - 11.95 = -1.95
+
+From here we can then use the following equation:
+
+\[\overline{D} +-t_{\alpha/2}\frac{s_D}{\sqrt{n}}\]
+
+So let's calculate the sample mean and sample standard deviation:
+
+\[\overline{D} = \frac{1.13 + 3.7 + ... + 0.91 - 1.95}{10} \approx 0.447\]
+
+\[s_D = \sqrt{\frac{(1.13-0.447)^2 + (3.7-0.447)^2 + ... + (0.91-0.447)^2 +(-1.95-0.447)^2}{9}} \approx 1.7296\]
+
+We also can find from the distribution chart for alpha of 0.05 to use the value t = 1.833 with 9 degrees of freedom. Plugging our values in we get.
+
+\[0.447 +-1.833\frac{1.7296}{\sqrt{10}}\]
+
+This gives us the bounds **[0.447 - 1.0026, 0.447 + 1.0026] = [-0.5556, 1.4496]** This would be the 90% confidence interval.
+
+## Part b
+
+To find the 90% confidence interval for the mean in difference of percentages of females we must used a paired difference in means approach. To do this we must make the proper calculations for $D = x_1 - x_2$ where $x_2$ is post program for females and $x_1$ is pre program for females.
+
+1. 22.90 - 22.89 = 0.01
+2. 31.60 - 33.47 = -1.87
+3. 27.70 - 25.75 = 1.95
+4. 21.70 - 19.80 = 1.90
+5. 19.36 - 18.00 = 1.36
+6. 25.03 - 22.33 = 2.7
+7. 26.90 - 25.26 = 1.64
+8. 25.75 - 24.90 = 0.85
+9. 23.63 - 21.80 = 1.83
+10. 25.06 - 24.28 = 0.78
+
+From here we can then use the following equation:
+
+\[\overline{D} +-t_{\alpha/2}\frac{s_D}{\sqrt{n}}\]
+
+So let's calculate the sample mean and sample standard deviation:
+
+\[\overline{D} = \frac{0.01 - 1.87 + ... + 1.83 + 0.78}{10} \approx 1.115\]
+
+\[s_D = \sqrt{\frac{(0.01-1.115)^2 + (-1.87-1.115)^2 + ... + (1.83-1.115)^2 +(0.78-1.115)^2}{9}} \approx 1.2904\]
+
+We also can find from the distribution chart for alpha of 0.05 to use the value t = 1.833 with 9 degrees of freedom. Plugging our values in we get.
+
+\[1.115 +-1.833\frac{1.2904}{\sqrt{10}}\]
+
+This gives us the bounds **[1.115 - 1.0026, 1.115 + 1.0026] = [0.3670, 1.8630]** This would be the 90% confidence interval.
+
+## Part c
+
+According to the data we **cannot** say with 90% confidence that the percentages of body fat in males has decreased; however since 0 is not contained in our confidence interval for differences in females we can say with 90% confidence that there has been a decrease in percentages of body fat for them.
 
 # Problem 7.2-11
 
