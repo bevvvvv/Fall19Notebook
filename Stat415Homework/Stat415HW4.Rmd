@@ -146,29 +146,87 @@ According to the data we **cannot** say with 90% confidence that the percentages
 
 # Problem 7.2-11
 
+In order to find the 95% confidence interval for the difference in means we should use a normal distribution approximation, since n appears to be sufficiently large and the sample variations are clearly not equal. We would approximate X-Y to be a normal distribution with the mean $\mu_x-\mu_y$ and a variance of $\frac{\sigma^2_x}{n}+\frac{\sigma_y^2}{m}$, so our confidence interval equation would be:
+
+\[\overline{x}-\overline{y} -z_{\alpha}\sqrt{\frac{s_x^2}{n} +\frac{s_y^2}{m}}\]
+
+The value of z in the normal distributoin table for an alpha of 0.05 is 1.645, so let's plug in our values:
+
+\[671-480 -1.645\sqrt{\frac{129^2}{60} +\frac{93^2}{60}}\]
+\[191 - 1.645\sqrt{421.5}\]
+
+This makes our lower bound interval **[191 - 33.77262, infinity] = [157.2274, infinity]**. This would be the 95% confidence interval.
+
+
 # Problem 7.3-3
 
 ## Part a
 
+Our sample proportion p hat is $\overline{x} = 167 / 330 = 0.5061$, the sum of yes answers over the sample size.
+
 ## Part b
 
+To create the 90% confidence interval we can use the variables $\alpha = 0.1,\overline{x} = 0.5061,n=330$. The value for z of 0.05 is what we used in the last homework problem of 1.645. Then we can plug this int our equation:
+
+\[\overline{x}+-z_{\alpha/2}\sqrt{\frac{\overline{x}(1-\overline{x})}{n}}\]
+
+\[0.5061+-1.645\sqrt{\frac{0.5061(1-0.5061)}{330}}\]
+
+This makes our 90% confidence interval for p hat **[0.4608, 0.5514]**
 
 # Problem 7.3-5
 
 ## Part a
 
+The point estimate of p would be $\overline{x} = \frac{9}{50} = 0.18$, the sum of yes answers over the sample size.
+
 ## Part b
+
+95% confidence interval calls for an alpha of 0.05, so z of half alpha would be 1.96.
+
+\[\frac{y}{n}+-z_{\alpha/2}\sqrt{\frac{(y/n)(1-y/n)}{n}}\]
+\[0.18+-1.96\sqrt{\frac{0.18(1-0.18)}{50}}\]
+
+This makes our 95% confidence interval for p hat **[0.0735, 0.2865]**
 
 ## Part c
 
+\[\frac{\overline{x} + z_{\alpha/2}^2/(2n)+-z_{\alpha/2}\sqrt{\overline{x}(1-\overline{x}/n+z_{\alpha/2}^2/(4n^2))}}{\overline{x} + z_{\alpha/2}^2/n}\]
+\[\frac{0.18+ 1.96^2/(100)+-1.96\sqrt{0.18(1-0.18)/50+1.96^2/(4*50^2))}}{0.18 + 1.96^2/50}\]
+
+This makes our 95% confidence interval for p hat **[0.0648, 0.2751]**
+
 ## Part d
 
-# Problme 7.3-9
+\[p_0 = \frac{y + 2}{n + 4} = \frac{11}{54} \approx 0.2037\]
+\[p_0 +-z_{\alpha/2}\sqrt{\frac{p_0(1-p_0)}{n+4}}\]
+\[0.2037 +-1.96\sqrt{\frac{0.2037(1-0.2037)}{54}}\]
+
+This makes our 95% confidence interval for p **[0.0963, 0.3111]**
+
+# Problem 7.3-9
 
 ## Part a
 
+We know the following information:
+
+* $x_1 = 1009$
+* $n_1 = 1230$
+* $y_2 = 207$
+* $n_2 = 340$
+
+The point estimate for the first proportion would be $1009/1230 \approx 0.8203$ and the point estimate for the second proportion would be $207/340 = 0.6088$.
+
+This makes the point estimate for $p_1 - p_2$ be $0.8203 - 0.6088 = 0.2115$.
+
 ## Part b
 
+We are again finding a 95% confidence interval so alpha over 2 is 0.025 making the value of z 1.96. The equation to estimate the interval would be:
+
+\[(\overline{x}_1-\overline{x}_2)+-1.96\sqrt{\frac{\overline{x}_1(1-\overline{x}_1)}{n_1}+\frac{\overline{x}_2(1-\overline{x}_2)}{n_2}}\]
+\[(0.8203-0.6088)+-1.96\sqrt{\frac{0.8203(1-0.8203)}{1230}+\frac{0.6088(1-0.6088)}{340}}\]
+
+This makes our 95% confidence interval for $p_1-p_2$ to be **[0.1554, 0.2676]**
 
 
 
