@@ -10,7 +10,47 @@ output:
 ---
 
 
+# Problem 1
 
+Collaborators: None
+
+## Part a
+
+1. s
+2. a
+3. c
+4. d
+5. b
+
+\pagebreak
+
+## Part b
+
+The edge needs to be 3 or greater, since the vertex removed after a is c, and if this edge is 2 or less it could be removed next (would be tied or less than c at the step after vertex a). The edge also needs to be 4 or less so it will be removed before the b vertex.
+
+If tied vertices are removed in alphabetical order then the constraint on a to d is [2, 4], otherwise the strict bounds are [3, 4].
+
+\pagebreak
+
+# Problem 2
+
+\pagebreak
+
+# Problem 3
+
+\pagebreak
+
+# Problem 4
+
+\pagebreak
+
+# Problem 5
+
+## Part a
+
+\pagebreak
+
+## Part b
 
 
 
