@@ -54,9 +54,18 @@ All you have to do to create this modified version of Bellman-ford is instead of
 
 ## Part a
 
+Given the constraint that every conversion rate from i to j must be greater than or equal to zero, you can use Bellman-Ford algorithm on a graph where you transform all the edges by multiplying by negative one. These set of edges would be the minimum of the negation, but the maximum of the original set of edges. The max path in this case would be the most advantageous sequence of conversions, because it would provide us with the maximum possible mileage for the destination airline from the source airline. As we know Bellman-Ford runs with time complexity of O(|V|*|E|), because it updates every edges |V| - 1 times.
+
+1. Negate edges
+2. Run Bellman-Ford
+3. Shortest Path in negated edges is max path/desired path in non-negated edges.
+
 \pagebreak
 
 ## Part b
+
+Since we are using negative edges and the Bellman-Ford algorithm in part a, checking for accretion is the same as checking for a negative cycle. If you negate all the edges and run Bellman-Ford |V| - 1 times, then you found the min path of the negated eges (max path for the original graph). If you update all the edges one more time, and any edge actually **does** update, then you know that your graph with negated edges contains a negative cycle, which implies you can always obtain a smaller and smaller path. Since these edges are negated you know that this same negative cycle would be a profitable cycle in the original graph that would always obtain a larger and larger path. Therefore to determine if accretion exists you just need to run the previous algorithm in part(a), but add an extra round of updates to check for a negative cycle. Since we run update on |E| edges |V| times, the running time is still O(|V|*|E|).
+
 
 
 
