@@ -35,27 +35,55 @@ Level(s) of loudness or softness in a piece of music. Italian terms such as fort
 
 ### Harmony
 
-
+Two or more different pitches occuring simultaneously, usually creating a sense of consonance or dissonance.
 
 ### Instrumentation
 
+The set of instrumental components (e.g. a quintet of flute, clarinet, oboe, bassoon, and horn) in an ensemble, piece of music, or at a particular point in a piece.
+
 ### Melody
+
+The succession of notes (usually pitched) forming a recognizable pattern, a.k.a. the "tune", "ditty", or "theme". In Jazz it is called the "head".
+
+### Motive
+
+A recognizable, prominent melodic or rhyhmic fragment, somewhere between 2 and 7 notes in length, that is used as a basis of development and adapted throughout a piece.
 
 ### Music
 
+Sound(s) which cause, or have as their purpose, an emotional experience and/or temporal aesthetic reaction in the minds and/or behaviors of one or more listeners. These sounds are ususally organized with respect to time, and incorporate accepted principles of construction.
+
 ### Note
+
+One melodic or rhyhmic event; also, it's written representation.
 
 ### Octave
 
+Distance between two pitches whose frequencies are in a 2:1 Hertz relationship.
+
 ### Pitch
+
+An audible uniform frequency, of sufficient duration, that produces a psychomusical sensation. The Western pitch system contains 12 different pitches A through G, with repetitions at the octave.
 
 ### Range
 
+The full extent of pitches, from highest to lowest tones, that an instrument, voice, or composition has.
+
+### Rhyhm
+
+A series of musical sounds in some combination of short and long durations. Often notated using note values such as whole notes, half notes, quarter notes, eighth notes, etc.
+
 ### Scale
+
+Divisions of the naturally occuring octave into x number of steps. The ordered collection of pitches or frequencies that result when a given mode is played with respect to a given key center. There are hundreds to thousands of scale types.
 
 ### Timbre
 
+The particular sound signature of an instrument or voice.
+
 ### Triad
+
+A chord consisting of three pitches in a root-third-fifth relationship.
 
 # What are waves
 
@@ -64,6 +92,8 @@ EXPLAIN WHAT WAVES ARE (INCLUDING WAVELENGTH)
 ## Simple Harmonic Motion
 
 ## Amplitude and Frequency
+
+### Overtones, Partials, Harmonics
 
 ## Standing Waves
 
@@ -98,6 +128,8 @@ Drt equation:
 
 This is common equation where distance is equal to rate times time.
 
+Area of a circle follows the equation $A=\pi * r^2$.
+
 Open-Open Pipe fundamental:
 
 \[f_1 = \frac{C}{2L}\]
@@ -120,16 +152,53 @@ knitr::include_graphics("./QuarterWaveResonator.jpg")
 
 ## End Correction
 
+Remember you need to multiply the radius value by 2 if it is the acoustical length for an open-open pipe. The following equation is for a closed-open pipe.
+
+\[L_A = L_P + 0.61 * r\]
+
+* $L_A$ is the acoustical length
+* $L_P$ is the physical length
+* r is the radius of the tube/pipe
+
 # Sound Intensity Level
+
+Loudness ia a subjective perception; whereas the sound intensity level is measure of power over a given area due to the pressure waves. For example you need to add eight more players to make something "sound" twice as loud (from one base player). Sound intensity level, since it would be measured as power over an area, is measured in watts per meter squared, however we transform this into a logarithmic scale using decibel units due to the large range of hearing in the ear.
 
 ## Logarithms
 
+Logarithms are the inverse of exponents. Below are some logarithmic properties to recall what logarithms are:
+
+\[log_ba = x; b^x = a\]
+\[log(x*y) = log(x) + log(y)\]
+\[log(x/y) = log(x) - log(y)\]
+\[log(x^a) = a*log(x)\]
+
 ## Decibels
+
+Our basis of 0 dB starts at $1*10^{-12}\frac{W}{m^2}$. 100 dB would be $1*10^{-2}\frac{W}{m^2}$. This makes every change in 10 dB equal to multiplying our sound level by 10, so a change in 1000, would be a change in 30 dB.
+
+### Rules of thumb
+
+1. Doubling the sound intensity level requires adding 3 decibels (doubling in volume).
+2. Doubling the distance from a sound source, you subtract 6 decibels (quartering the volume).
 
 ## Hearing Limits
 
+The standard ear drum has a SIL range between 0 dB and 120 dB (starts to damage). You can see the power over area of these units by using the calculation methods stated above.
 
 # The Amazing Ear
+
+## Outer Ear
+
+## Middle Ear
+
+### Malleus: Hammer
+
+### Incus: Anvil
+
+### Stapes: Stirrup
+
+## Inner Ear
 
 
 # Pitch and Pitch Names
@@ -146,9 +215,28 @@ knitr::include_graphics("./QuarterWaveResonator.jpg")
 
 ## ADSR
 
+1. Attack Time
+2. Decay Time
+3. Sustain Level
+4. Release Time
+
 ## Combination Tones
 
-## Octave Equivalence
+## Psychoacoustics
+
+### Octave Equivalence
+
+### Fundamental Tracking
+
+The brain supplies or tracks the missing fundamental that is produced through combination tones.
+
+### Masking
+
+Two sounds that are close to each other might have one mask the other sound. Our perception would only hear the louder of two similar sounds. There are some types of masking: temporal masking and backward masking. The sensitivity range of the frequency will also determine which sound is masked out.
+
+### Tonal Fusion
+
+Two different instruments are playing together, but it sounds like there is only one instrument playing.
 
 
 
