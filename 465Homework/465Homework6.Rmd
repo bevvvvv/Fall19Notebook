@@ -40,6 +40,8 @@ Recall our inductive proof on the correctness of Dijkstra's algorithm. We know t
 
 # Problem 3
 
+An efficient algorithm would be to run Dijkstra's algorithm twice to start. The first run you use s as the source node, and the second run you use t as the source node. You know have data on the shorest past from city s to every city and from city t to every city. This also means you know that base time/length from s to t. You can then loop through the edges in E' and for each edge from vertex u to v, you can sum the distance from s to u, the length of the edge e', and the distance from v to t to get the length of that possible new path. For each of these paths store the value, but if you find a path of a lesser value store that (starting with this value assigned to the current value of the path from s to t). Then you can just return this distance and edge e' as the new edge to add. This algorithm is efficient, because it runs through Dijkstra twice, then just loops through the edges in E'. This has a running time of O((|V| + |E|)log|V| + |E'|).
+
 \pagebreak
 
 # Problem 4
