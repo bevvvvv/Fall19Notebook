@@ -10,7 +10,7 @@ output:
 ---
 
 
-# Problem 1
+# Problem 1 Dijkstra's Algorithm
 
 Collaborators: None
 
@@ -26,13 +26,15 @@ Collaborators: None
 
 ## Part b
 
-The edge needs to be 3 or greater, since the vertex removed after a is c, and if this edge is 2 or less it could be removed next (would be tied or less than c at the step after vertex a). The edge also needs to be 4 or less so it will be removed before the b vertex.
+The edge needs to be 3 or greater, since the vertex removed after a is c, and if this edge is 2 or less it could be removed next (would be tied or less than c at the step after vertex a). The edge also needs to be 5 or less so it will be removed before the b vertex, whose distance is 7 when a is removed.
 
-If tied vertices are removed in alphabetical order then the constraint on a to d is [2, 4], otherwise the strict bounds are [3, 4].
+If tied vertices are removed in alphabetical order then the constraint on a to d is [2, 5], otherwise the strict bounds are [3, 5].
 
 \pagebreak
 
-# Problem 2
+# Problem 2 Negative Weights
+
+Recall our inductive proof on the correctness of Dijkstra's algorithm. We know that the first iteration out of the source node to the connected vertices will have the correct path. This is the base case, and s and its smallest connected edge (even negative) is added to the set S, which denotes all vertices with known shortest path. If we search then from this smallest path s -> v, where v is the furthest vertex in the set S, it is guranteed to be the shortest path. Adding u, a vertex outside the set v, we compared it's current distance with the distance of v plus the length to u. We only add the vertex to the path if the distance of v plus the length of the edge to u is shorter than its current path distance. Since the distance array is intitalized with the only negative edges, the length value used in all of these comparisons will only be strictly positive, **so the vertex u added cannot have an edge coming from a vertex not in S that has a negative length to decrease distance, the shorest path vertex to u (not in S), must come from the set S**. This is what had broken the algorithm with negative edges before, but since all the negative edges in in the array at the start, Dijkstra's algorithm will succeed in the graph.
 
 \pagebreak
 
