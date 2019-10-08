@@ -46,6 +46,8 @@ An efficient algorithm would be to run Dijkstra's algorithm twice to start. The 
 
 # Problem 4
 
+All you have to do to create this modified version of Bellman-ford is instead of running update on all the edges |V| - 1 times, you run the update function at most k times. If after these k updates of all the edges the value of the distance to t is still infinity, then you know you cannot make it there in k edges, otherwise you know you have the shorest path containing at most k edges. This has to do with the way Bellman-Ford finds shortest paths. Since everything is initialized to infinity, but the source node, the shortest paths to edges that are not s are found in a BFS type manner, where all vertices 1 edge away from s are update in the first iteration, then the second iteration updates everything within 2 edges of s, and since update by defintion will only make a path smaller, this algorithm will find the shortest path containing k edges.
+
 \pagebreak
 
 # Problem 5
