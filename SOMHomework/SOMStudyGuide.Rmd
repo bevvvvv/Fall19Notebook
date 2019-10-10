@@ -87,19 +87,35 @@ A chord consisting of three pitches in a root-third-fifth relationship.
 
 # What are waves
 
-EXPLAIN WHAT WAVES ARE (INCLUDING WAVELENGTH)
+A wave is a motion in space that involves a rising and falling action. There are electromagnetic waves, pressure waves, on others. In the case of sound we look at pressure waves. Below is an illustration of what the parts of a wave are. Remember when looking at graphs of waves the x axis and y axis are parts of a graph and they have value! The y axis in our case is usually pressure or displacement (velocity).
+
+```{r, out.width = "400px", echo=FALSE}
+knitr::include_graphics("./WaveImage.png")
+```
 
 ## Simple Harmonic Motion
 
+The movement of a mass on a spring.
+
 ## Amplitude and Frequency
+
+The **amplitude** of a wave is how high and low the crest and troughs of the waves go. A sound wave with a higher amplitude would sound louder, and a lower amplitude would sound quieter. (Sound Pressure Level) The **frequency** of a wave is how many times in a second the wave goes from crest to crest. For example A=440Hz would have 440 crests in pressure/displacement occur every second. Higher frequencies have a higher pitch and lower frequencies have a lower pitch.
 
 ### Overtones, Partials, Harmonics
 
+Any note being played has overtones associated with it. The fundamental or first harmonic has a first overton or second harmonic that is 2 times the frequency and an octave higher. Any harmonic associated with a fundamental is an integer multiplier of the frequency. For example the fith harmonic would be at a frequency that is 5 times the fundamental.
+
 ## Standing Waves
+
+The wave appears to only be moving up and down, but the components of the wave are actually moving side to side as well.
 
 ## Resonance
 
+Recall the Tacoma narrows bridge. Everything has a natural frequency with which it wants to vibrate. Resonance would be matching that frequency, for example pushing a child on a swing with the right timing.
+
 ### Mechanical Coupling
+
+Mechanical coupling is resonance that couples one object to another, which the professor illustrated with his music box and a desk.
 
 # Variables to Know
 
@@ -203,15 +219,23 @@ The standard ear drum has a SIL range between 0 dB and 120 dB (starts to damage)
 
 # Pitch and Pitch Names
 
+A pitch as defined above is an audible uniform frequency, of sufficient duration, that produces a psychomusical sensation. The Western pitch system contains 12 different pitches A through G, with repetitions at the octave. If you wish to reference the pitch names you can look a tthe staff below. Recall there is no B sharp/C flat and there is no E sharp/F flat.
+
 ## Pitch versus Frequency
+
+Pitches are subjective, while frequencies are objective. You could assign middle C to any value of frequency. For example in the A=440 tuning system middle C is 261 Hz, but in physics lab middle C is often 256 Hz.
 
 ## Musical Staff
 
-## Pitch Names
+```{r, out.width = "400px", echo=FALSE}
+knitr::include_graphics("./MusicalStaff.png")
+```
 
 # Misc
 
 ## Timbre
+
+Timbre is the soudn signature of a particular instrument or voice. This is directly correlated to the instruments power spectrum. The power spectrum illustrates the relative power of overtones when a fundamental is played.
 
 ## ADSR
 
@@ -222,9 +246,13 @@ The standard ear drum has a SIL range between 0 dB and 120 dB (starts to damage)
 
 ## Combination Tones
 
+When two pitches are played you can often hear the difference tone or summation tone from the combination of the two. For example if 400 Hz and 500 Hz are both played, the 100 Hz ptich and 900 Hz pitches are also audible to the human ear.
+
 ## Psychoacoustics
 
 ### Octave Equivalence
+
+Playing a seuqence of pitches in varying octave has the same recognizable sequence of notes played in the same octave. Dr. Latten illustrated this by playing happy birthday through various octaves.
 
 ### Fundamental Tracking
 
