@@ -204,17 +204,13 @@ The standard ear drum has a SIL range between 0 dB and 120 dB (starts to damage)
 
 # The Amazing Ear
 
-## Outer Ear
+```{r, out.width = "400px", echo=FALSE}
+knitr::include_graphics("./AmazingEar.png")
+```
 
-## Middle Ear
-
-### Malleus: Hammer
-
-### Incus: Anvil
-
-### Stapes: Stirrup
-
-## Inner Ear
+```{r, out.width = "400px", echo=FALSE}
+knitr::include_graphics("./EarTwo.png")
+```
 
 
 # Pitch and Pitch Names
