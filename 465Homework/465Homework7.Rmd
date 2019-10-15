@@ -10,9 +10,26 @@ output:
 ---
 
 
-# Problem 1
+# Problem 1 Shortest Path
 
 Collaborators: None
+
+Recall that in Dijkstra's algorithm it includes O(|V|) Get Min operations from the priority queue and O(|E|) insert/decrease key operations. This implies that we want the running time of both operations in our priority queue to be O(logW) to get the running time noted. The reason we should use a modified Dijkstra algorithm, is because we are looking at finding the shortest path solution.
+
+For this algorithm we should operate the priority queue as a heap, but instead of this heap being the nodes in the queue they have to do with current edge weights. In this case we operate a min binary heap that includes all of the current edge weights to nodes. For example if we have a source node with three edges coming out with distances of 1, 2, and 3, then our min heap has those edges in the heap, ordered by their edge weight plus the distance to the current node, since with Dijkstra we will be working from the node that the shortest path has already been found. Working with the edges in a binary min heap would give you log(W) time to insert/decrease key and log(W) time to get the minimum. This would give this updated Dijkstra's algorithm a running time of O((|V|+|E)log(W)).
+
+\pagebreak
+
+# Problem 2 Roads and Planes
+
+\pagebreak
+
+# Problem 3 Couple Pairing
+
+\pagebreak
+
+# Problem 4 Matching Rocks
+
 
 
 
