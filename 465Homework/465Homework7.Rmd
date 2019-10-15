@@ -52,9 +52,21 @@ Since this algorithm has Dijkstra as the highest growth rate part of the algorit
 
 # Problem 3 Couple Pairing
 
+We are given two sets A and B, who are boys and girls. We want to determine if it is possible to find a matching with k pairs. We can do this using a modified Ford-Fulkerson algorithm, where the weight of every possible matching in the set E (also called C) is 1. Since all the edges are identically a weight of 1, we will always be adding the same possible value to the flow count. This flow count is essentially equivalent to the number of matches we can make. This means that on each iteration we should check if we have at least k matches. If we do then we can return true, if after the max flow is found the flow count is less than k, then the algorithm would return false. This means we will run in O(max_flow * |E|) for the Ford-Fulkerson, but we have a trigger to stop the running time at k, which makes the running time O(k |E|). |E| in this case would be the number of possible matches C making our run time O(kC).
+
+```{r, out.width = "400px", echo=FALSE}
+knitr::include_graphics("./MatchRooks.png")
+```
+
 \pagebreak
 
 # Problem 4 Matching Rocks
+
+We can frame this problem in a bipartite graph. The vertices in a set A are the row numbers 1 through m. The vertices in a set B are the row numbers 1 through n. You can then add an edge for every usable square so for example if the space 4,6 is usuable you put an edge from vertex 4 in A to vertex 6 in B, but if space 5,1 is not usable then you do **not** add an edge. You know have a bipartite graph whose possible matchings are the usable squares on the board. If you want to find the maximum number of rooks you can place then you merely need to take this bipartite graph and run a maximum cardinality matching algorithm, such as Ford-Fulkerson, but in order to run that, since it looks for maximum flow, you would have to designate edge weights of 1 and add a single source going into set A and a single sink coming out of set B. This algorithm would run in O(max_flow * |E|) time.
+
+```{r, out.width = "400px", echo=FALSE}
+knitr::include_graphics("./MatchRooks.png")
+```
 
 
 
