@@ -12,7 +12,7 @@ output:
 
 # Problem 1 Shortest Path
 
-Collaborators: None
+Collaborators: GeeksForGeeks Dial's Algorithm
 
 Recall that in Dijkstra's algorithm it includes O(|V|) Get Min operations from the priority queue and O(|E|) insert/decrease key operations. This implies that we want the running time of both operations in our priority queue to be O(logW) to get the running time noted. The reason we should use a modified Dijkstra algorithm, is because we are looking at finding the shortest path solution.
 
@@ -21,6 +21,32 @@ For this algorithm we should operate the priority queue as a heap, but instead o
 \pagebreak
 
 # Problem 2 Roads and Planes
+
+We want the shortest path between two cities s and t in this graph of roads and planes. Planes have directed edges that can be negative, and roads have undirected edges that are positive. Any two vertices connected by a plane route are two separate strongly connected components in the graph, implying a negative cycle is not possible. We want to find the shortest path using an algorithm that is as efficient as Dijkstra's.
+
+Since we know that each plane route connects strongly connected components, then if there is a plane route between s and t, we must take that plane route. This creates a macro DAG, where we have the value of the plane routes to account for, but in each SCC we need to find the shortest path from plane to plane, therefore what we could do is first find the shorest path within each connected component, and then add that distance to the weight of any outgoing edges of that component essentially creating a with updated edge weights. The algorithm would be as follows:
+
+```
+Input: G, l, s
+Output: dist(t)
+
+Create a set CC of connected components
+for all vertices v in V, set dist(v) to infinity
+set dist(s) to 0
+make Q, priority queue of V
+
+for each cc in CC:
+  v = deleteMin(Q)
+  Dijkstra(v, G) # find min path through component
+  for each edge p in P: # plane edges
+    dist(p) = l(v, p) + l(p, u) # where u is plane destination
+  update(G) # so G has the SCC as single node
+
+Dijkstra(s, G) # find shortest path through dag
+return dist(t)
+```
+
+Since this algorithm has Dijkstra as the highest growth rate part of the algorithm it would have the same running time (even though it runs Disjkstra multiple times growth rates do not look at coeffficients.)
 
 \pagebreak
 
