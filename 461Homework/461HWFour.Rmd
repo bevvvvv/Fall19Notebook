@@ -1,0 +1,50 @@
+---
+title: "Programming Language Concepts Homework 4"
+subtitle: "Due Friday Oct 18; Joseph Sepich (jps6444)"
+output:
+  pdf_document:
+    toc: false
+    toc_depth: 2
+    number_sections: true
+    keep_tex: false
+---
+
+# Problem One
+
+In the first scheme expression the two expressions can only be equivalent if e1 = e2, so if you applied the same value to both x1 and x2, but in the second scheme expression you can gurantee that e1 = e2 if e2 = x1. You can guarantee this because the let* declartion has the scope of x1 start immediately when its declared. This means it can be used in the x2 declaration, however we can not use x1 as meaning e1 in the first expression, because the scope of the x1 in the expression is only in the body of the local function (e).
+
+# Problem Two
+
+## Part a
+
+## Part b
+
+# Problem Three
+
+## Part a
+
+## Part b
+
+## Part c
+
+# Problem Four
+
+## Part a
+
+## Part b
+
+# Problem Five
+
+## Part 1
+
+## Part 2
+
+## Part 3
+
+
+
+
+
+
+
+
