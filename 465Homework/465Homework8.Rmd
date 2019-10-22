@@ -23,6 +23,16 @@ knitr::include_graphics("./requirementGraph.png")
 
 # Problem 2
 
+The maximum flow in the graph below from s to t is 13. The corresponding cut from the is A = {S, C F} and V not in A. Below is my iteration through Ford-Fulkerson.
+
+```{r, out.width = "400px", echo=FALSE}
+knitr::include_graphics("./FlowGraph1.PNG")
+```
+
+```{r, out.width = "400px", echo=FALSE}
+knitr::include_graphics("./FlowGraph2.PNG")
+```
+
 \pagebreak
 
 # Problem 3
