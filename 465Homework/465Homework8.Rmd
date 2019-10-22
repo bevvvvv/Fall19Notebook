@@ -1,0 +1,83 @@
+---
+title: "Data Structures and Algorithms Homework 8"
+subtitle: "Due Wednesday Oct 23; Joseph Sepich (jps6444)"
+output:
+  pdf_document:
+    toc: false
+    toc_depth: 2
+    number_sections: true
+    keep_tex: false
+---
+
+Collaborators: None
+
+# Problem 1
+
+This problem requires matching classes to fulfill requirements. You could solve this problem by setting up a bipartite graph, where a set A has vertices $S_i$ where S is a class requirement set, and i is the ith class requied in that set. The other set, set B, has classes as the vertices. For the simple example in the problem with x = 2, and S = {B, C, D, F}, A would have $S_1$ and $S_2$ which are both connected to every class in set B = {B, C, D, F}. From here you can run the Ford-Fulkerson algorithm by phrasing this maximum cardinality problem as a flow problem to find the maximum matches. I included an example graph below with more than one set, where it is clear that this can be solved through maximum cardinality matching. (The example graph requires x=2 from S={A,B,C} and x=3 from R={B,D,F}).
+
+```{r, out.width = "400px", echo=FALSE}
+knitr::include_graphics("./requirementGraph.png")
+```
+
+\pagebreak
+
+# Problem 2
+
+\pagebreak
+
+# Problem 3
+
+\pagebreak
+
+# Problem 4
+
+\pagebreak
+
+# Problem 5
+
+## Part a
+
+\pagebreak
+
+## Part b
+
+\pagebreak
+
+## Part c
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
