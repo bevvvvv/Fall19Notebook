@@ -1,0 +1,93 @@
+---
+title: "Stat/Math 415 Homework 5"
+subtitle: "Due Friday Oct 25; Joseph Sepich (jps6444)"
+output:
+  pdf_document:
+    toc: false
+    toc_depth: 2
+    number_sections: true
+    keep_tex: false
+---
+
+# Problem 7.4-3
+
+Problem information:
+
+* $\overline{x} = 6.09$
+* $s = 0.02$
+
+## Part a
+
+Sample size calculation: sample size needed for $\epsilon = 0.001$ with confidence of $\alpha = 0.1$
+
+Assuming standard deviation is the same for the population we can use the Z value of 1.645 for alpha of 0.1 and plug the numbers into our equation based off a confidence interval:
+
+\[n \geq \frac{z_{\alpha / 2}S^2}{\epsilon^2} = \frac{1.645^2*0.02^2}{0.001^2} = 1082.41\]
+
+Remember we must round up, so we need the sample size to be at least **1,083** samples.
+
+## Part b
+
+With the following numbers we have a decent sample size, and we don't know the distribution, so we use central limit theorem and approximate with a normal distribution:
+
+* $n = 1219$
+* $\overline{x} = 6.048$
+* $s = 0.022$
+
+Since we looking at the confidecnce level from the last problem, we are still using the same Z value of 1.645. We plug this into our confidence interval formula:
+
+\[\overline{x} +-Z_{\alpha/2}\frac{s}{\sqrt{n}} = 6.048 +- 1.645*\frac{0.022}{\sqrt{1219}}\]
+
+This gives us a confidence interval for mu of **[6.0470, 6.0490]**
+
+## Part c
+
+The problem states that for every 0.01 pounds less the company would save \$14,000 per year. the original sample mean was 6.09 and the new one is around 6.048. This would be a savings of roughly 4.2 * 14,000 = \$58,800.
+
+## Part d
+
+To estimate the proportion of boxes that will weight less than 6 pounds, we want to know P(X < 6). We can use our estimated normal distribution from CLT to come up with a z score of $\frac{6 - 6.048}{0.022} \approx -2.18$.
+
+\[P(X < 6) = P(Z<-2.18) = 1-P(Z<2.18) = 1 - 0.9854 = 0.0146\]
+
+The proportion of boxes measured to be under 6 pounds is now **0.0146**.
+
+# Problem 7.4-7
+
+
+# Problem 7.4-8
+
+
+# Problem 6.5-3
+
+
+
+# Problem 6.5-5
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
