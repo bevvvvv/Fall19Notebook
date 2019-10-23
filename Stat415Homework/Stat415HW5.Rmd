@@ -152,7 +152,9 @@ yVals <- meany + beta * (xVals - meanx)
 df1 <- data.frame("MidtermScores"=midterms, "FinalScores"=finals)
 df2 <- data.frame("RegressionX"=xVals, "RegressionY"=yVals)
 df1 %>%
-  ggplot(aes(x=MidtermScores,y=FinalScores)) + geom_point() + geom_line(data=df2,aes(x=RegressionX,y=RegressionY)) +
+  ggplot(aes(x=MidtermScores,y=FinalScores)) +
+  geom_point() +
+  geom_line(data=df2,aes(x=RegressionX,y=RegressionY)) +
   ggtitle('Regression of Final Scores vs Midterm Scores')
 ```
 
@@ -173,7 +175,102 @@ print(paste0('The variance estimate: ', sigma))
 
 # Problem 6.5-5
 
+```{r}
+n <- 14
+horsepower <- c(230, 225, 375, 322, 190, 150, 178, 282, 300, 220, 250, 315, 200, 300)
+acceleration <- c(8.1, 7.8, 4.7, 6.6, 8.4, 8.4, 7.2, 6.2, 6.4, 7.7, 7.0, 5.3, 6.2, 5.5)
+weight <- c(3516, 3690, 2976, 4215, 3761, 2940, 2818, 3627, 3892, 3377, 3625, 3230, 2657, 3518)
+```
 
+## Part 
+
+Calculate the least squares regression line for 0-60 vs horsepower:
+
+```{r}
+meanHorse <- sum(horsepower) / n
+meanAccel <- sum(acceleration) / n
+
+beta <- sum((acceleration - meanAccel) * (horsepower - meanHorse)) /
+  sum((horsepower - meanHorse)^2)
+
+
+print(paste0('Sample mean x: ',meanHorse))
+print(paste0('Sample mean y(alpha): ',meanAccel))
+print(paste0('Beta: ',beta))
+```
+
+Suppose x denotes the horsepower, which affects 0-60 y.
+
+\[y = \alpha + \beta(x - \overline{x})\]
+\[\overline{x} = \frac1n\Sigma^n_{i=1}x_i = \frac1{10}*(230 + 225 + ... + 200 + 300) = 252.64\]
+\[\alpha = \overline{y} =  \frac1n\Sigma^n_{i=1}y_i = \frac1{10}*(8.1 + 7.8 + ... + 6.2 + 5.5)=6.82\]
+\[\beta = \frac{\Sigma^n_{i=1}(y_i-\overline{y})(x_i-\overline{x})}{\Sigma^n_{i=1}(x_i-\overline{x})^2} = -0.01499\]
+
+
+This gives us the least squares regression line:
+
+\[y = 6.82 - 0.01499(x - 252.64) = 10.609 - 0.01499x\]
+
+
+## Part b
+
+```{r}
+xVals <- seq(min(horsepower), max(horsepower), 0.01)
+yVals <- meanAccel + beta * (xVals - meanHorse)
+df1 <- data.frame("Horsepower"=horsepower, "Acceleration"=acceleration)
+df2 <- data.frame("RegressionX"=xVals, "RegressionY"=yVals)
+df1 %>%
+  ggplot(aes(x=Horsepower,y=Acceleration)) +
+  geom_point() +
+  geom_line(data=df2,aes(x=RegressionX,y=RegressionY)) +
+  ggtitle('Regression of 0-60 Acceleration vs Horspower')
+```
+
+## Part c
+
+Calculate the least squares regression line for 0-60 vs weight:
+
+```{r}
+meanWeight <- sum(weight) / n
+
+beta <- sum((acceleration - meanAccel) * (weight - meanWeight)) /
+  sum((weight - meanWeight)^2)
+
+
+print(paste0('Sample mean x: ',meanWeight))
+print(paste0('Sample mean y(alpha): ',meanAccel))
+print(paste0('Beta: ',beta))
+```
+
+Suppose x denotes the horsepower, which affects 0-60 y.
+
+\[y = \alpha + \beta(x - \overline{x})\]
+\[\overline{x} = \frac1n\Sigma^n_{i=1}x_i = \frac1{10}*(3516 + 3690 + ... + 2657 + 3518) = 3417.286\]
+\[\alpha = \overline{y} =  \frac1n\Sigma^n_{i=1}y_i = \frac1{10}*(8.1 + 7.8 + ... + 6.2 + 5.5)=6.82\]
+\[\beta = \frac{\Sigma^n_{i=1}(y_i-\overline{y})(x_i-\overline{x})}{\Sigma^n_{i=1}(x_i-\overline{x})^2} = 0.000395\]
+
+
+This gives us the least squares regression line:
+
+\[y = 6.82 + 0.000395(x - 3417.286) = 5.471 + 0.000395x\]
+
+## Part d
+
+```{r}
+xVals <- seq(min(weight), max(weight), 0.01)
+yVals <- meanAccel + beta * (xVals - meanWeight)
+df1 <- data.frame("Weight"=weight, "Acceleration"=acceleration)
+df2 <- data.frame("RegressionX"=xVals, "RegressionY"=yVals)
+df1 %>%
+  ggplot(aes(x=Weight,y=Acceleration)) +
+  geom_point() +
+  geom_line(data=df2,aes(x=RegressionX,y=RegressionY)) +
+  ggtitle('Regression of 0-60 Acceleration vs Weight')
+```
+
+## Part e
+
+Horsepower has more of an affect on 0-60 acceleration time. The slope of the regression line was steeper for horsepower vs 0-60, which means beta for that regression had a larger absolute value than for weight. This implies there is a greater change in y or 0-60 time due to horsepower than weight, because of a larger beta value.
 
 
 
