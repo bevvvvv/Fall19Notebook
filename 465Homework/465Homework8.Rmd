@@ -55,9 +55,24 @@ knitr::include_graphics("./FlowGraph2.PNG")
 
 ## Part a
 
+The maximum flow of the graph must be 2m + 1. You can send m through (s, $v_1$) and ($v_1$, t), and you can send another m through (s, $v_4$) and ($v_4$, t). This leaves one outgoing edge from s (s, $v_2$), since the other two edges out of s are already at capacity. This leaves the bottle neck value of 1 on the path from (s, $v_2$), ($v_2$, $v_3$), and ($v_3$, t). This implies a minimum cut of S = {s, $v_1$, $v_2$} and V not in S, which must be true, because you cannot get a smaller value with any other cut. Look at the cut values:
+
+* Just s in S would be 3m
+* Just t in V not in S would be 3m
+* S = {s, $v_1$}  would be 3m
+* S = {s, $v_4$} would be 3m + r
+* S = {s, $v_2} would be 2m + 2
+* S = {s, $v_1$, $v_4$} would be 2m + r
+* S = {s, $v_2$, $v_3$} would be 3m + 1
+* S = {s, $v_2$, $v_4$} would be 2m + r + 2
+* S = {s, $v_1$, $v_2$, $v_3$} would be 3m
+* S = {s, $v_2$, $v_3$, $v_4$} would be 3m + 1
+
 \pagebreak
 
 ## Part b
+
+
 
 \pagebreak
 
