@@ -43,6 +43,12 @@ To find the k edges to delete to minimize the max flow in the graph we would wan
 
 # Problem 4
 
+This problem can be modelled as a graph where the set of vertices V, are the cities and the set of edges E are railways connecting each city. As stated above we have a subset of V called T, which are safe cities and the sinks of our directed graph, and a subset of cities S where a spy i is stationed in the vertex $s_i$. A way to convert this to a max flow problem would be to take this graph and make each city a set of 3 verticies (with the exception of S and T that would have 2), where there is a into city X vertex, the actual city X vertex and out of city X vertex. THe into vertex would have all railway routes in with infinite capacity, but then link to the actual city vertex with capacity c (the max number of spies allowed to pass through a given city), and the out of vertex would be modeled the same way, but with a edges from the city vertex of weight/capacity c and all possible outgoing railways out of it with infinite verticies. This ensures at most c spies can pass through a given city and you can then solve the max flow problem to see what the escape routes could be, if they existed. Below is a diagram of the graph in a general format.
+
+```{r, out.width = "400px", echo=FALSE}
+knitr::include_graphics("./FlowGraph2.PNG")
+```
+
 \pagebreak
 
 # Problem 5
