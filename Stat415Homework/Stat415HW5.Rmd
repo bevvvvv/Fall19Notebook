@@ -95,6 +95,20 @@ Rounding up we would require a sample size of at least **752**.
 
 # Problem 7.4-8
 
+What we know:
+
+* $n = 137$
+* $y = 54$
+* $p^* = 0.3942$
+* $\epsilon = 0.04$
+* $\alpha = 0.1$
+
+Since we have a study already we can figure out how many samples we need using the variance based off the point estime from the first study. With a Z score value of 1.645 for alpha /2 of 0.5 we can plug into our formula:
+
+\[n = \frac{Z^2_{\alpha/2}*p(1-p)}{\epsilon^2} = \frac{1.645 ^2 * 0.3942 * 0.6058}{0.04^2} = 403.885\]
+
+Rounding up we would require a sample size of at least **404**.
+
 
 # Problem 6.5-3
 
