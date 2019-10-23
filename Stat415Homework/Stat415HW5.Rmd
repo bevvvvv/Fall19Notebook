@@ -112,7 +112,64 @@ Rounding up we would require a sample size of at least **404**.
 
 # Problem 6.5-3
 
+## Part a
 
+```{r}
+midterms <- c(70, 74, 80, 84, 80, 67, 70, 64, 74, 82)
+finals <- c(87, 79, 88, 98, 96, 73, 83, 79, 91, 94)
+
+meanx <- sum(midterms) / 10
+meany <- sum(finals) / 10
+
+beta <- sum((finals - meany) * (midterms - meanx)) / sum((midterms - meanx)^2)
+
+print(paste0('Sample mean x: ',meanx))
+print(paste0('Sample mean y(alpha): ',meany))
+print(paste0('Beta: ',beta))
+```
+
+Suppose x denotes the midterm score, which indicates the final score y.
+
+\[y = \alpha + \beta(x - \overline{x})\]
+\[\overline{x} = \frac1n\Sigma^n_{i=1}x_i = \frac1{10}*(70 + 74 + ... + 74 + 82) = 74.5\]
+\[\alpha = \overline{y} =  \frac1n\Sigma^n_{i=1}y_i = \frac1{10}*(87 + 79 + ... + 91 + 94)=86.8\]
+\[\beta = \frac{\Sigma^n_{i=1}(y_i-\overline{y})(x_i-\overline{x})}{\Sigma^n_{i=1}(x_i-\overline{x})^2} = 1.0157\]
+
+This gives us the least squares regression line:
+
+\[y = 86.8 + 1.0157(x - 74.5) = 11.132 + 1.0157x\]
+
+## Part b
+
+```{r include=FALSE}
+library(tidyverse)
+library(ggplot2)
+```
+
+```{r}
+xVals <- seq(min(midterms), max(midterms), 0.01)
+yVals <- meany + beta * (xVals - meanx)
+df1 <- data.frame("MidtermScores"=midterms, "FinalScores"=finals)
+df2 <- data.frame("RegressionX"=xVals, "RegressionY"=yVals)
+df1 %>%
+  ggplot(aes(x=MidtermScores,y=FinalScores)) + geom_point() + geom_line(data=df2,aes(x=RegressionX,y=RegressionY)) +
+  ggtitle('Regression of Final Scores vs Midterm Scores')
+```
+
+## Part c
+
+The point estimate of the variance for our regression is the sum of squared errors divided by the sample size:
+
+\[\hat{\sigma^2} =\frac{\Sigma_{i=1}^n(y_i-\hat{y_i})}{n} = \frac{179.9981}{10} = 17.99981\]
+
+```{r}
+yHats <- meany + beta * (midterms - meanx)
+sumError <- sum((finals - yHats)^2)
+sigma <- sumError / 10
+
+print(paste0('The sum of squared errors: ', sumError))
+print(paste0('The variance estimate: ', sigma))
+```
 
 # Problem 6.5-5
 
