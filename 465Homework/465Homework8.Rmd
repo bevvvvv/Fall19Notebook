@@ -72,7 +72,9 @@ The maximum flow of the graph must be 2m + 1. You can send m through (s, $v_1$) 
 
 ## Part b
 
-
+```{r, out.width = "400px", echo=FALSE}
+knitr::include_graphics("./LastProb.PNG")
+```
 
 \pagebreak
 
