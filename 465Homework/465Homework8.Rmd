@@ -37,6 +37,8 @@ knitr::include_graphics("./FlowGraph2.PNG")
 
 # Problem 3
 
+To find the k edges to delete to minimize the max flow in the graph we would want to look at the minimum cut. By deleting edges from the minimum cut we would reduce the max flow by 1 for each edge deleted, since the minimum cut is what determines the larges possible flow (since you can't fit any more through). The algorithm you could use to do this is first run Ford-Fulkerson to find the max flow of the graph. At the end of finding the max flow look at the residual graph you have made. Create a subset of edges in E called E' that have the following property: the edges in E' are edges going out of vertices in a set S, where S is a set of all verticies reachable by the source vertex s. The edges must also satifiy the condition that they are going into a vertex not in S, which implies they are crossing the minimum cut of the graph and are therefore going to decrease the capacity when you remove them from the graph. Even if you have a k greater than the number of edges in E' by the time you delete all edges in E' the flow will be zero and you cannot go any lower (so k > than the flow). This algorithm essentialy has the same polynomial running time as Ford-Fulkerson.
+
 \pagebreak
 
 # Problem 4
