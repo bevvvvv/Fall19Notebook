@@ -54,6 +54,44 @@ The proportion of boxes measured to be under 6 pounds is now **0.0146**.
 
 # Problem 7.4-7
 
+## Part a
+
+What we know:
+
+* $\epsilon = 0.03$
+* $\alpha = 0.05$
+
+What we don't have is any idea of what the actual proportion or a pilot sample proportion would be. We would have to assume the worst with p = 0.5 to maximize possible variance. Z score for a value of 0.025 (half of alpha) is 1.96. We plug this into our formula:
+
+\[n = \frac{Z^2_{\alpha/2}*p(1-p)}{\epsilon^2}=\frac{1.96^2*0.25}{0.03^2} = 1067.11\]
+
+Rounding up we would require a sample size of at least **1,068**.
+
+## Part b
+
+What we know:
+
+* $\epsilon = 0.02$
+* $\alpha = 0.05$
+
+What we don't have is any idea of what the actual proportion or a pilot sample proportion would be. We would have to assume the worst with p = 0.5 to maximize possible variance. Z score for a value of 0.025 (half of alpha) is 1.96. We plug this into our formula:
+
+\[n = \frac{Z^2_{\alpha/2}*p(1-p)}{\epsilon^2}=\frac{1.96^2*0.25}{0.02^2} = 2401\]
+
+We would require a sample size of at least **2,401**.
+
+## Part c
+
+What we know:
+
+* $\epsilon = 0.03$
+* $\alpha = 0.1$
+
+What we don't have is any idea of what the actual proportion or a pilot sample proportion would be. We would have to assume the worst with p = 0.5 to maximize possible variance. Z score for a value of 0.5 (half of alpha) is 1.645. We plug this into our formula:
+
+\[n = \frac{Z^2_{\alpha/2}*p(1-p)}{\epsilon^2}=\frac{1.645^2*0.25}{0.03^2} = 751.674\]
+
+Rounding up we would require a sample size of at least **752**.
 
 # Problem 7.4-8
 
