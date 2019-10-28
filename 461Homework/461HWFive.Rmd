@@ -42,6 +42,8 @@ The "optimized" version is more efficient with space efficiency and time efficie
 
 # Problem 2
 
+On many systems when the variable/name i is declared and its address is assigned teh data stored at that address is a zero making integer variables initialized as 0. Since i is being initialzied to zero, it prints 0 through 9 every time it is run. On other systems that don't do this it may not be assigned this default value and error out.
+
 
 # Problem 3
 
