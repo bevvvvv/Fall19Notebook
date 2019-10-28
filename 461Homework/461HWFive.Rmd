@@ -61,12 +61,12 @@ Run through line by line:
 8. f1(p, q) doesn't print or update p or q
 9. print f2(q)
 10. returns f1(q, q)
-11. b = 2 * c = 9
-12. c = 5 + b = 14
-13. prints b + c = **23** on return
+11. b = 2 * c = 6
+12. c = 5 + b = 11
+13. prints b + c = **17** on return
 14. print p, q prints **2, 3** since copies used in functions
 
-Output is: **17, 2, 3, 23, 2, 3**
+Output is: **17, 2, 3, 17, 2, 3**
 
 ## Part 2: Call by Reference
 
@@ -113,11 +113,11 @@ Run through line by line:
 15. returns f1(q, q)
 16. b = 2 * c = 54
 17. c = 5 + b = 59
-18. prints q + q = **118** on return
+18. prints b + c = **113** on return
 19. q assigned to 59 on return
 20. print p, q prints **22, 59** since values updated on return
 
-Output is: **17, 6, 11, 118, 22, 59**
+Output is: **17, 6, 11, 113, 22, 59**
 
 
 # Problem 4
