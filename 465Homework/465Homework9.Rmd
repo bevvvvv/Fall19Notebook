@@ -33,11 +33,29 @@ Collaborators:
 
 \pagebreak
 
-# Problem 3
+# Problem 3 Kruskal's Algorithm
+
+Algorithm by iteration:
+
+1. FD (Cut (S = {F}, V - S))
+2. AB (Cut (S = {F, D, A}, V - S))
+3. BE (Cut (S = {F, D, A, B}, V - S))
+4. DE (Cut (S = {F, D}, V - S))
+5. CE (Cut (S = {A, B, D, E, F}, {C}))
+
+Final MST:
+
+```{r, out.width = "400px", echo=FALSE}
+knitr::include_graphics("./Kruskal.PNG")
+```
 
 \pagebreak
 
-# Problem 4
+# Problem 4 Prim's Algorithm
+
+```{r, out.width = "400px", echo=FALSE}
+knitr::include_graphics("./Prims.PNG")
+```
 
 \pagebreak
 
