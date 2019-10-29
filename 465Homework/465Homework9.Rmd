@@ -11,7 +11,18 @@ output:
 
 # Problem 1
 
-Collaborators:
+Collaborators: None
+
+First let's prove that **if** there is perfect matching, **then** there is any subset where the condition holds.
+
+If you look at the base case with only 1 boy and 1 girl, then with perfect matching the condition must hold true, because the empty set, trivially holds true, and the set with 1 boy and 1 girl is the full set of perfect matching we started with. Suppose then it is true that with perfect matching, a subset of k boys is connected to at least k girls. If we look at k+1 boys, then if we have perfect matching we know that the k+first boy must be matched to at least one more girl, so you must have at least k+1 girls.
+
+
+Then if you look at **if** any subset of boys the condition holds, **then** there is perfect matching.
+
+At the base case you have 1 boy and 1 girl (or more). Since the boy is connected to at least 1 girl, there must be perfect matching. Let's assume then if you have k boys, who are connected to at least k girls, you have perfect matching. If you then have k+1 boys, who are connected to at least k+1 girls, then that implies the additional boy is connected to a new girl, or one that was not matched with only k boys, so then you must have perfect matching.
+
+Since the conditional holds both ways then the given if and only if statement must be true.
 
 \pagebreak
 
