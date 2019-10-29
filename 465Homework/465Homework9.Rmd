@@ -61,6 +61,34 @@ knitr::include_graphics("./Prims.PNG")
 
 # Problem 5
 
+To compute a maximum spanning tree what we could do is take a minimum spanning tree algorithm such as Kruskal's Algorithm and run it on the graph with all edge weights multiplied by negative one. This would reverse any comparisons of edge weights that are made, so for example if you have two edges of weight 1 and 5, then in the standard minimum spanning tree you would choose the 1 weighted edge first, but when multiplied by negative 1, you get -1, and -5, which compels the minimum algorithm to select the -5 weight. The steps for the algoritm would be as follows:
+
+1. Multiply each edge weight by -1, which would run in O(|E|) time.
+2. Run Kruskal's on the graph using negative edge weights, which takes O(|E|log|V|).
+3. THe output is the output of Kruskal's but you must multiply the edge weights by negative one again.
+
+
+You could also ignore this method and just modify Kruskal's algorithm:
+
+```{}
+def Kruskal_Max(G, w) {
+  A = empty set
+  for all v in V {
+    make_set(v)
+  }
+  G.E = G.E sorted in decreasing order by w
+  for all (u, v) in G.E {
+    if find_set(u) != find_set(v) {
+      A = A union {(u,v)}
+      union(u,v)
+    }
+  }
+  return A
+}
+```
+
+You know this algorithm must be correct, because you merely reverse the comparison operator from being small to large.
+
 
 
 
