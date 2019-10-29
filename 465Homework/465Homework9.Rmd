@@ -30,17 +30,29 @@ Since the conditional holds both ways then the given if and only if statement mu
 
 ## Part 1
 
+The minimum edge weight in G must be a part of some MST. You can see this via the minimum cut property that we had proven. This property states that the edge with the smallest weight across any cut of G must be in some MST. Any cut that has the minimum weighted edge that crosses it wouled therefore have to have that edge as the minimum weighted edge across the cut, and therefore be in the MST.
+
 \pagebreak
 
 ## Part 2
+
+This is the opposite conditional of the minimum cut property that we had proven in class that states the lightest edge of some cut must be in some MST. If e is the lightest edge across some cut, then it must be in the MST, which you can see by running an MST algorithm. For example Prim's algorithm creates a tree and has a priority queue of nodes with their distance from the current tree. If you wanted to look at some cut as the current MST being created, then the lightest edge across the cut would be the closest node to the current tree, therefore if e is the lightest edge across some cut, it must in the MST.
 
 \pagebreak
 
 ## Part 3
 
+This conditional is not true if it must hold for every cycle in G. The example below has the cycle BCED, but the unique lightest edge BC would not be in the MST, because of the edges AB and AC.
+
+```{r, out.width = "400px", echo=FALSE}
+knitr::include_graphics("./MSTCycle.PNG")
+```
+
 \pagebreak
 
 ## Part 4
+
+The given conditional must be true. If there is an r-path in G from s to t, then the MST, must have an r-path from s to t, because an r-path is **any** path from s-t that has edge weights **less than** r. We can prove this by contradiction. Say we have an r-path in G, but none in the MST. The MST by definition has some path from s to t, since it is spanning. This path also by definition is said to have minimum values, but if G has an r-path and the MST doesn't then the MST is including a path with larger edge weights than G (who has e < r versus the MST with e >= r). This would not meet the minimum definition requirement, and therefore the original claim must be true.
 
 \pagebreak
 
