@@ -227,6 +227,36 @@ The probability of a Type II error, if in fact p=0.04 is **0.1064**.
 
 # Problem 8.3-3
 
+Using normal approximation we go off the fact that with a large sample size we can use CLT to approximate the sample proportion in a normal distribution. This will give us the following test statistic:
+
+\[Z = \frac{\hat{p}-p_0}{\sqrt{\frac{p_0(1-p_0)}{n}}}\]
+
+## Part a
+
+Our goal is to find the value of $\alpha$ denoted as: $P(Y\geq152|p=0.75)$. We can transform this:
+
+\[P(Y\geq152|p=0.75)=P(Z\geq \frac{(\frac{152}{192})-0.75}{\sqrt{\frac{0.75(1-0.75)}{192}}})\]
+
+
+```{r}
+z <- ((152/192)-0.75)/(sqrt((0.75*0.25)/(192)))
+paste0('The z value to compare is ',z)
+```
+
+At a z value of 1.33 we have an alpha value of 1-0.9082 = **0.0918**.
+
+## Part b
+
+Our goal is to find the value of $\beta$ denoted as: $P(Y < 152|p=0.80)$. We can transform this:
+
+\[P(Y<152|p=0.80)=P(Z< \frac{(\frac{152}{192})-0.80}{\sqrt{\frac{0.80(1-0.80)}{192}}})\]
+
+```{r}
+z <- ((152/192)-0.8)/(sqrt((0.8*0.2)/(192)))
+paste0('The z value to compare is ',z)
+```
+
+At a z value of -0.29 we have a beta value of 1-0.6141 = **0.3859**.
 
 # Problem 8.3-7
 
