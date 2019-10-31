@@ -191,6 +191,39 @@ This makes the following Prediction Intervals:
 
 # Problem 8.3-1
 
+## Part a
+
+Recall that $\alpha$ represents the probability of rejecting $H_0$ given that $H_0$ is true. We can find this result from our binomial distribution:
+
+\[P(Y \leq6|p=0.08) = \Sigma_{k=0}^6(\frac{100!}{k!*(100-k)!}*0.08^k*(1-0.08)^{(n-k)})\]
+
+```{r}
+k <- seq(from=0, to=6, by=1)
+n <- 100
+p <- 0.08
+
+alpha <- sum((factorial(n) / (factorial(k) * factorial(n-k)))*p^k*(1-p)^(n-k))
+paste0('Alpha value is: ', alpha)
+```
+
+The significance level $\alpha$ of the test is **0.3032**.
+
+## Part b
+
+The probablity of a type two error is also denoted at $\beta$. Beta would be defined as the probability of no rejecting $H_0$ given that $H_1$ is true. We can find this result from our binomial distribution:
+
+\[P(Y \geq7|p=0.04) = 1 - \Sigma_{k=0}^6(\frac{100!}{k!*(100-k)!}*0.04^k*(1-0.04)^{(n-k)})\]
+
+```{r}
+k <- seq(from=0, to=6, by=1)
+n <- 100
+p <- 0.04
+
+beta <- 1 - sum((factorial(n) / (factorial(k) * factorial(n-k)))*p^k*(1-p)^(n-k))
+paste0('Beta value is: ', beta)
+```
+
+The probability of a Type II error, if in fact p=0.04 is **0.1064**.
 
 # Problem 8.3-3
 
