@@ -97,6 +97,97 @@ This makes the following Prediction Intervals:
 
 # Problem 7.6-7
 
+```{r}
+x <- c(32, 23, 23, 23, 26, 30, 17, 20, 17, 18, 26, 16, 21, 24, 30)
+y <- c(28, 25, 24, 32, 31, 27, 23, 30, 18, 18, 32, 22, 28, 31, 26)
+
+n <- 15
+
+meanx <- sum(x) / n
+meany <- sum(y) / n
+
+beta <- sum((y - meany) * (x - meanx)) / sum((x - meanx)^2)
+
+epsilon <- y - meany - beta * (x - meanx)
+variance_est <- sum(epsilon^2) / n
+
+print(paste0('Sample mean x: ',meanx))
+print(paste0('Sample mean y(alpha): ',meany))
+print(paste0('Beta: ',beta))
+print(paste0('SigmaSquared: ',variance_est))
+```
+
+Here x denotes the social science score, which indicates the natural science score y. This gives us the least squares regression line:
+
+\[y = 26.333 + 0.506(x - 23.067) = 14.658 + 0.506x\]
+
+
+## Part a
+
+To find a 95% confidence interval we use the following equation:
+
+\[\hat{\alpha}+\hat{\beta}(x-\overline{x}) +-t_{\alpha/2}\sqrt{\frac{n}{n-2}\hat{\sigma^2}(\frac{1}n+\frac{(x-\overline{x})^2}{\Sigma_{i=1}^n(x_i-\overline{x})^2}})\]
+
+Looking up the value for $t_{0.025}$ in the t distribution table for n - 2 = 15 - 2 = 13 degrees of freedom, we get t = 2.160. We plug the values into our equation for each value of x we want to get a CI for and we get:
+
+```{r}
+xVals <- c(17, 20, 23, 26, 29)
+
+for (x_val in xVals) {
+  y_hat <- meany + beta*(x_val - meanx)
+  t <- 2.160
+  sqrt_coefficient <- (n * variance_est) / (n-2) #n * sigmasquared / n-2
+  sqrt_val <- (1 / n) + ((x_val - meanx)^2 / (sum((x - meanx)^2)))
+  
+  lower_bound <- y_hat - (t * sqrt(sqrt_coefficient * sqrt_val))
+  upper_bound <- y_hat + (t * sqrt(sqrt_coefficient * sqrt_val))
+  
+  print(paste0('Lower bound for ',x_val,' is ',lower_bound))
+  print(paste0('Upper bound for ',x_val,' is ',upper_bound))
+}
+```
+
+This makes the following Confidence Intervals:
+
+* x=17 y=[19.669, 26.856]
+* x=20 y=[22.122, 27.441]
+* x=23 y=[24.048, 28.551]
+* x=26 y=[25.191, 30.445]
+* x=29 y=[25.791, 32.882]
+
+## Part b
+
+For the prediction interval we do the same thing, but add in variance due to random error resulting in the following equation:
+
+\[\hat{\alpha}+\hat{\beta}(x-\overline{x}) +-t_{\alpha/2}\sqrt{\frac{n}{n-2}\hat{\sigma^2}(1 +\frac{1}n+\frac{(x-\overline{x})^2}{\Sigma_{i=1}^n(x_i-\overline{x})^2}})\]
+
+Looking up the value for $t_{0.05}$ in the t distribution table for n - 2 = 15 - 2 = 13 degrees of freedom, we get t = 1.771 We plug the values into our equation for each value of x we want to get a CI for and we get:
+
+```{r}
+for (x_val in xVals) {
+  y_hat <- meany + beta*(x_val - meanx)
+  t <- 1.771
+  sqrt_coefficient <- (n * variance_est) / (n-2) #n * sigmasquared / n-2
+  
+  # DIFFERENCE HERE FROM PART A
+  sqrt_val <- 1 + (1 / n) + ((x_val - meanx)^2 / (sum((x - meanx)^2)))
+  
+  lower_bound <- y_hat - (t * sqrt(sqrt_coefficient * sqrt_val))
+  upper_bound <- y_hat + (t * sqrt(sqrt_coefficient * sqrt_val))
+  
+  print(paste0('Lower bound for ',x_val,' is ',lower_bound))
+  print(paste0('Upper bound for ',x_val,' is ',upper_bound))
+}
+```
+
+This makes the following Prediction Intervals:
+
+* x=17 y=[15.530, 30.996]
+* x=20 y=[17.306, 32.256]
+* x=23 y=[18.915, 33.684]
+* x=26 y=[20.351, 35.285]
+* x=29 y=[21.618, 37.055]
+
 
 # Problem 8.3-1
 
