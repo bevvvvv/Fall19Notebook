@@ -260,12 +260,85 @@ At a z value of -0.29 we have a beta value of 1-0.6141 = **0.3859**.
 
 # Problem 8.3-7
 
+* $H_0$: $p=0.40$
+* $H_1$: $p > 0.40$
+
+## Part a
+
+We know that $\alpha=0.05$ and we want a critical region of the form $Z > Z_{\alpha}$. This corresponds to $Z > 1.645$ as our critical region.
+
+## Part b
+
+We have a random sample of n = 1278 with y = 550 fans who said they approved of the new policy. We can use the following test statistic:
+
+\[Z = \frac{\hat{p}-p_0}{\sqrt{\frac{p_0(1-p_0)}{n}}}\]
+
+This gives us:
+
+\[Z = \frac{\frac{550}{1278}-0.40}{\sqrt{\frac{0.4(1-0.4)}{1278}}}\]
+
+```{r}
+z <- ((550/1278)-0.4)/(sqrt((0.4*0.6)/(1278)))
+paste0('The z value to compare is ',z)
+```
+
+Since the value of the test statistic of Z=2.215 is in our critical region of Z > 1.645, then we will reject the null hypothesis of p = 0.40.
 
 # Problem 8.3-11
 
+* $H_0$: $p_1 = p_2$
+* $H_1$: $p_1 \neq p_2$
+* n = 1000
 
+## Part a
 
+Let's take our test statistic based of the CLT by using a Z score from a normal distribution:
 
+\[Z = \frac{\hat{p_1}-\hat{p_2}}{\sqrt{\frac{\hat{p}(1-\hat{p})}{n_1}+\frac{\hat{p}(1-\hat{p})}{n_2}}}\]
+
+Where $\hat{p_1} = \frac{y_1}{n_1};\hat{p_2}=\frac{y_2}{n_2};\hat{p}=\frac{y_1+y_2}{n_1+n_2}$. With $\alpha = 0.05$, our critical region would be $|Z| > |Z_{\alpha/2}| = |Z_{0.025}| = 1.96$.
+
+```{r include=FALSE}
+library(tidyverse)
+```
+
+```{r}
+ggplot(data.frame(x = c(-3, 3)), aes(x)) +
+  stat_function(fun = dnorm) + 
+  stat_function(fun = dnorm, 
+                xlim = c(-3,-1.96),
+                geom = "area") +
+  stat_function(fun = dnorm, 
+                xlim = c(1.96,3),
+                geom = "area") 
+```
+
+## Part b
+
+If $y_1 = 37$ and $y_2 = 53$, then we get:
+
+\[\hat{p_1} = \frac{37}{1000} = 0.037;\hat{p_2}=\frac{53}{100} = 0.053\]
+\[\hat{p}=\frac{37+53}{1000+1000} = \frac{90}{2000} = 0.045\]
+\[Z = \frac{0.037-0.053}{\sqrt{\frac{0.045(1-0.045)}{1000}+\frac{0.045(1-0.045)}{1000}}}\]
+
+```{r}
+z <- (0.037 - 0.053)/(sqrt(((0.045*0.955)/(1000)) + ((0.045*0.955) / (1000))))
+paste0('The z value to compare is ',z)
+```
+
+```{r}
+ggplot(data.frame(x = c(-3, 3)), aes(x)) +
+  stat_function(fun = dnorm) + 
+  stat_function(fun = dnorm, 
+                xlim = c(-3,-1.96),
+                geom = "area") +
+  stat_function(fun = dnorm, 
+                xlim = c(1.96,3),
+                geom = "area") + 
+  geom_vline(xintercept=z, color="red")
+```
+
+Since our our test statistic Z = -1.726 is not within our critical region, then we cannot reject our null hypothesis that $p_1 = p_2$
 
 
 
