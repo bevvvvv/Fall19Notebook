@@ -9,6 +9,142 @@ output:
     keep_tex: false
 ---
 
+# Shortest Path
+
+## Dijkstra's Algorithm
+
+Use a priority queues and update path distances starting from minimum unfinalized vertex.
+
+### Algorithm
+
+```{}
+Dijkstra(G, l, s) {
+  Input: Graph g, weights l, source vertex s
+  Output: distance to each vertex from s
+  
+  dist = new int[|V|]
+  for each v in V {
+    dist[v] = inf
+  }
+  dist[s] = 0
+  R = {s}
+  # create queue
+  # get min value of q aka s
+  for (i = 1 to |V|) {
+    pop min distance vertex not in R # use getMin from PQ
+    foreach (v, z) in E {
+      if (dist[z] >= dist[v] + l(v, z)) {
+        dist[z] = dist[v] + l(v, z)
+        # update keys in queue (insert if inf)
+      }
+    }
+  }
+  
+  return dist
+}
+```
+
+### Running Time
+
+$O(|V|^2)$ when sorting list, but we are going to use a priority queue implementation. The following table is how running time is affected by different queue implementations where there are |V| inserts, |V| getMins, and |E| decreaseKey.
+
+```{r, out.width = "400px", echo=FALSE}
+knitr::include_graphics("./DijkstraPQRunningTime.PNG")
+```
+
+### Priority Queue Implementations
+
+Priority Queue has three functions: insert, getMin, and decreaseKey. Binary heap is a heap with two leaves, whereas d-ary the d will affect the runnning time. Amortized time from a finbonacci heap references how the running time changes after each run.
+
+## Bellman-Ford Algorithm
+
+Bellman-Ford helps to solve shortest path when there are negative edges involved. Incrementing edges does not work, because if one path to a node has 1 edge and another has 3 edges, then the path will be incremented by a total of 1 and 3 respectively, so you cannot merely perform a linear transformation to find shortest paths. The Bellman-Ford algorithm works by iteratively solving distance in a BFS fashion, where each edge is updated every time.
+
+```{}
+Bellman-Ford(G, l, s) {
+  Input: same as Dijkstra
+  Output: same as Dijkstra
+  for all w in V {
+    dist[w] = inf
+  }
+  dist[s] = 0
+  for (i to |V|-1) {
+    for all e in E {
+      update(e)
+    }
+  }
+}
+
+update(e = (v, w)) {
+ if (dist[w] >= dist[v] + l(v,w)) {
+  dist[w] = dist[v] + l(v,w)
+ }
+}
+```
+
+In order to check for a negative cycle run update on every edge an additional time. If any distances are updated then a negative cycle exists.
+
+### Running Time
+
+The running time of this algorithm is $O(|V||E|)$, because you update each edge for |V| - 1 times.
+
+### Shorest Path in DAG
+
+Run Bellman-Ford by starting at source verticies. This requires to sort by topological order. This ensures you do not have to run more than |V|-1 times.
+
+```{}
+DAG-Shorest-Path(G, l, s) {
+  for every u in V {
+    dist[u] = inf
+  }
+  dist[s] = 0
+  topologically sort G # run DFS and sort by decreasing post number
+  for each w in V  (in topo order) {
+    for each (w, v) in E {
+      update(w, v)
+    }
+  }
+}
+```
+
+Running time of $O(|V| + |E|)$
+
+# Maximum Cardinality Matching
+
+# Max Flow Problem
+
+## Ford-Fulkerson Algorithm
+
+### Running Time
+
+### Proof of Correctness
+
+# Greedy Choice Algorithms
+
+## Minimal Spanning Tree
+
+### Data Structures
+
+## Kruskal Algorithm
+
+### Running Time
+
+## Prim's Algorithm
+
+# Huffman Encoding
+
+## Huffman's Algorithm
+
+
+## Encoding Cost
+
+# Matroids
+
+## Definition
+
+## Properties
+
+## Task Scheduling
 
 
 
