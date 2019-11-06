@@ -281,13 +281,15 @@ The cost listed above is deteremined in the algorithm by summing the frequencies
 
 # Matroids
 
+Matroids involve theories generalizing many greedy algorithms.
+
 ## Definition
 
-## Properties
+A Matroid M=(S, I) is an ordered pair. S is a finite set. I is the powerset of S (all subsets) called independent sets. These sets follow the exchange property: A != B, which are both in I, but |A| < |B| then there is some X in B-A where A U {x} is a subset of I.
 
 ## Task Scheduling
 
-
+A set A of tasks is independent if there is some way to schedule them so that no task is late. Let I = set of all independent tasks. Clearly I is hereditary and posseses the exchange property. We must therefore be able to use a greedy algorithm to solve the problem.
 
 
 
