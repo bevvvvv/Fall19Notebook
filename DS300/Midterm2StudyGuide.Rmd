@@ -3,14 +3,71 @@ title: "Data Science Privacy Study Guide"
 subtitle: "Josepeh Sepich Nov 7"
 output:
   pdf_document:
-    toc: false
+    toc: true
     toc_depth: 2
     number_sections: true
     keep_tex: false
 ---
 
+# Database Anonymization
 
+## Privacy vs Anonymity
 
+## EI/QI/SD
+
+## Challenges with protecting QI and SD
+
+# Challeneges with protecting Non-Relational Data
+
+## Transactional Data
+
+## Temporal/Longitudinal Data
+
+## Graph Data
+
+# K-anonymity
+
+## Generalization
+
+## Suppression
+
+## Equivalence Classes
+
+## Limitations
+
+# L-diversity
+
+# T-closeness
+
+# Attacks to K-anonymity, L-diversity, T-closeness
+
+## Linking Attack
+
+## Homogeneity Attack
+
+# Introduction to Differential Privacy
+
+## Definition
+
+## Laplace Mechanism
+
+## Limitations
+
+## Examples
+
+## Properties
+
+# Challeneges and Methods to address anonymity in Graph Data
+
+## Challeneges
+
+## Limitations
+
+## Approaches (K-degree anon)
+
+## De-Anonymization
+
+# Introduction to cryptography
 
 
 
