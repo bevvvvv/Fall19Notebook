@@ -1,0 +1,154 @@
+---
+title: "Stat/Math 415 Homework 7"
+subtitle: "Due Friday Nov 8; Joseph Sepich (jps6444)"
+output:
+  pdf_document:
+    toc: false
+    toc_depth: 2
+    number_sections: true
+    keep_tex: false
+---
+
+
+# Problem 8.1-1
+
+Problem constraints:
+
+* X ~ N($\mu$, 100)
+* $H_0$: $\mu = 110$
+* $H_1$: $\mu > 110$
+* n = 16
+* $\overline{x} = 113.5$
+
+## Part a
+
+Given a significance level of $\alpha = 0.05$, we want to determine if we reject the null hypothesis. Let us use a critical region approach where we will only reject the null hypothesis if observed $Z > Z_{\alpha}$. The $Z_{\alpha} = Z_{0.05}$ is 1.645. Let's transform our sample mean into a test statistic using the known variance of 100.
+
+\[Z = \frac{\overline{x} - \mu}{\sqrt{\frac{\sigma^2}{n}}} = \frac{113.5 - 110}{\sqrt{100/16}} = 1.40\]
+
+Since $1.40 < 1.645$, our test statistic is **not** within the critical region, therefore we fail to reject the null hypothesis of $\mu = 110$.
+
+## Part b
+
+Given a significance level of $\alpha = 0.10$, we want to determine if we reject the null hypothesis. Let us use a critical region approach where we will only reject the null hypothesis if observed $Z > Z_{\alpha}$. The $Z_{\alpha} = Z_{0.10}$ is 1.28. Let's transform our sample mean into a test statistic using the known variance of 100.
+
+\[Z = \frac{\overline{x} - \mu}{\sqrt{\frac{\sigma^2}{n}}} = \frac{113.5 - 110}{\sqrt{100/16}} = 1.40\]
+
+Since $1.40 > 1.28$, our test statistic is within the critical region, therefore we will reject the null hypothesis of $\mu = 110$.
+
+## Part c
+
+The p-value for this test corresponds to the probability of having our test statistic or higher given our distribution: $P(Z>1.40)$. Looking at the Z score table the p-value would be 1-0.9192 = **0.0808**.
+
+# Problem 8.1-3
+
+Problem constraints:
+
+* X ~ N($\mu$, 100)
+* $H_0$: $\mu = 170$
+* $H_1$: $\mu > 170$
+* n = 25
+
+## Part a
+
+The test statistic for our distribution (varaince of 100) is as follows:
+
+\[Z = \frac{\overline{x} - \mu}{\sqrt{\frac{\sigma^2}{n}}} = \frac{\overline{x} - 170}{\sqrt{100/25}} = \frac{\overline{x} - 170}{2}\]
+
+Given a significance level of $\alpha = 0.05$, the criticial region is $Z > Z_{\alpha} = 1.645$
+
+```{r include=FALSE}
+library(tidyverse)
+```
+
+```{r}
+ggplot(data.frame(x = c(-3, 3)), aes(x)) +
+  stat_function(fun = dnorm) +
+  stat_function(fun = dnorm, 
+                xlim = c(1.645,3),
+                geom = "area") + 
+  geom_vline(xintercept=1.645, color="red") +
+  ggtitle('Critical Region') +
+  xlab('Standard Normal Distribution')
+```
+
+## Part b
+
+To calculate the value of the test statisic we must first calculate the value of the sample mean: $\overline{x} = \frac{1}{n}\Sigma_{i=1}^{25}x_i$.
+
+```{r}
+x_data <- c(170, 167, 174, 179, 179, 156, 163, 156, 187, 156, 183, 179, 174, 179,
+            170, 156, 187, 179, 183, 174, 187, 167, 159, 170, 179)
+n <- 25
+
+x_mean <- sum(x_data) / n
+paste0('The vale of the sample mean is: ', x_mean)
+```
+
+\[Z = \frac{\overline{x} - 170}{2} = \frac{172.52 - 170}{2} = 1.26\]
+
+Given the value of our test statistic and our critical region, we **cannot** reject the null hypothesis $\mu = 170$, because the test statistic 1.26 is not in the critical region $Z > 1.645$.
+
+## Part c
+
+The p-value for this test corresponds to the probability of having our test statistic or higher given our distribution: $P(Z>1.26)$. Looking at the Z score table the p-value would be 1-0.8962 = **0.1038**.
+
+# Problem 8.1-6
+
+Problem constraints:
+
+* X $\approx N(\mu = 3.4, \sigma^2)$
+* n = 9
+
+## Part a
+
+The null hypothesis is $H_0$: $\mu = 3.4$.
+
+## Part b
+
+
+
+## Part c
+
+## Part d
+
+## Part e
+
+## Part f
+
+## Part g
+
+# Problem 8.2-3
+
+# Problem 8.2-5
+
+# Problem 8.2-9
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
