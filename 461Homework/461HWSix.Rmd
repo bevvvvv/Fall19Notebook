@@ -1,0 +1,44 @@
+---
+title: "Prog Language Concepts Homework 6"
+subtitle: "Due Mon Nov 11; Joseph Sepich (jps6444)"
+output:
+  pdf_document:
+    toc: false
+    toc_depth: 2
+    number_sections: false
+    keep_tex: false
+---
+
+# Problem 1
+
+# Problem 2
+
+# Problem 3
+
+# Problem 4
+
+## Part a
+
+## Part b
+
+# Problem 5
+
+## Part a
+
+## Part b
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
