@@ -1,0 +1,71 @@
+---
+title: "Research Paper Proposal and Annotations"
+subtitle: "Due Fri Nov 15; Joseph Sepich (jps6444)"
+output:
+  pdf_document:
+    toc: false
+    toc_depth: 2
+    number_sections: false
+    keep_tex: false
+---
+
+
+In one of our first lectures we talked about Nicholas Flamel as a counterexample. He was a manuscript and book seller in Paris along as a scribe, but most noteably he was known as being an alechemist. I found the topic of alchemy particularly interesting as it bears a close remsemblance to chemistry and science, but was also seen in parallel with magical practices; however for some reason those who practiced alchemy were not persecuted like those who practiced magic. In order to fully understand why alechemists were not persecuted as witches were, we must not only understand how each were percieved, but also how alechemy and witchcraft differed in terms of what they are. A further reason I found this subject interesting was the mention of Flamel in Harry Potter, a novel about magic and witchcraft. Sadly this book is too recent to explore the topic I am interested in.
+
+Link to sources.
+
+Three research questions. Big to small targeted questions. Specify historical era and geographical location.
+
+Historical Title for project
+
+Bibliography of required source. Chicago Manual style.
+
+Describe why each source will help.
+
+
+Sources required:
+
+* 1-3 primary sources
+* 2 encyclopedia entries
+* scholarly journal article(s)
+* scholarly book(s)
+* Bonus primary: visual/art
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
