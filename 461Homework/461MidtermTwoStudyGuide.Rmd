@@ -1,0 +1,112 @@
+---
+title: "Programming Language Concepts Study Guide"
+subtitle: "Josepeh Sepich Nov 13"
+output:
+  pdf_document:
+    toc: true
+    toc_depth: 2
+    number_sections: false
+    keep_tex: false
+---
+
+# Scope
+
+## Symbol Table
+
+## Static
+
+## Dynamic
+
+## Binding: Shallow vs Deep
+
+## Links
+
+### Determining Static Link
+
+# Lifetime
+
+# Memory Storage
+
+### Variable Declaration
+
+## Static
+
+## Stack
+
+## Heap
+
+## Something else
+
+# Tail Recursive Functions
+
+## Definition
+
+## Optimization
+
+# Parameter Passing
+
+## Call By Value
+
+## Call By Value Return
+
+## Call By Reference
+
+## Call By Name
+
+# Types
+
+## Two's Complement
+
+## Union Type
+
+### Compiler Memory Layout
+
+## Struct Type
+
+## IEEE 32-bit Floating Point
+
+### Sign
+
+### Exponent
+
+### Mantissa
+
+# Type Systems
+
+Rules needed will be given according to professor.
+
+## Typing Rules
+
+## Proof Tree
+
+## Constraints
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
