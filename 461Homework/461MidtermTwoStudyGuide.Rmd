@@ -189,21 +189,93 @@ knitr::include_graphics("./CBNExample.PNG")
 
 # Types
 
+Values are type-less in hardware, so operations on wrong values will produce garbage, such as float addition using integers. These errors are called **type errors**. A **type** is an abstraction of a set of values, and legal operations on those values.
+
+* Denotational: a set of values
+* Constructive: set of primitive types, type constructors
+* Abstraction: an interface (set of operations)
+
+## Kind of Types
+
+* Primitive
+    + Integer
+    + Double
+    + Character
+    + Boolean
+* Constructed
+    + Products
+    + Unions
+    + Arrays
+    + Lists
+* User-Defined
+
+## Type System
+
+A type system is a method or specification for associating types with variables, expressions, etc. **Type equivalence** happens when two types are equivalent. **Type compatibiliy** determines if two types can be used together. **Type safety** includes the absence of type errors.
+
+### Type Checking
+
+* Strongly typed: all type errors caught in checking
+* Weakly typed: type checking may miss errors
+* Static typing: type checking happens at compile time
+* Dynamic typing: type checking happens at run time
+* Type inference: type checker can infer variable types
+
 ## Two's Complement
 
-## Union Type
+To find the value of a negative integer merely flip all the bits and add a 1. Odd values would have a 1 on the end and even values would have a zero. The first bit indicates sign.
 
-### Compiler Memory Layout
-
-## Struct Type
+```{r, out.width = "400px", echo=FALSE}
+knitr::include_graphics("./TwoComplement.PNG")
+```
 
 ## IEEE 32-bit Floating Point
 
-### Sign
+Due to loss of precision in floats, checking a value is sufficiently bounded is often good enough. An example of floating point rounding causes an error is the patriot missle defense system. Floating point is essentially scientific notation for binary. The mantissa would be the values after the 1.__ in the scientific notation.
 
-### Exponent
+Parts:
 
-### Mantissa
+* 1 bit sign
+* 8 bit exponent
+* 23 bit mantissa
+
+## Boolean 
+
+In most languages booleans are either true or false. In C 0 means false, and all other values mean true. A **word** is the basic unit of load and store and is usually how large a boolean value is.
+
+## Character
+
+All languages support ASCII encoding, but some mordern languages, like Java, also support Unicode.
+
+## Records and Structure Type
+
+* usually laid out contiguously
+* possible holes for alignment
+* compilers may re-arrange fields to minimize holes
+
+```{r, out.width = "400px", echo=FALSE}
+knitr::include_graphics("./StructMemory.PNG")
+```
+
+## Union Type
+
+In union types all fields share the same piece of memory.
+
+```{r, out.width = "400px", echo=FALSE}
+knitr::include_graphics("./UnionMemory.PNG")
+```
+
+## Sum and Product Types
+
+Sum types are alternation of types and are a generalization of enum types. Haskell example below. Product types are concatenation of types such as records and structures.
+
+```{r, out.width = "400px", echo=FALSE}
+knitr::include_graphics("./SumProductType.PNG")
+```
+
+## Array and Dope Vector
+
+# Pointers and References
 
 # Type Systems
 
@@ -214,6 +286,8 @@ Rules needed will be given according to professor.
 ## Proof Tree
 
 ## Constraints
+
+## Unification
 
 
 
