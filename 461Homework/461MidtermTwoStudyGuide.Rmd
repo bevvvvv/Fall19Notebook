@@ -273,21 +273,69 @@ Sum types are alternation of types and are a generalization of enum types. Haske
 knitr::include_graphics("./SumProductType.PNG")
 ```
 
-## Array and Dope Vector
+## Arrays
+
+### C Array
+
+* Static/Stack/Heap allocated
+* Size statically/dynamically determined
+* Array bounds not checked (buffer overflow)
+
+### Java Array
+
+* Heap allocated
+* Size dynamically determined
+* Array size is part of stored data (dope vector)
+* Array bounds checked
+
+### Dope Vector
+
+Dope vectors are stored in memories and offer metadata about the array. The beginning of the vector dictates the element size and type along with the array size. The rest of the vector indicated memory storage and acts as indicies.
+
+```{r, out.width = "400px", echo=FALSE}
+knitr::include_graphics("./DopeVector.PNG")
+```
 
 # Pointers and References
 
+## Pointers
+
+Pointers are a set of memory addresses and operations on them. This includes legal addresses and the special null value. Some operations that can be performed are assignment, dereferencing, and arithmetic. 
+
+Uses:
+
+* Indirect addressing (access arbitrary address)
+* Manage dynamic storage (heap)
+
+## References
+
+References are restricted pointers and cannot be used as a value or operated in any way. References are used mainly to manage dynamic storage and as aliases for existing variables.
+
+## Problems and Solutions
+
+The null pointer problem happens when a pointer points to null, but is tried to be operated on like a type. A dangling reference is when a pointer points to a deallocated address. Tombstone and lock and key algorithms help to prevent this.
+
 # Type Systems
 
-Rules needed will be given according to professor.
+Rules needed will be given according to professor. Type systems use typing rules to created proofs by induction. If a proof is able to be made then the code is type safe, but if the proof fails then there exists a type error.
 
 ## Typing Rules
 
+Typing rules are rules that dictate which terms are well formed terms. The rules are set up as the given symbol table proves that the term has type $\tau$.
+
 ## Proof Tree
+
+Proof tree starts with the original statement on the bottom. Use typing rules to move up the tree. Form conclusions once the root nodes of the tree are reached.
 
 ## Constraints
 
+Typing constraints assist with type inference. Constraints are equalities on types. Much like proofs of types constraint carry down through a proof tree.
+
 ## Unification
+
+Constraints for a given terms can be resolved through unification. Unification is the process that finds substitudes to make two terms equal. There is a set of statements to solve constraints that make an algorithm such as Robinson's algorithm.
+
+
 
 
 
