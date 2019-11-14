@@ -1,0 +1,60 @@
+---
+title: "Data Structures and Algorithms Homework 11"
+subtitle: "Due Wed Nov 13; Joseph Sepich (jps6444)"
+output:
+  pdf_document:
+    toc: false
+    toc_depth: 2
+    number_sections: true
+    keep_tex: false
+---
+
+# Problem 1
+
+## Part a
+
+\pagebreak
+
+## Part b
+
+\pagebreak
+
+# Problem 2
+
+\pagebreak
+
+# Problem 3
+
+## Part 1
+
+\pagebreak
+
+## Part 2
+
+\pagebreak
+
+# Problem 4
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

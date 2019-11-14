@@ -1,0 +1,140 @@
+---
+title: "Research Paper Proposal and Annotations"
+subtitle: "Due Fri Nov 15; Joseph Sepich (jps6444)"
+output:
+  pdf_document:
+    toc: false
+    toc_depth: 2
+    number_sections: false
+    keep_tex: false
+---
+
+# Research Topic
+
+In one of our first lectures we talked about Nicholas Flamel as a counterexample, so this topic relates to our study of witchcraft in the sense that alchemists were essentially doing what some described as magic, but went unpersecuted. He (Flamel) was a manuscript and book seller in Paris along as a scribe, but most noteably he was known as being an alechemist. I found the topic of alchemy particularly interesting as it bears a close remsemblance to chemistry and science, but was also seen in parallel with magical practices. A further reason I found this subject interesting was the mention of Flamel in Harry Potter, a novel about magic and witchcraft, as the discoverer of the philosopher's stone (which grants a person immortality). I am going to examine how the aspect of alchemy helped to foster the foundations of modern day chemistry. Google describes it as "the medieval forerunner of chemistry." 
+
+# Primary Source Description
+
+There are two sources located in the Penn State library system that are of particular note to my topic. The first source is called Das Wesen der Alchemie and it was written by Dr. Ferdinand Maack. As part of a series called the Occult world it describes various "The Essence of Alechemy" which in actuality were various aspects of science at the time. The other primary source of interest is called Witchcraft, Magic, and Alchemy. It was originally written by an occult scholar in the 1931, but the edition I am using is from 1971. This is a good book to look at what alechemy was at the time, since it gives a description of "Operations of Work" and "The Laboratory of Alchemists".
+
+# Research Questions
+
+1. Alchemy is often referred to as the forerunner of chemistry. In what ways has alchemy influenced chemistry?
+2. How was alchemy viewed during the prolific scientific revolution in the early 20th century? What are the similarities and differences of alchemy and chemistry?
+3. In reference to the Occult World series, what determined alchemy to be a part of this world, but not chemistry?
+
+# Research Title
+
+Chemistry's Alchemical Influences in Early 20th Century Europe
+
+# Sources
+
+## <Source One>
+
+<Citation>
+
+<Explanation>
+
+## <Source Two>
+
+<Citation>
+
+<Explanation>
+
+## <Source Three>
+
+<Citation>
+
+<Explanation>
+
+## <Source Four>
+
+<Citation>
+
+<Explanation>
+
+## <Source Five>
+
+<Citation>
+
+<Explanation>
+
+## <Source Six>
+
+<Citation>
+
+<Explanation>
+
+## <Source Seven>
+
+<Citation>
+
+<Explanation>
+
+## <Source Eight>
+
+<Citation>
+
+<Explanation>
+
+
+Sources required:
+
+* 1-3 primary sources
+* 2 encyclopedia entries
+* 2 scholarly journal article(s)
+* scholarly book(s)
+* Bonus primary: visual/art
+
+
+* Alchemy Enclycopedia entry: Golden, Richard M. Encyclopedia of Witchcraft: The Western Tradition. Santa Barbara, Calif: ABC-CLIO, 2006. http://search.ebscohost.com.ezaccess.libraries.psu.edu/login.aspx?direct=true&db=nlebk&AN=148574&site=ehost-live&scope=site
+* Alchemy Enclycopedia entry: York, Michael. "Alchemy." In The Encyclopedia of Religion and Nature. : Continuum, 2006. https://www-oxfordreference-com.ezaccess.libraries.psu.edu/view/10.1093/acref/9780199754670.001.0001/acref-9780199754670-e-17.
+* Primary: https://cat.libraries.psu.edu/uhtbin/cgisirsi/?ps=booej5paHb/UP-PAT/X/9
+* Primary: Alchemie das Wesen
+* Scholarly Article: Alchemy and Christianity in the Middle Ages https://onlinelibrary-wiley-com.ezaccess.libraries.psu.edu/doi/full/10.1111/hic3.12013
+* Scholarly Article: Curry, Patrick. ""Occult and Scientific Mentalities in the Renaissance", Ed. by Brian Vickers." History of Science 23, no. 3 (Sep 01, 1985): 299. http://ezaccess.libraries.psu.edu/login?url=https://search-proquest-com.ezaccess.libraries.psu.edu/docview/1298059905?accountid=13158.
+* Periodic Scholarly Journal on Alchemy: http://web.a.ebscohost.com.ezaccess.libraries.psu.edu/ehost/command/detail?vid=0&sid=82e1d3ed-0683-4766-a6f5-aea2a13468fa%40sdc-v-sessmgr02&bdata=JnNpdGU9ZWhvc3QtbGl2ZSZzY29wZT1zaXRl#jid=VS3&db=a9h
+* 1971 book on witchcraft and alchemy: https://books.google.com/books?hl=en&lr=&id=PKVGDwAAQBAJ&oi=fnd&pg=PA8&dq=alchemy+vs+witchcraft&ots=FlSEDZCrVF&sig=V7_zfi2RjsBH8GvrAUAViI2UmXQ#v=onepage&q=alchemy%20vs%20witchcraft&f=false
+    + noted scholar of the occult (used web)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
