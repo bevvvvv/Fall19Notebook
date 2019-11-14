@@ -106,25 +106,179 @@ The null hypothesis is $H_0$: $\mu = 3.4$.
 
 ## Part b
 
-
+The coach's hypothesis or the null hypothesis is $H_1$:$\mu > 3.4$.
 
 ## Part c
 
+Test test statistic follows the t distribution, since we are using an approximation and have an unknown variance. Transforming to student's t would be:
+
+\[t = \frac{\overline{x} - \mu}{\sqrt{\frac{\sigma^2}{n}}} = \frac{\overline{x} - 3.4}{\sqrt{\frac{S^2}{9}}}\]
+
 ## Part d
+
+A critical region for a value of $\alpha = 0.05$ would be $t > t_{\alpha} = t_{0.05} = 1.860$. This would come from a t table with n-1 = 8 degrees of freedom.
+
+```{r}
+ggplot(data.frame(x = c(-3, 3)), aes(x)) +
+  stat_function(fun = dnorm) +
+  stat_function(fun = dnorm, 
+                xlim = c(1.860,3),
+                geom = "area") + 
+  geom_vline(xintercept=1.860, color="red") +
+  ggtitle('Critical Region') +
+  xlab('Student\'s t Distribution')
+```
 
 ## Part e
 
+Before calculating the test statistic we must first calculate the sample mean and sample variance:
+
+```{r}
+x_data <- c(3.4, 3.6, 3.8, 3.3, 3.4, 3.5, 3.7, 3.6, 3.7)
+n <- 9
+
+x_mean <- sum(x_data) / n
+x_var <- sum((x_data - x_mean)^2) / (n-1)
+
+paste0('The sample mean: ', x_mean)
+paste0('The sample variance: ', x_var)
+```
+
+\[t = \frac{3.556 - 3.4}{\sqrt{\frac{0.0278}{9}}} \approx 2.80\]
+
 ## Part f
+
+Given that our test statistic of  $t_{0.05} = 2.80$ is within our critical region $t > 1.860$, we will reject the null hypothesis that $\mu = 3.4$.
 
 ## Part g
 
+The p-value for this test corresponds to the probability of having our test statistic or higher given our distribution: $P(t>2.80)$ at n-1 = 8 degrees of freedom. Looking at the t table the p-value would be 1-0.9884 = **0.0116**.
+
 # Problem 8.2-3
+
+Problem constraints:
+
+* X and Y are normally distributed
+* n = 9, m = 13
+* $H_0$: $\mu_x = \mu_y$
+
+Let's assume a significance level of $\alpha = 0.05$. Let's begin by defining our test statistic and relevant values.
+
+\[t = \frac{\overline{x} - \overline{y}}{\sqrt{S^2_p(\frac1n+\frac1m)}}\]
+\[\overline{x} = \frac1n\Sigma_{i=1}^nx_i\]
+\[S^2 = \frac1{n-1}\Sigma_{i=1}^n(x_i-\overline{x})^2\]
+\[S^2_p=\frac{(n-1)s_x^2+(m-1)s_y^2}{n + m - 2}\]
+
+```{r}
+x_data <- c(21.7, 21.0, 21.2, 20.7, 20.4, 21.9, 20.2, 21.6, 20.6)
+y_data <- c(21.5, 20.5, 20.3, 21.6, 21.7, 21.3, 23.0, 21.3, 18.9, 20.0, 20.4, 20.8,
+            20.3)
+n <- 9
+m <- 13
+
+x_mean <- sum(x_data) / n
+x_var <- sum((x_data - x_mean)^2) / (n-1)
+y_mean <- sum(y_data) / m
+y_var <- sum((y_data - y_mean)^2) / (m-1)
+pool_var <- ((n - 1) * x_var + (m - 1) * y_var) / (n + m - 2)
+
+paste0('The x sample mean: ', x_mean)
+paste0('The x sample variance: ', x_var)
+paste0('The y sample mean: ', y_mean)
+paste0('The y sample variance: ', y_var)
+paste0('The pooled sample variance: ', pool_var)
+
+t <- (x_mean - y_mean) / (sqrt(pool_var * (1/n + 1/m)))
+  
+paste0('Our test statistic is: ', t)
+```
+
+Given our signifance level of $\alpha = 0.05$ we can check the t table with n + m - 2 = 20 degrees of freedom to get a critical region of $|t| > 2.086$. Since our sample test statistic of $t = 0.374$ is not within the critical region we **fail** to reject the null hypothesis.
 
 # Problem 8.2-5
 
+Problem constraints:
+
+* X and Y are normally distributed with the same variance
+* $H_0$: $\mu_x - \mu_y = 0$
+* $H_1$: $\mu_x - \mu_y < 0$
+* $\alpha = 0.05$
+
+## Part a
+
+The test statisitc for comparing these two sample means would be:
+
+\[t = \frac{\overline{x} - \overline{y}}{\sqrt{S^2_p(\frac1n+\frac1m)}}\]
+
+Given a significance level of $\alpha = 0.05$ and degrees of freedom of n + m -2 = 26. The crtical region would be $t < -t_{\alpha} = -t_{0.05} = -1.706$.
+
+## Part b
+
+```{r}
+x_data <- c(49, 108, 110, 82, 93, 114, 134, 114, 96, 52, 101, 114, 120, 116)
+y_data <- c(133, 108, 93, 119, 119, 98, 106, 131, 87, 153, 116, 129, 97, 110)
+n <- 14
+m <- 14
+
+x_mean <- sum(x_data) / n
+x_var <- sum((x_data - x_mean)^2) / (n-1)
+y_mean <- sum(y_data) / m
+y_var <- sum((y_data - y_mean)^2) / (m-1)
+pool_var <- ((n - 1) * x_var + (m - 1) * y_var) / (n + m - 2)
+
+paste0('The x sample mean: ', x_mean)
+paste0('The x sample variance: ', x_var)
+paste0('The y sample mean: ', y_mean)
+paste0('The y sample variance: ', y_var)
+paste0('The pooled sample variance: ', pool_var)
+
+t <- (x_mean - y_mean) / (sqrt(pool_var * (1/n + 1/m)))
+  
+paste0('Our test statistic is: ', t)
+```
+
+Given the value of our test statistic of $t = -1.714$ we can **reject** the null hypothesis $\mu_x - \mu_y = 0$, since $-1.714 < -1.706$.
+
+## Part c
+
+The p-value for this test corresponds to the probability of having our test statistic or higher given our distribution: $P(t<-1.714)$ at n+m-2 = 26 degrees of freedom. Looking at the t table the p-value would be **0.049**.
+
 # Problem 8.2-9
 
+Problem constraints:
 
+* X and Y are normally distributed with same variance
+* n = m = 13
+* $H_0$: $\mu_x = \mu_y$
+* $H_1$: $\mu_x < \mu_y$
+* $\alpha = 0.05$
+
+First let us calculate the test statistic t:
+
+```{r}
+x_data <- c(2.9, 14.9, 1.0, 12.6, 9.4, 7.6, 3.6, 3.1, 2.7, 4.8, 3.4, 7.1, 7.2)
+y_data <- c(7.8, 4.2, 2.4, 12.9, 17.3, 10.4, 5.9, 4.9, 5.1, 8.4, 10.8, 23.4, 9.7)
+n <- 13
+m <- 13
+
+x_mean <- sum(x_data) / n
+x_var <- sum((x_data - x_mean)^2) / (n-1)
+y_mean <- sum(y_data) / m
+y_var <- sum((y_data - y_mean)^2) / (m-1)
+pool_var <- ((n - 1) * x_var + (m - 1) * y_var) / (n + m - 2)
+
+paste0('The x sample mean: ', x_mean)
+paste0('The x sample variance: ', x_var)
+paste0('The y sample mean: ', y_mean)
+paste0('The y sample variance: ', y_var)
+paste0('The pooled sample variance: ', pool_var)
+
+t <- (x_mean - y_mean) / (sqrt(pool_var * (1/n + 1/m)))
+  
+paste0('Our test statistic is: ', t)
+```
+
+Given this one sided test at $\alpha = 0.05$, $P(t < -1.6672)$ at n + m - 2 = 24 degress of freedom is roughly greater than 0.05 (0.056), since $t_{0.05} = -1.711$. Under this significance level we **fail** to reject the null hypothesis, since our p-value is greater than $\alpha = 0.05$.
 
 
 
