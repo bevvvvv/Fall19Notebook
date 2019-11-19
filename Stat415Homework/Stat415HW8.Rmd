@@ -13,7 +13,7 @@ output:
 
 This problem relates to the analysis of variacne (ANOVA). We need to use various error sources to determine if we should reject the null hypothesis. First of all let's define two error sources (where n and m are the sample size and number of groups respectively):
 
-\[SS_E = SS_{TO}-SS_T; MS_E = \frac{SS_E}{n - m}\]
+\[SS_E = SS_{TO}-SS_T = \Sigma_{i=1}^m\Sigma_{j=1}^n(x_{ij}-\overline{x_{..}})^2; MS_E = \frac{SS_E}{n - m}\]
 \[SS_T = \Sigma_{i=1}^m(\overline{x_{i.}}-\overline{x_{..}})^2n_i; MS_E = \frac{SS_T}{n-m}\]
 \[SS_{TO} = \Sigma_{i=1}^m\Sigma_{j=1}^n(x_{ij}-\overline{x_{i.}})^2\]
 
@@ -42,6 +42,7 @@ means <- c(mean_1, mean_2, mean_3)
 total_mean <- sum(means) / m
 
 SS_T <- 0
+SS_E <- 0
 SS_TO <- 0
 
 for (i in 1:m) {
@@ -50,9 +51,19 @@ for (i in 1:m) {
 
 for (i in 1:m) {
   for (j in 1:n) {
-    SS_TO <- SS_TO + (x_matrix[j, i] - means[i])^2
+    SS_E <- SS_E + (x_matrix[j, i] - means[i])^2
   }
 }
+
+for (i in 1:m) {
+  for (j in 1:n) {
+    SS_TO <- SS_TO + (x_matrix[j, i] - total_mean)^2
+  }
+}
+
+print(paste0('SS(TO) is ', SS_TO))
+print(paste0('SS(T) is ', SS_T))
+print(paste0('SS(E) is ', SS_E))
 ```
 
 Using a significance level of $\alpha = 0.05$ we can reference the value of $F_{\alpha}(m-1, n-m) = F_{0.05}(2, 1)$
