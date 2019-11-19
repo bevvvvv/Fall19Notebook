@@ -1,0 +1,105 @@
+---
+title: "Stat/Math 415 Homework 8"
+subtitle: "Due Friday Nov 22; Joseph Sepich (jps6444)"
+output:
+  pdf_document:
+    toc: false
+    toc_depth: 2
+    number_sections: true
+    keep_tex: false
+---
+
+# Problem 9.3-1
+
+This problem relates to the analysis of variacne (ANOVA). We need to use various error sources to determine if we should reject the null hypothesis. First of all let's define two error sources (where n and m are the sample size and number of groups respectively):
+
+\[SS_E = SS_{TO}-SS_T; MS_E = \frac{SS_E}{n - m}\]
+\[SS_T = \Sigma_{i=1}^m(\overline{x_{i.}}-\overline{x_{..}})^2n_i; MS_E = \frac{SS_T}{n-m}\]
+\[SS_{TO} = \Sigma_{i=1}^m\Sigma_{j=1}^n(x_{ij}-\overline{x_{i.}})^2\]
+
+We can then use these error sources to define the F Distribution:
+
+\[F = \frac{MS_T}{MS_E}\]
+
+And we reject the null hypothesis if $F \geq F_{\alpha}(m-1, n-m)$. Let's now calculate the required values:
+
+
+```{r}
+x_1 <- c(5, 9, 6, 8)
+x_2 <- c(11, 13, 10, 12)
+x_3 <- c(10, 6, 9, 9)
+
+x_matrix <- data.frame(x_1 = x_1, x_2 = x_2, x_3 = x_3)
+
+n <- 4
+m <- 3
+
+mean_1 <- sum(x_1) / n
+mean_2 <- sum(x_2) / n
+mean_3 <- sum(x_3) / n
+
+means <- c(mean_1, mean_2, mean_3)
+total_mean <- sum(means) / m
+
+SS_T <- 0
+SS_TO <- 0
+
+for (i in 1:m) {
+  SS_T <- SS_T + n * (means[i] - total_mean)^2
+}
+
+for (i in 1:m) {
+  for (j in 1:n) {
+    SS_TO <- SS_TO + (x_matrix[j, i] - means[i])^2
+  }
+}
+```
+
+Using a significance level of $\alpha = 0.05$ we can reference the value of $F_{\alpha}(m-1, n-m) = F_{0.05}(2, 1)$
+
+
+# Problem 9.3-15
+
+
+# Problem 8.4-3
+
+## Part a
+
+## Part b
+
+## Part c
+
+## Part d
+
+
+# Problem 8.4-7
+
+## Part a
+
+## Part b
+
+## Part c
+
+
+# Problem 8.4-15
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
