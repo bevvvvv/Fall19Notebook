@@ -11,10 +11,16 @@ output:
 
 # Problem 9.3-1
 
-This problem relates to the analysis of variacne (ANOVA). We need to use various error sources to determine if we should reject the null hypothesis. First of all let's define two error sources (where n and m are the sample size and number of groups respectively):
+Problem Constraints:
+
+* $H_0$: $\mu_1 = \mu_2 = \mu_3$
+* $H_1$: not all equal
+* $\alpha = 0.05$
+
+This problem relates to the analysis of variacne (ANOVA). We need to use various error sources to determine if we should reject the null hypothesis. First of all let's define three error sources (where n and m are the sample size and number of groups respectively):
 
 \[SS_E = SS_{TO}-SS_T = \Sigma_{i=1}^m\Sigma_{j=1}^n(x_{ij}-\overline{x_{..}})^2; MS_E = \frac{SS_E}{n - m}\]
-\[SS_T = \Sigma_{i=1}^m(\overline{x_{i.}}-\overline{x_{..}})^2n_i; MS_E = \frac{SS_T}{n-m}\]
+\[SS_T = \Sigma_{i=1}^m(\overline{x_{i.}}-\overline{x_{..}})^2n_i; MSTE = \frac{SS_T}{m-1}\]
 \[SS_{TO} = \Sigma_{i=1}^m\Sigma_{j=1}^n(x_{ij}-\overline{x_{i.}})^2\]
 
 We can then use these error sources to define the F Distribution:
@@ -61,20 +67,142 @@ for (i in 1:m) {
   }
 }
 
+MS_T <- SS_T / (m-1)
+MS_E <- SS_E / (n * m - m)
+
+F_var <- MS_T / MS_E
+
 print(paste0('SS(TO) is ', SS_TO))
 print(paste0('SS(T) is ', SS_T))
 print(paste0('SS(E) is ', SS_E))
+print(paste0('MS(T) is ', MS_T))
+print(paste0('MS(E) is ', MS_E))
+print(paste0('F test statistic is ', F_var))
 ```
 
-Using a significance level of $\alpha = 0.05$ we can reference the value of $F_{\alpha}(m-1, n-m) = F_{0.05}(2, 1)$
+Using a significance level of $\alpha = 0.05$ we can reference the value of $F_{\alpha}(m-1, n-m) = F_{0.05}(2, 9) = 4.2565$ in the F distribution table reference. Since our F test statistic is $7.875 > 4.2565$, we can **reject** our null hypothesis ($H_0$) of $\mu_1 = \mu_2 = \mu_3$.
 
 
 # Problem 9.3-15
 
+Problem Constraints:
+
+* $H_0$: $\mu_1 = \mu_2 = \mu_3$
+* $H_1$: not all equal
+* $\alpha = 0.05$
+
+This problem relates to the analysis of variacne (ANOVA). We need to use various error sources to determine if we should reject the null hypothesis. First of all let's define three error sources (where n and m are the sample size and number of groups respectively):
+
+\[SS_E = SS_{TO}-SS_T = \Sigma_{i=1}^m\Sigma_{j=1}^n(x_{ij}-\overline{x_{..}})^2; MS_E = \frac{SS_E}{n - m}\]
+\[SS_T = \Sigma_{i=1}^m(\overline{x_{i.}}-\overline{x_{..}})^2n_i; MSTE = \frac{SS_T}{m-1}\]
+\[SS_{TO} = \Sigma_{i=1}^m\Sigma_{j=1}^n(x_{ij}-\overline{x_{i.}})^2\]
+
+We can then use these error sources to define the F Distribution:
+
+\[F = \frac{MS_T}{MS_E}\]
+
+And we reject the null hypothesis if $F \geq F_{\alpha}(m-1, n-m)$. Let's now calculate the required values:
+
+
+```{r}
+x_1 <- c(500, 650, 530, 680, NA)
+x_2 <- c(700, 620, 780, 830, 860)
+x_3 <- c(500, 520, 400, 580, 410)
+
+x_matrix <- data.frame(x_1 = x_1, x_2 = x_2, x_3 = x_3)
+
+n <- c(length(x_1) - 1, length(x_2), length(x_3))
+m <- 3
+
+mean_1 <- sum(x_1, na.rm = TRUE) / n[1]
+mean_2 <- sum(x_2, na.rm = TRUE) / n[2]
+mean_3 <- sum(x_3, na.rm = TRUE) / n[3]
+
+means <- c(mean_1, mean_2, mean_3)
+
+total_mean <- 0
+for (i in 1:m) {
+  total_mean <- total_mean + sum(x_matrix[,i], na.rm = TRUE)
+}
+total_mean <- total_mean / sum(n)
+
+SS_T <- 0
+SS_E <- 0
+SS_TO <- 0
+
+for (i in 1:m) {
+  SS_T <- SS_T + n[i] * (means[i] - total_mean)^2
+}
+
+for (i in 1:m) {
+  for (j in 1:n[i]) {
+    if (is.na(x_matrix[j, i])) {
+      break
+    }
+    SS_E <- SS_E + (x_matrix[j, i] - means[i])^2
+  }
+}
+
+for (i in 1:m) {
+  for (j in 1:n[i]) {
+    if (is.na(x_matrix[j, i])) {
+      break
+    }
+    SS_TO <- SS_TO + (x_matrix[j, i] - total_mean)^2
+  }
+}
+
+MS_T <- SS_T / (m-1)
+MS_E <- SS_E / (sum(n) - m)
+
+F_var <- MS_T / MS_E
+
+print(paste0('SS(TO) is ', SS_TO))
+print(paste0('SS(T) is ', SS_T))
+print(paste0('SS(E) is ', SS_E))
+print(paste0('MS(T) is ', MS_T))
+print(paste0('MS(E) is ', MS_E))
+print(paste0('F test statistic is ', F_var))
+```
+
+Using a significance level of $\alpha = 0.05$ we can reference the value of $F_{\alpha}(m-1, n-m) = F_{0.05}(2, 11) = 3.9823$ in the F distribution table reference. Since our F test statistic is $12.47 > 3.9823$, we can **reject** our null hypothesis ($H_0$) of $\mu_1 = \mu_2 = \mu_3$. This implies that different feed supplements do **not** have the same affect on cow weight.
+
 
 # Problem 8.4-3
 
+Problem Constraints
+
+* $H_0$: $m = 5.900$
+* $H_1$: $m > 5.900$
+* $n = 25$
+* $\alpha = 0.05$
+
+```{r}
+weight <- c(5.625, 5.665, 5.697, 5.837, 5.863, 5.870, 5.878, 5.884, 5.908, 5.967, 6.019, 6.020, 6.029, 6.032, 6.037, 6.045, 6.049, 6.050, 6.079, 6.116, 6.159, 6.186, 6.199, 6.307, 6.387)
+n <- 25
+```
+
 ## Part a
+
+We are going to use the sign test to test our hypothesis. The sign test inspects the sign value of $x_i - m_0$. After we create this, we simply have a binomial variable Y, an indicator of whether the data point is above or below our $m_0$. Y has the parameters $n=25$ and $p=0.5$, since our null hypothesis is about the median, Y would have half the values negative and half positive if it is the true median. Let's calculate our values:
+
+```{r include = FALSE}
+library(tidyverse)
+```
+
+```{r}
+calculations <- data.frame(weight = weight)
+
+calculations$med <- 5.9
+calculations$Difference <- calculations$weight - calculations$med
+calculations$Sign <- if_else(calculations$Difference > 0, TRUE, FALSE)
+
+calculations
+```
+
+Since the weight vector is ordered, and 8 values are negative sign in a 25 row table, we know the value of Y = 17 in this case (the binomial distribution). Let's calculator our test statistic:
+
+\[Z = \]
 
 ## Part b
 
