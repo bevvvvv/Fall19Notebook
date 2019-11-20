@@ -19,9 +19,9 @@ Problem Constraints:
 
 This problem relates to the analysis of variacne (ANOVA). We need to use various error sources to determine if we should reject the null hypothesis. First of all let's define three error sources (where n and m are the sample size and number of groups respectively):
 
-\[SS_E = SS_{TO}-SS_T = \Sigma_{i=1}^m\Sigma_{j=1}^n(x_{ij}-\overline{x_{..}})^2; MS_E = \frac{SS_E}{n - m}\]
-\[SS_T = \Sigma_{i=1}^m(\overline{x_{i.}}-\overline{x_{..}})^2n_i; MSTE = \frac{SS_T}{m-1}\]
-\[SS_{TO} = \Sigma_{i=1}^m\Sigma_{j=1}^n(x_{ij}-\overline{x_{i.}})^2\]
+\[SS_E = SS_{TO}-SS_T = \Sigma_{i=1}^m\Sigma_{j=1}^n(x_{ij}-\overline{x_{i.}})^2; MS_E = \frac{SS_E}{n - m}\]
+\[SS_T = \Sigma_{i=1}^m(\overline{x_{i.}}-\overline{x_{..}})^2n_i; MS_{TE} = \frac{SS_T}{m-1}\]
+\[SS_{TO} = \Sigma_{i=1}^m\Sigma_{j=1}^n(x_{ij}-\overline{x_{..}})^2\]
 
 We can then use these error sources to define the F Distribution:
 
@@ -93,9 +93,9 @@ Problem Constraints:
 
 This problem relates to the analysis of variacne (ANOVA). We need to use various error sources to determine if we should reject the null hypothesis. First of all let's define three error sources (where n and m are the sample size and number of groups respectively):
 
-\[SS_E = SS_{TO}-SS_T = \Sigma_{i=1}^m\Sigma_{j=1}^n(x_{ij}-\overline{x_{..}})^2; MS_E = \frac{SS_E}{n - m}\]
-\[SS_T = \Sigma_{i=1}^m(\overline{x_{i.}}-\overline{x_{..}})^2n_i; MSTE = \frac{SS_T}{m-1}\]
-\[SS_{TO} = \Sigma_{i=1}^m\Sigma_{j=1}^n(x_{ij}-\overline{x_{i.}})^2\]
+\[SS_E = SS_{TO}-SS_T = \Sigma_{i=1}^m\Sigma_{j=1}^n(x_{ij}-\overline{x_{i.}})^2; MS_E = \frac{SS_E}{n - m}\]
+\[SS_T = \Sigma_{i=1}^m(\overline{x_{i.}}-\overline{x_{..}})^2n_i; MS_{TE} = \frac{SS_T}{m-1}\]
+\[SS_{TO} = \Sigma_{i=1}^m\Sigma_{j=1}^n(x_{ij}-\overline{x_{..}})^2\]
 
 We can then use these error sources to define the F Distribution:
 
@@ -178,7 +178,9 @@ Problem Constraints
 * $\alpha = 0.05$
 
 ```{r}
-weight <- c(5.625, 5.665, 5.697, 5.837, 5.863, 5.870, 5.878, 5.884, 5.908, 5.967, 6.019, 6.020, 6.029, 6.032, 6.037, 6.045, 6.049, 6.050, 6.079, 6.116, 6.159, 6.186, 6.199, 6.307, 6.387)
+weight <- c(5.625, 5.665, 5.697, 5.837, 5.863, 5.870, 5.878, 5.884, 5.908, 5.967,
+            6.019, 6.020, 6.029, 6.032, 6.037, 6.045, 6.049, 6.050, 6.079, 6.116,
+            6.159, 6.186, 6.199, 6.307, 6.387)
 n <- 25
 ```
 
@@ -197,7 +199,8 @@ calculations$med <- 5.9
 calculations$Difference <- calculations$weight - calculations$med
 calculations$Sign <- if_else(calculations$Difference > 0, TRUE, FALSE)
 
-calculations
+calculations %>%
+  head()
 ```
 
 Since the weight vector is ordered, and 8 values are negative sign in a 25 row table, we know the value of Y = 17 in this case (the binomial distribution). Let's calculate our test statistic:
@@ -209,7 +212,7 @@ Z <- (17 / 25 - 0.5) / (sqrt((0.5 * 0.5)/n))
 paste0('The value of Z is ', Z)
 ```
 
-Using the critical region approach we have $Z > Z_{\alpha} = Z_{0.05} = 1.645$. Since our test statistic $1.8 > 1.645$ we **can** reject the null hypothesis that the median is 5.900.
+Using the critical region approach we have $Z > Z_{\alpha} = Z_{0.05} = 1.645$. Since our test statistic $1.8 > 1.645$ we **can** reject the null hypothesis that the median is 5.900 meaning we conclude the median weight of a Grape Jolly Rancher is not 5.900 grams.
 
 ## Part b
 
@@ -236,13 +239,13 @@ Let's calculate these values:
 
 ```{r}
 W <- sum(calculations$Rank * if_else(calculations$Sign == TRUE, 1, -1))
-Z <- W / (sqrt((n * (n + 1) * ( 2 * n + 1))) / 6)
+Z <- W / (sqrt((n * (n + 1) * ( 2 * n + 1)) / 6))
 
 paste0('The value of W is ', W)
 paste0('The value of Z is ', Z)
 ```
 
-Using the critical region approach at $\alpha = 0.05$ significance level, we reject if $Z > Z_{\alpha} = Z_{0.05} = 1.645$. Given our test statistic of $5.635 > 1.645$ we **can** reject the null hypothesis $H_0$ that $m = 5.900$.
+Using the critical region approach at $\alpha = 0.05$ significance level, we reject if $Z > Z_{\alpha} = Z_{0.05} = 1.645$. Given our test statistic of $2.301 > 1.645$ we **can** reject the null hypothesis $H_0$ that $m = 5.900$ meaning we conclude the median weight of a Grape Jolly Rancher is not 5.900 grams.
 
 ## Part c
 
@@ -268,7 +271,7 @@ paste0('Difference sample variance SD^2 is ', sd)
 paste0('Test statistic t is ', t)
 ```
 
-Given a significance level of $\alpha = 0.05$, using the t table we have the critical region $t(n-1) > t_{\alpha}(n-1) = t_{0.05}(24) = 1.711$. Since our test statistic $2.608 > 1.711$ we **can** reject the null hypothesis that $m = 5.900$
+Given a significance level of $\alpha = 0.05$, using the t table we have the critical region $t(n-1) > t_{\alpha}(n-1) = t_{0.05}(24) = 1.711$. Since our test statistic $2.608 > 1.711$ we **can** reject the null hypothesis that $m = 5.900$ meaning we conclude the median weight of a Grape Jolly Rancher is not 5.900 grams.
 
 ## Part d
 
@@ -276,18 +279,96 @@ The sign test is the easiest test to do, because it requires no assumptions abou
 
 # Problem 8.4-7
 
+Problem Constraints
+
+* m is median
+* $H_0$: $m = 1.14$
+* $H_1$: $m > 1.14$
+* $n = 14$
+* $\alpha \approx 0.10$
+
 ## Part a
+
+In a Wilcoxon test, we use a test statistic in the normal standard distribution table. This would make our critical region:
+
+\[Z > Z_{\alpha} = Z_{0.10} = 1.28\]
 
 ## Part b
 
+The Wilcoxon Test looks at the magnitude of our data. We are under the assumption that our data is somewhat symmetrically distributed. We need to calculate the sign, but we also want to know rank: the magnitude of the difference from the null hypothesis. Let's calculate this:
+
+```{r}
+weight <- c(1.12, 1.13, 1.19, 1.25, 1.06, 1.31, 1.12, 1.23, 1.29, 1.17, 1.20,
+            1.11, 1.18, 1.23)
+n <- 14
+
+calculations <- data.frame(weight = weight)
+
+calculations$med <- 1.14
+calculations$Difference <- calculations$weight - calculations$med
+calculations$Sign <- if_else(calculations$Difference > 0, TRUE, FALSE)
+calculations$AbsDiff <- abs(calculations$Difference)
+
+calculations <- calculations %>%
+  select(weight, med, AbsDiff, Sign) %>%
+  arrange(AbsDiff)
+
+calculations
+```
+
+Note that some of our values have the same magnitude. In ties we take the average range of ranks and insert that as each variables rank value:
+
+```{r}
+calculations$Rank <- c(1, 2.5, 2.5, 4.5, 4.5, 6, 7, 8, 9, 10.5, 10.5, 12, 13, 14)
+
+calculations %>%
+  select(weight, Rank)
+```
+
+We can now use the rank to calculate the random variable W. This random variable will enable use to get our test statistic. W is defined:
+
+\[W = \Sigma_{i=1}^nrank_i*sign_i\]
+
+Since our variance for W is $n(n+1)(2n+2)/6$, we can use this to create our test statistic:
+
+\[Z = \frac{W - 0}{\sqrt{\frac{n(n+1)(2n+1)}{6}}}\]
+
+Let's calculate these values:
+
+```{r}
+W <- sum(calculations$Rank * if_else(calculations$Sign == TRUE, 1, -1))
+Z <- W / (sqrt(n * (n + 1) * ( 2 * n + 1) / 6))
+
+paste0('The value of W is ', W)
+paste0('The value of Z is ', Z)
+```
+
+Since our test statistice $2.071 > 1.28$ we would therefore **reject** the null hypothesis that $m = 1.14$ meaning we conclude that the median weight of the one pound carrot bags is not 1.14 pounds.
+
 ## Part c
 
+The P-value of this test is the probability that the test statistic is more extreme than our observed test statistic: 
+
+\[P(Z > 2.07) = 1 - P(Z \leq 2.07) = 1 - 0.9808 = 0.0192\]
+
+This makes our p-value **0.0192**. 
 
 # Problem 8.4-15
 
+Problem Constraints
+
+* $\alpha = 0.05$
+* $H_0$: $m_x = m_y$
+* $H_1$: $m_x \neq m_y$
 
 
+```{r}
+x <- c(-2.3864, -2.2171, -1.9148, -1.9097, -1.4883, -1.2007, -1.1077, -0.3601,
+       0.4325, 1.0598, 1.3035, 1.5241, 1.7133, 1.7656, 2.4912)
+y <- c(-1.7613, -0.9391, -0.7437, -0.5530, -0.2469, 0.0647, 0.2031, 0.3219, 0.3579,
+       0.6431, 0.6557, 0.6724, 0.6762, 0.9041, 1.3571)
 
+```
 
 
 
