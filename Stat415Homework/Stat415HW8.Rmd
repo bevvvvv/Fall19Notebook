@@ -367,14 +367,38 @@ x <- c(-2.3864, -2.2171, -1.9148, -1.9097, -1.4883, -1.2007, -1.1077, -0.3601,
        0.4325, 1.0598, 1.3035, 1.5241, 1.7133, 1.7656, 2.4912)
 y <- c(-1.7613, -0.9391, -0.7437, -0.5530, -0.2469, 0.0647, 0.2031, 0.3219, 0.3579,
        0.6431, 0.6557, 0.6724, 0.6762, 0.9041, 1.3571)
-
+n <- 15
 ```
 
+For our Wilcoxon test we must first assign ranks to every value in the dataset. Any ties will be settled by giving each tied value the average of their ranks.
 
+```{r}
+wilcoxon <- data.frame(x = x, y = y)
 
+wilcoxon
+```
 
+```{r}
+wilcoxon$xRank <- 0
+wilcoxon$yRank <- 0
+wilcoxon$xRank <- c(1, 2, 3, 4, 6, 7, 8, 12, 18, 24, 25, 27, 28, 29, 30)
+wilcoxon$yRank <- c(5, 9, 10, 11, 13, 14, 15, 16, 17, 19, 20, 21, 22, 23, 26)
+```
 
+Just like with the one-sided hypotheses we have a random variable W. We can use the wilcoxon statistic to find our test statistic. W is defined:
 
+\[W = \Sigma_{i=1}^nrank(y_i); W - N(n_2(n_1 + n_2 + 1)/2, n_1n_2(n_1+n_2+1)/12)\]
+\[Z = \frac{W - n_2(n_1 + n_2 + 1)/2}{\sqrt{n_1n_2(n_1+n_2+1)/12}}\]
+
+```{r}
+W <- sum(wilcoxon$yRank)
+Z <- (W - n * (n + n + 1) / 2) / sqrt((n * n * (n + n + 1))/12)
+
+paste0('The value of W is ', W)
+paste0('The value of Z is ', Z)
+```
+
+Using the critical region approach we can test that with $\alpha = 0.05$ the critical region would be $|Z| > Z_{\alpha} = Z_{0.05} = 1.96$. Since our test statistic $0.35 < 1.96$ we **cannot** reject the null hypothesis that the medians are equal. That means that we cannot say with 95% confidence that the two medians are not equal.
 
 
 
