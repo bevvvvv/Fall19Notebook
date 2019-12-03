@@ -87,15 +87,22 @@ For this change making problem we can use a matrix approach to finding values th
 ```{}
 Change(array X, int v) {
   V = 0:v
-  V[0] = true // base case
+  bool[][] possible = new bool[|X|][|V|] // false by default
+  possible[0:len(X)][0] = true // base case
+  
   for (int i=0; i < len(X); i++) { // go through each coin value
-    for (int j=X[i]; j < len(V); j++) { // check all values >= to coin value
-      if (V[j - X[i]] == true) { // can previous value be reached (current - coin value)
-        V[j] = true
+    for (int j=1; j < len(V); j++) { // go through each value
+      // check previous coins are possible
+      if (possible[i-1][j] == true) {
+        possible[i][j] = true
+      } else if (possible[i][j-X[j]])  {
+        // check if possible by adding current coin
+        // this adds a duplicate
+        possible[i][j] = true
       }
     }
   }
-  return V[v]
+  return possible[len(X)][len(V)]
 }
 ```
 
@@ -108,13 +115,22 @@ This problem is the same as the previous, BUT each coin can only be used once. W
 ```{}
 Change(array X, int v) {
   V = 0:v
-  int[][] possible = new int[|X|][|V|]
-  possible[:, 0] = true // base case zero coins
-  for (int i=0; i < len(X); i++) {
-    for (int j=1; j < len(V); j++) {
-      
+  bool[][] possible = new bool[|X|][|V|] // false by default
+  possible[0:len(X)][0] = true // base case
+  
+  for (int i=0; i < len(X); i++) { // go through each coin value
+    for (int j=1; j < len(V); j++) { // go through each value
+      // check previous coins are possible
+      if (possible[i-1][j] == true) {
+        possible[i][j] = true
+      } else if (possible[i-1][j-X[i]])  {
+        // check if possible by adding current coin
+        // LOOKS TO SEE IF YOU CAN ADD TO PREVIOUS COIN
+        possible[i][j] = true
+      }
     }
   }
+  return possible[len(X)][len(V)]
 }
 ```
 
@@ -122,6 +138,29 @@ Change(array X, int v) {
 
 # Problem 5 Change Making Again
 
+
+In this last coin change problem we wish to know if change is possible using at most k coins. This is a minimization problem. If we find the minimum possible coins to make change, and that value is less than or equal to k then it is possible. So we can again use duplicate denominations, but we must track the number of coins.
+
+```{}
+Change(array X, int v,int k) {
+  V = 0:v
+  int[][] possible = new int[|X|][|V|]
+  possible[0:len(X)][0] = 0 // base case
+  possible[0:len(X)][1:len(V)] = MAX_INTEGER
+  
+  for (int i=0; i < len(X); i++) { // go through each coin value
+    for (int j=1; j < len(V); j++) { // go through each value
+      // check previous coins are possible
+      prevAmount = possible[i-1][j]
+      // check if possible by adding current coin
+      addCoin = possible[i][j-X[j]] + 1
+      addCoinPrev = possible[i-1][j-X[j]] + 1
+      possible[i][j] = min(prevAmount, addCoin, addCoinPrev)
+    }
+  }
+  return possible[len(X)][len(V)] < k
+}
+```
 
 
 
