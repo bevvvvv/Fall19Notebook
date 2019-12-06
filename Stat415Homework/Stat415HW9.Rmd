@@ -106,12 +106,90 @@ paste0('E: ', E)
 print(paste0('The value of the test statistic is ', sum((X - E)^2 /E)))
 ```
 
+Now if we look in the chi-squared table for k - 1 - d = 1 degrees of freedom, we get the critical region to be $\chi^2 > \chi^2(k-1-d)_{\alpha} = \chi^2(1)_{0.01} = 6.635$. Since our test statistic of 0.185 is less than the critical value of 6.635 we do **not** reject the null hypothesis.
+
 # Problem 9.2-3
 
+We want to use a chi-squared test with $\alpha = 0.05$ to perform a homogeneity test on two Classes and the distribution of their test scores. In this case it would also be an independence test. We will combine the given sample into three parts: low, middle, high. This gives us the hypothesis:
+
+\[H_0 \text{:} p_{L}=p_{M}=p_{H}\]
+
+Using 55 and 75 as our cutoff points for ranges of scores we get the following table.
+
+| Class | L | M | H | Totals |
+|------:|---|---|---|--------|
+|     U | 7 | 4 | 4 | 15     |
+|     V | 3 | 6 | 6 | 15     |
+
+These are our observed values. Now we must get our expected values. To do this we recognize that $\hat{p_j} = \frac13$, since each test group (L, M, H) contains 10 of 30 total samples. We then use the number of samples in each group to find the expected values as \[n_i * p_j = E_{ij}\]. This yields our test statistic:
+
+\[\chi^2 = \Sigma_{i=1}^h\Sigma_{j=1}^k\frac{(O_ij - E_ij)^2}{E_{ij}}\]
+
+```{r}
+n <- 15 # sample size of each group
+p <- 1 / 3
+E <- n * p
+L <- c(7, 3)
+M <- c(4, 6)
+H <- c(4, 6)
+
+observed <- data.frame(L = L, M = M, H = H)
+chi <- 0
+for (i in 1:2) {
+  for (j in 1:3) {
+    chi <- chi + (observed[i, j] - E)^2 / E
+  }
+}
+# Test statistic
+print(paste0('The value of the test statistic is ', chi))
+```
+
+Now if we look in the chi-squared table for (h-1)(k-1) = (2-1)(3-1) = 2 degrees of freedom, we get the critical region to be $\chi^2 > \chi^2((h-1)(k-1))_{\alpha} = \chi^2(2)_{0.05} = 5.99$. Since our test statistic of 2.4 is less than the critical value of 5.99 we do **not** reject the null hypothesis.
 
 # Problem 9.2-9
 
+We again use the same chi-squared test that we used in the last problem to test the independence/homogeneity of the two variables. This time we test whether those who had older brothers participated in sports at the same rate as those without.
 
+\[H_0 \text{:} p_{S}=p_{NS}\] 
+
+The observed values for this case are in the table. To find the expected value we can merely multiply the row and column totals and divide by the sample size:
+
+```{r}
+Y <- c(12, 13, 25)
+N <- c(8, 27, 35)
+Tot <- c(20, 40, 60)
+
+observed <- data.frame(Y = Y, N = N, Tot = Tot)
+
+E_1 <- c(observed[1,3] * observed[3,1] / observed[3,3],
+         observed[2,3] * observed[3,1] / observed[3,3])
+E_2 <- c(observed[1,3] * observed[3,2] / observed[3,3],
+         observed[2,3] * observed[3,2] / observed[3,3])
+
+E <- data.frame(Yes = E_1, No = E_2)
+
+print('Expected values')
+E
+```
+
+This yields our test statistic:
+
+\[\chi^2 = \Sigma_{i=1}^h\Sigma_{j=1}^k\frac{(O_ij - E_ij)^2}{E_{ij}}\]
+
+```{r}
+chi <- 0
+for (i in 1:2) {
+  for (j in 1:2) {
+    chi <- chi + (observed[i, j] - E[i,j])^2 / E[i,j]
+  }
+}
+# Test statistic
+print(paste0('The value of the test statistic is ', chi))
+```
+
+Now if we look in the chi-squared table for (h-1)(k-1) = (2-1)(2-1) = 1 degrees of freedom, we get the critical region to be $\chi^2 > \chi^2((h-1)(k-1))_{\alpha} = \chi^2(1)_{0.05} = 3.841$. Since our test statistic of 4.15 is greater than the critical value of 3.841 we **do** reject the null hypothesis.
+
+Since we would not reject for the value in the chi-square table at a significance level of 0.025, we can say our p-value is between 0.005 and 0.025.
 
 
 
