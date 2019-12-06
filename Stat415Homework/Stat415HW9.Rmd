@@ -1,0 +1,139 @@
+---
+title: "Stat/Math 415 Homework "
+subtitle: "Due Friday Dec 6; Joseph Sepich (jps6444)"
+output:
+  pdf_document:
+    toc: false
+    toc_depth: 2
+    number_sections: true
+    keep_tex: false
+---
+
+
+# Problem 9.1-3
+
+Michigan Lottery digit drawing follows a multinomial distribution where $p_i$ is the probability of drawing digit i. Problem constraints are below:
+
+* $H_0$: $p_0 = p_1 = .. = p_9 = 0.1$
+* $\alpha = 0.05$
+
+```{r}
+# Data
+digits <- c(1, 6, 9, 9, 3, 8, 5, 0, 6, 7, 4, 7, 5, 9, 4, 6, 5, 6, 4, 4, 4, 8, 0,
+            9, 3, 2, 1, 5, 4, 5, 7, 3, 2, 1, 4, 6, 7, 1, 3, 4, 4, 8, 8, 6, 1, 6,
+            1, 2, 8, 8)
+```
+
+To test this hypothesis we can use a Chi-squared test statistic:
+
+\[\chi^2 = \Sigma_{i=1}^n\frac{(O_i - E_i)^2}{E_i}\]
+
+First let's get the observed counts:
+
+```{r}
+observed <- 0:9
+for (i in 1:10) {
+  observed[i] <- sum(digits == i-1)
+  print(paste0(i-1, ' has a count of ', observed[i]))
+}
+
+```
+
+Now for the expected counts:
+
+\[E_i = n * \hat{p_0}\]
+
+```{r}
+n <- 50
+p <- 0.1
+
+print(paste0('Every expected value is ', n * p))
+```
+
+```{r}
+# Test statistic
+E <- n * p
+print(paste0('The value of the test statistic is ', sum((observed - E)^2 /E)))
+```
+
+Now if we look in the chi-squared table for c - 1 = 9 degrees of freedom, we get the critical region to be $\chi^2 > \chi^2(c-1)_{\alpha} = \chi^2(9)_{0.05} = 16.92$. Since our test statistic of 7.6 is less than the critical value of 16.92 we do **not** reject the null hypothesis.
+
+# Problem 9.1-7
+
+Problem constraints
+
+* $n = 150$
+* $c = 5$
+* $\overline{x} = 0.5$
+* $\alpha = 0.01$
+
+We want to test if X has a poisson distribution. Let us first create our data.
+
+```{r}
+observed <- c(0, 1, 2, 3, 4) # 5 groups
+X <- c(92, 46, 8, 3, 1) # number of dishes
+```
+
+To test this against a poisson distribution, we must get the expected values using the pmf. We can find the expected number by finding the probability of that number ocurring and multiply by the total experiments n.
+
+\[E_i = p_i * n\]
+\[f(x) = \frac{\lambda^xe^{-\lambda}}{x!}\]
+
+```{r}
+E <- 0:4 # 5 groups
+lambda <- 0.5
+n <- 150
+
+for (i in 0:4) {
+  prob <- ((lambda ^ i) * exp(-lambda)) / factorial(i)
+  E[i+1] <- prob * n
+  print(paste0('Expected value of ', i, ' colonies is ', E[i+1], ' prob of ', prob))
+}
+```
+
+We can test this using our chi-squared test statistic:
+
+\[\chi^2 = \Sigma_{i=1}^n\frac{(O_i - E_i)^2}{E_i}\]
+
+Let's combine the last three groups to have a reasonable frequency
+
+```{r}
+# Test statistic
+X <- c(X[1], X[2], sum(X[3:5]))
+E <- c(E[1], E[2], sum(E[3:5]))
+paste0('O: ', X)
+paste0('E: ', E)
+print(paste0('The value of the test statistic is ', sum((X - E)^2 /E)))
+```
+
+# Problem 9.2-3
+
+
+# Problem 9.2-9
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
