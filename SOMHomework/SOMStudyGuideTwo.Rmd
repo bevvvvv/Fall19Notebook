@@ -1,0 +1,69 @@
+---
+title: "Science Of Music Study Guide"
+subtitle: "Josepeh Sepich Dec 12"
+output:
+  pdf_document:
+    toc: true
+    toc_depth: 2
+    number_sections: false
+    keep_tex: false
+---
+
+# Instruments
+
+## Categories of Instruments
+
+## Three Components of an Instruments
+
+## Transposition
+
+# Brass Instruments
+
+
+# Woodwind Instruments
+
+
+# Vocal Instruments
+
+# String Instruments
+
+# Percussion Instruments
+
+# Room Acoustics
+
+## Absorption Coefficient
+
+## Reverb Time
+
+# Tuning Temperaments
+
+## Pythagorean Temperament
+
+## Just Intonation
+
+## Equal Temperament
+
+# Electrophones
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
