@@ -20,7 +20,32 @@ output:
 
 \pagebreak
 
-# Problem 2
+# Problem 2 Linear Program
+
+```{r include=FALSE}
+library(ggplot2)
+
+```
+
+```{r echo=FALSE}
+fun1 <- function(x) 5 / 2 * x # y <= 5/2x
+fun2 <- function(x) 7 - x # y <= 7 - x
+fun3 <- function(x) 0 # y >= 0
+x1 = seq(-5,10)
+mydf = data.frame(x1, y1=fun1(x1), y2=fun2(x1),y3= fun3(x1))
+x2 <- seq(0,5)
+mydf2 = data.frame(x2, y1=fun1(x2), y2=fun2(x2),y3= fun3(x2))
+mydf2 <-  transform(mydf2, z = pmin(y1,y2))
+ggplot(mydf, aes(x = x1)) + 
+  geom_line(aes(y = y1), colour = 'blue') +
+  geom_line(aes(y = y2), colour = 'green') +
+  geom_line(aes(y = y3), colour = 'red') +
+  geom_ribbon(data = mydf2, aes(x=x2, ymin=y3,ymax = z), fill = 'gray60') +
+  geom_vline(xintercept=0) +
+  geom_vline(xintercept=5)
+```
+
+According to the feasible region the optimal solution would be __
 
 \pagebreak
 
