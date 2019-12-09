@@ -45,7 +45,7 @@ ggplot(mydf, aes(x = x1)) +
   geom_vline(xintercept=5)
 ```
 
-According to the feasible region the optimal solution would be __
+Maximizing the function 5x + 3y, the (5,0) vertex gives a value of 25. Going up the vertical line to the next vertex (5, 2) the value is 31. This value is clearly higher. Going to the interecting vertex (2, 5) the value is 25. Our highest value vertex is (5, 2) with 31. If we go towards the top vertex with (4, 3) we get 29, which is less, and if we go towards the axis vertex with (5, 1) we get 28, which is less. Therefore our optimal solution is 31 with x = 5 and y = 2.
 
 \pagebreak
 
