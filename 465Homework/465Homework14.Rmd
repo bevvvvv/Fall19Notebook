@@ -14,6 +14,17 @@ output:
 
 ## Part a
 
+The following sequence would be suboptimal to follow the greedy hueristic:
+
+* 4
+* 6
+* 4
+* 4
+* 1
+* 2
+
+In this case the first player would grab 4, 4, 2, and the second player would grab 6, 4, 1. This gives a score of 10 to 11 in favor of player two.
+
 \pagebreak
 
 ## Part b
@@ -50,6 +61,24 @@ Maximizing the function 5x + 3y, the (5,0) vertex gives a value of 25. Going up 
 \pagebreak
 
 # Problem 3
+
+The equation for our dual is as follows:
+
+\[(j+k)x + (j + k)y \leq j * 3 + k * 5\]
+
+So our dual LP would be:
+
+\[\text{min} (3j + 5k)\]
+\[j+k \geq 1\]
+\[j,k \geq 0\]
+
+The minimization of this dual is clearly just j=1 to get a value of 3. If you plug this into the primal LP, an upper bound of the problem is 3. 3 could be obtained by x = 1 and y = 2, which would be the optimal solution, since both the primal and dual LP have the same value. Again this solution would be:
+
+* j = 1
+* k = 0
+* x = 1
+* y = 2
+* value = 3
 
 \pagebreak
 
