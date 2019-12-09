@@ -116,14 +116,14 @@ The minimization of this dual is clearly just j=1 to get a value of 3. If you pl
 
 We must formulate a linear program to minimize the chance that our components fail. x will be units in compartment 1, y will be compartment 2, and z will be compartment 3. First let us write our objective function:
 
-\[\text{min}(0.3^x*0.4^y*0.2^z)\]
+\[\text{min}(0.3^x*0.4^y*0.2^z)=\text{min}(x*ln(0.3)+y*ln(0.4)+z*ln(0.2))\]
 
 \[\text{Space constraint}: 40x + 50y + 30z \leq 500\]
 \[\text{Weight constraint}: 15x + 20y + 10z \leq 200\]
 \[\text{Cost constraint}: 30x + 35y + 25z \leq 400\]
-\[\text{Prob constratin}: \]
+\[\text{Probability constraints}: x*ln(0.3),y*ln(0.4),z*ln(0.2) \leq ln(0.05)\]
 
-Now we can solve!
+Now we can solve! If we want it to say maximize, just take the same objective function and multiply by negative one.
 
 \pagebreak
 
