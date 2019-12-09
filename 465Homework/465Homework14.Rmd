@@ -29,6 +29,36 @@ In this case the first player would grab 4, 4, 2, and the second player would gr
 
 ## Part b
 
+To solve this problem we can create a matrix of precomputed values given a certain situation. The rows (indexed with i) will be the "first" card on the deck and the columns (indexed with j) will be the last card on the deck. We have two clear choices for each point in the problem. We choose the first card in the deck, and the opponent chooses the next card to minimize our score, or we choose the last card and the opponent choose the next card to minimize our score. This can be written as the following dynamic programming problem:
+
+```{}
+def maxValueCards(int[] cards): 
+      
+    # Create a table to store solutions
+    table = [[0 for i in range(n)] for i in range(n)] 
+  
+    # Fill table
+    for diff in range(n): # fill in diagonally up left
+        for j in range(diff, n): 
+            i = j - diff 
+              
+            # make sure to hop coins -> opponent choice  
+            # x = table(i+2, j)   
+            # y = table(i+1, j-1)
+            # z = table(i, j-2)
+            x = 0
+            if((i + 2) <= j): 
+                x = table[i + 2][j] 
+            y = 0
+            if((i + 1) <= (j - 1)): 
+                y = table[i + 1][j - 1] 
+            z = 0
+            if(i <= (j - 2)): 
+                z = table[i][j - 2] 
+            table[i][j] = max(cards[i] + min(x, y), cards[j] + min(y, z)) 
+    return table[0][n - 1] 
+```
+
 \pagebreak
 
 # Problem 2 Linear Program
@@ -83,6 +113,17 @@ The minimization of this dual is clearly just j=1 to get a value of 3. If you pl
 \pagebreak
 
 # Problem 4
+
+We must formulate a linear program to minimize the chance that our components fail. x will be units in compartment 1, y will be compartment 2, and z will be compartment 3. First let us write our objective function:
+
+\[\text{min}(0.3^x*0.4^y*0.2^z)\]
+
+\[\text{Space constraint}: 40x + 50y + 30z \leq 500\]
+\[\text{Weight constraint}: 15x + 20y + 10z \leq 200\]
+\[\text{Cost constraint}: 30x + 35y + 25z \leq 400\]
+\[\text{Prob constratin}: \]
+
+Now we can solve!
 
 \pagebreak
 
