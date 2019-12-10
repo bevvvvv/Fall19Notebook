@@ -25,6 +25,8 @@ The following sequence would be suboptimal to follow the greedy hueristic:
 
 In this case the first player would grab 4, 4, 2, and the second player would grab 6, 4, 1. This gives a score of 10 to 11 in favor of player two.
 
+Collaborators: None
+
 \pagebreak
 
 ## Part b
@@ -117,6 +119,8 @@ The minimization of this dual is clearly just j=1 to get a value of 3. If you pl
 We must formulate a linear program to minimize the chance that our components fail. x will be units in compartment 1, y will be compartment 2, and z will be compartment 3. First let us write our objective function:
 
 \[\text{min}(0.3^x*0.4^y*0.2^z)=\text{min}(x*ln(0.3)+y*ln(0.4)+z*ln(0.2))\]
+
+Note that in order to find probability of independent random variables we must multiply them together, so the probability of them all failing at once is their product together; however we need a linear function, so we use logarithmic properties to reduce this to a linear problem.
 
 \[\text{Space constraint}: 40x + 50y + 30z \leq 500\]
 \[\text{Weight constraint}: 15x + 20y + 10z \leq 200\]
