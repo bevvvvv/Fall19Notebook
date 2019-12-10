@@ -131,9 +131,37 @@ Now we can solve! If we want it to say maximize, just take the same objective fu
 
 ## Part 1
 
+We have a variation on the maximum flow problem. Each edge in this case has both a capacity (upper bound) and a lower bound. This implies that and edge must have at least the lower bound flowing through it. Recall that we could set up the vanilla max flow problem as such:
+
+\[\text{max}(\Sigma_{(e \in E)}f_e)\]
+
+\[\text{All edges:} f_e \leq c_e \]
+\[\text{All edges:} f_e \geq 0 \]
+\[\text{All vertices(v):} \Sigma_{(w,v)\in E}f_{(w,v)}-\Sigma_{(v,u)\in E}f_{(v,u)}=0\]
+
+To adapt this to include a lower bound were merely need to add an additional constraint (where k is the lower bound):
+
+\[\text{All edges:} f_e \geq k; -f_e \leq -k\]
+
+This would be a proper reduction of this variance of the max flow problem.
+
 \pagebreak
 
 ## Part 2
+
+We have a variation of the maximum flow problem. Each node u in this case has a loss coefficient $\varepsilon_u$. This loss coefficient will adjust our linear programming reduction of our max flow problem. Below is the reduction of the original linear flow problem.
+
+\[\text{max}(\Sigma_{(e \in E)}f_e)\]
+
+\[\text{All edges:} f_e \leq c_e \]
+\[\text{All edges:} f_e \geq 0 \]
+\[\text{All vertices(v):} \Sigma_{(w,v)\in E}f_{(w,v)}-\Sigma_{(v,u)\in E}f_{(v,u)}=0\]
+
+We do not want the last constraint in our variation, but we want a revised version of it:
+
+\[\text{All vertices(v):} \Sigma_{(w,v)\in E}f_{(w,v)}-\Sigma_{(v,u)\in E}f_{(v,u)}=\varepsilon_u\]
+
+In this revised constraint the difference of flow in and out of a given vertex is not 0, rather the loss coefficient $\varepsilon_u$. This would be a proper reduction of this variance of the max flow problem.
 
 
 
