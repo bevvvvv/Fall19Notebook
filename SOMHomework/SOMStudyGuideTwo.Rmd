@@ -48,6 +48,19 @@ Transposition is the act of transforming pitches to different notes on the scale
 
 # Vocal Instruments
 
+```{r, out.width = "400px", echo=FALSE}
+knitr::include_graphics("./VoiceDiagram.PNG")
+```
+
+## Phonemes
+
+Voiced means vocal chords are involved
+
+* Plosives - "Puh"
+* Voiced Plosives - "Buh", "Duh", "Kuh"
+* Fricatives - "F", "Sssss"
+* Voiced Fricatives - "Shhh", "Vvvvvvvv", "Thh"
+
 # String Instruments
 
 ## Parts of a Violin
@@ -65,6 +78,31 @@ knitr::include_graphics("./ViolinDireciton.PNG")
 # Percussion Instruments
 
 # Room Acoustics
+
+Keep in mind some basic asorption concepts. High frequencies have short wavelengths. They are caught many places such as hair, seat material, people, and curtains. Low frequencies with bigger waves need large cavaties to be caught in, such as the large curtains in the recital hall.
+
+## Qualities in Room Acoustics
+
+* Liveness/Reverb - Amount of meaurable reverb time. Theatrical spaces are more dead for clarity, but instrumental and choral spaces are more live. This quality is usually measured at 500 Hz.
+* Intimacy - This is related to the amount of direct sound received from the performers. A more intimate setting would have more direct sound.
+* Loudness - The general pressure level experienced by the listener. Diminished by absorption.
+* Fullness - A type of longer reverberation achieved when the ratio of reflected to direct sound is higher.
+* Clarity - A type of shorter reverb, which is the opposite of fullness.
+* Warmth - When reverb time for low frequencies is greater than high frequencies. 
+* Brilliance - The opposite of warmth.
+* Uniformity - A uniform aural product is heard regardless of location in the hall.
+* Envelopment - The sense of sound arriving from all directions. Often absent in open air performance.
+* Texture - Pertaining to the arrival of various reflections to the listener.
+* Blend - The mixing of sound from all the instruments on stage.
+* Ensemble - Ability of the performers on stage to satisfactorily hear each other.
+
+## Problems in Design
+
+* Focusing - Hotspots of sound can occur in an area of the audience. Why concave walls are avoided.
+* Echoes - Detrimental to clarity along with flutter from parallel walls. Creates a repetition of notes.
+* Shadows - Dead spots in halls due to diffraction and absorption.
+* Resonances - Smaller rooms can have their resonant frequencies matched.
+* External noise - comes from HVAC, traffic, etc.
 
 ## Absorption Coefficient
 
