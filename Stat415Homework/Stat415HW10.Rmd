@@ -11,13 +11,59 @@ output:
 
 # Problem 6.8-1
 
+Problem constraints:
+
+\[Y \sim Poisson(\lambda)\]
+\[\theta \sim Gamma(\alpha, \beta)\]
+
+Going off this we have:
+
+\[P(Y=y) = \frac{\lambda^ye^{-\lambda}}{y!}\]
+\[f(\theta) = \frac{\theta^{\alpha - 1}e^{-\theta/\beta}}{\Gamma(\alpha)\beta^\alpha}\]
+
+This second pdf would be the prior pdf for our parameter.
+
 ## Part a
+
+To get our posterior pdf we must solve for $h(\theta|y)$ where y is our data.
+
+\[h(\theta|y) = \frac{P(y|\theta)f(\theta)}{P(y)} = \frac{P(y|\theta)f(\theta)}{\int P(y|\theta)f(\theta)d\theta}\]
+\[\int P(y|\theta)f(\theta)d\theta = \int \frac{n\theta^ye^{-n\theta}}{y!}\frac{\theta^{\alpha - 1}e^{-\theta/\beta}}{\Gamma(\alpha)\beta^\alpha}d\theta\]
+\[= \frac{n^y}{y!\Gamma(\alpha)\beta^\alpha} \int \theta^{\alpha + y  - 1}e^{-n\theta-\theta/\beta}d\theta\]
+\[= \frac{n^y}{y!\Gamma(\alpha)\beta^\alpha} \int \theta^{\alpha + y  - 1}e^{-\theta(n+1/\beta)}d\theta\]
+
+Now let's multiply by one to make the solution to the integral a trivial one, being a Gamma distribution pdf:
+
+\[= \frac{n^y\Gamma(y + \alpha)(\frac{1}{n + 1/\beta})^{y+\alpha}}{y!\Gamma(\alpha)\beta^\alpha} \int \frac{\theta^{\alpha + y  - 1}e^{-\theta(n+1/\beta)}}{\Gamma(y + \alpha)(\frac{1}{n + 1/\beta})^{y+\alpha}} d\theta\]
+\[= \frac{n^y\Gamma(y + \alpha)(\frac{1}{n + 1/\beta})^{y+\alpha}}{y!\Gamma(\alpha)\beta^\alpha}\]
+\[= \frac{n^y\Gamma(y + \alpha)}{y!\Gamma(\alpha)\beta^\alpha(n + 1/\beta)^{y + \alpha}} \]
+\[= \frac{n^y\Gamma(y + \alpha)\beta^y}{y!\Gamma(\alpha)(n\beta + 1)^{y + \alpha}} \]
+
+Plugging back in to the posterior:
+
+\[h(\theta|y) = \frac{P(y|\theta)f(\theta)}{\int P(y|\theta)f(\theta)d\theta}\]
+\[= \frac{\frac{n\theta^ye^{-n\theta}}{y!}\frac{\theta^{\alpha - 1}e^{-\theta/\beta}}{\Gamma(\alpha)\beta^\alpha}}{\frac{n^y\Gamma(y + \alpha)\beta^y}{y!\Gamma(\alpha)(n\beta + 1)^{y + \alpha}}}\]
+\[= \frac{\theta^{y + \alpha - 1}e^{-\theta(n + 1/\beta)}}{\Gamma(y + \alpha)(1/(n + 1/\beta))^{y+\alpha}}\]
+
+This means that our posterior distrbution is a Gamma distribution with parameters $\alpha + y$ and $\frac{1}{n + 1/\beta}$.
 
 ## Part b
 
+Our loss fuction is $[w(y)-\theta]^2$. We want to find our point estimate w(y), which would be the expected value of our posterior distribution:
+
+\[E[\theta | y] = \alpha + y * \frac{1}{n + 1/\beta} = \frac{y + \alpha}{n + 1/\beta}\]
+
 ## Part c
 
+\[w(y) = \frac{y}{n}\frac{n}{(n+1/\beta)} + \frac{\alpha\beta(1/\beta)}{(n + 1/\beta)}\]
+\[= \frac{y}{(n+1/\beta)} + \frac{\alpha}{(n + 1/\beta)}\]
+\[= \frac{y + \alpha}{n + 1/\beta}\]
+
+This shows that w(y) is the weighted average of the maximum likelihood estimate y/n and the prior mean $\alpha\beta$.
+
 # Problem 6.8-4
+
+
 
 # Problem 6.9-1
 
