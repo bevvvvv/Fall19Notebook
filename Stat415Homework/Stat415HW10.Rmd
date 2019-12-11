@@ -63,17 +63,113 @@ This shows that w(y) is the weighted average of the maximum likelihood estimate 
 
 # Problem 6.8-4
 
+Problem constraints:
 
+\[f(x|\theta) = 3\theta x^2e^{-\theta x^3}\]
+\[g(\theta) = \frac{\theta^{4 - 1}e^{-\theta/(1/4)}}{\Gamma(4)(1/4)^4}=\frac{3}{128}\theta^3e^{-4\theta}\]
+
+We want to find the conditional mean of $\theta$ given the data in X. This first requires that we discover the posterior distribution from the prior distribution. To do this we need the joint pdf of our random samples.
+
+\[f(x_1, x_2,...,x_n|\theta) = f(x_1|\theta)f(x_2|\theta)...f(x_n|\theta) = \Pi_{i=1}^nf(x_i|\theta)\]
+\[\Pi_{i=1}^nf(x_i|\theta) = 3^n\theta^ne^{-\theta\Sigma_{i=1}^nx_i^3}\Pi_{i=1}^nx_i^2\]
+
+This brigs us to our posterior pdf:
+
+\[h(\theta|x) = \frac{f(x|\theta)g(\theta)}{f(x)} =\frac{f(x|\theta)g(\theta)}{\int f(x|\theta)g(\theta) d\theta}\]
+\[\int f(x|\theta)g(\theta) d\theta = \int 3^n\theta^ne^{-\theta\Sigma_{i=1}^nx_i^3}\Pi_{i=1}^nx_i^2\frac{3}{128}\theta^3e^{-4\theta}d\theta\]
+\[= \frac{3^{n+1}}{128}\Pi x_i^2 \int \theta^{n+3}e^{-\theta(\Sigma_{i=1}^nx_i^3+4)}d\theta\]
+
+From the pattern in these problems, and the fact we should multiply by one to get the new Gamma posterior distribution we know that our new parameters would be:
+
+\[n+4\]
+\[\frac{1}{\Sigma_{i=1}^nX_i^3+4}\]
+
+Since our expected value is the product of the parameters in the gamma distrbution our final result is:
+
+\[\frac{n+4}{\Sigma_{i=1}^nX_i^3+4}\]
 
 # Problem 6.9-1
 
+We know our random variable x follows the poissson distribution with probability
+
+\[P(X=x) = \frac{\lambda^xe^{-\lambda}}{x!}\]
+
+We know that our parameter $\theta$ has a gamma distribution with probability
+
+\[f(\theta) = \frac{\theta^{\alpha - 1}e^{-\theta/\beta}}{\Gamma(\alpha)\beta^\alpha}\]
+
+The marginal pmf of X would be the joint pdf with its integral taken over $\theta$:
+
+\[k_1(\theta)= \int P(X)f(\theta)d\theta = \int \frac{\lambda^xe^{-\lambda}}{x!}\frac{\theta^{\alpha - 1}e^{-\theta/\beta}}{\Gamma(\alpha)\beta^\alpha}d\theta\]
+\[= \frac{1}{x!\Gamma(\alpha)\beta^\alpha} \int \theta^{x+\alpha - 1}e^{-\theta(1 + 1/\beta)d\theta}\]
+
+Now let's multiply by one so our integral evaluates to a trivial one.
+
+\[= \frac{\Gamma(x + \alpha)(\frac{1}{1 + 1/\beta})^{x+\alpha}}{x!\Gamma(\alpha)\beta^\alpha} \int \frac{\theta^{x+\alpha - 1}e^{-\theta(1 + 1/\beta)d\theta}}{\Gamma(x + \alpha)(\frac{1}{1 + 1/\beta})^{x+\alpha}}\]
+
+\[= \frac{\Gamma(x + \alpha)(\frac{1}{1 + 1/\beta})^{x+\alpha}}{x!\Gamma(\alpha)\beta^\alpha}\]
+\[= \frac{\Gamma(x + \alpha)}{x!\Gamma(\alpha)\beta^\alpha(1 + 1/\beta)^{x+\alpha}}\]
+\[= \frac{\Gamma(x + \alpha)\beta^x}{x!\Gamma(\alpha)(1 + \beta)^x + \alpha}\]
+
+
 # Problem Bayesian Decision Exercise
+
+Problem Constraints
+
+* $p(\omega_1) = 0.9$
+* $p(\omega_2) = 0.1$
 
 ## Part a
 
+Using the loss matrix we should calculate the action that minimizes risk. Risk is defined as: 
+
+\[R(a_j) = \Sigma_{i=1}^n\lambda(a_j|\omega_i)p(\omega_i)\]
+
+Where $\lambda(a_j|\omega_i)$ is our loss function.
+
+\[R(a_1) = 0 * 0.9 + 10 * 0.1 = 1\]
+\[R(a_2) = 1 * 0.9 + 0 * 0.1 = 0.9\]
+
+Since a risk of 0.9 is less than a risk of 1 the optimal decision would be to take action $a_2$, which is prescribe antibiotics.
+
 ## Part b
 
+We now are able to take a blood test. The posterior probabilites of failure are:
 
+* $p(x_1|\omega_2) = 0.3$
+* $p(x_2|\omega_1) = 0.2$
+
+Since the two states cover the whole probabily space any x not in that state is in the other state:
+
+* $p(x_1|\omega_1) = 0.7$
+* $p(x_2|\omega_2) = 0.8$
+
+
+We should find the optimal decision give $x_1$ or $x_2$. Our updated risk function would be:
+
+\[R(a_j) = \Sigma_{i=1}^n\lambda(a_j|\omega_i)p(\omega_i|x_k)\]
+
+First we must find $p(\omega_i|x_k)$ for both $x_1$ and $x_2$. To do this we can use Bayes rule.
+
+\[p(\omega_i|x_k) = \frac{p(x_k|\omega_i)p(\omega_i)}{\Sigma_{i=1}^n p(x_k|\omega_i)p(\omega_i)}\]
+
+\[p(\omega_1|x_1) = \frac{0.7 * 0.9}{0.7 * 0.9 + 0.3 * 0.1} =\frac{0.63}{0.66} = 0.955\]
+\[p(\omega_2|x_1) = \frac{0.3 * 0.1}{0.7 * 0.9 + 0.3 * 0.1} =\frac{0.03}{0.66} = 0.045\]
+
+\[p(\omega_1|x_1) = \frac{0.2 * 0.9}{0.2 * 0.9 + 0.8 * 0.1} =\frac{0.18}{0.26} = 0.692\]
+\[p(\omega_2|x_1) = \frac{0.8 * 0.1}{0.2 * 0.9 + 0.8 * 0.1} =\frac{0.08}{0.26} = 0.308\]
+
+For $x_1$:
+
+\[R(a_1) = 0 * 0.955 + 10 * 0.045 = 0.45\]
+\[R(a_2) = 1 * 0.955 + 0 * 0.045 = 0.955\]
+
+For $x_2$:
+
+\[R(a_1) = 0 * 0.692 + 10 * 0.308 = 3.08\]
+\[R(a_2) = 1 * 0.692 + 0 * 0.308 = 0.692\]
+
+According to our new risk value if the test is negative we should choose to prescribe hot tea, since 0.45 is less than 0.955. If the test is positive we should prescribe antibiotics since 3.08 is greater than 0.692.
 
 
 
