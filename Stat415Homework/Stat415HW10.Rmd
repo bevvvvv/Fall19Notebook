@@ -1,0 +1,66 @@
+---
+title: "Stat/Math 415 Homework 10"
+subtitle: "Due Friday Dec 13; Joseph Sepich (jps6444)"
+output:
+  pdf_document:
+    toc: false
+    toc_depth: 2
+    number_sections: true
+    keep_tex: false
+---
+
+# Problem 6.8-1
+
+## Part a
+
+## Part b
+
+## Part c
+
+# Problem 6.8-4
+
+# Problem 6.9-1
+
+# Problem Bayesian Decision Exercise
+
+## Part a
+
+## Part b
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
