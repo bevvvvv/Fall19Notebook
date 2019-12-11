@@ -36,14 +36,43 @@ Transposition is the act of transforming pitches to different notes on the scale
 
 ## Instrument Concept
 
+Brass instruments operate directly off the concept of overtones. The instrument has a naturally ocurring set of overtones. For example, the bugle has no vales or anyway to manipulate the length of the instrument, so it can only play a single overtone series. Other brass instruments such as the trumpet use valves to adjust the length to change the note by a differing number of half steps to access all the pitches in our 12 note scale. The trombone uses a slide to accomplish this. The fundamental on brass instruments are always slightly flat (about 80% of the right pitch). Sometimes brass instruments are also played with a mute that creates a buzzy sound that heights the vibration of the bell.
+
 ## Instrument Examples
+
+* Trombone
+* French Horn
+* Tuba
+* Euphonium
+* Cornet
+* Trumpet
+
+### Trumpet Mouthpiece parts
+
+* Inner Rim 
+* Rim Width
+* Contour (rim)
+* Rim edge
+* cup
+* Throat
+* backbone
+* shape
 
 
 # Woodwind Instruments
 
 ## Instrument Concept
 
+Woodwinds are played by passing air through some sort of vibrating edge. They change their acoustical length through a series of pads and keys to open and close those pads. While they are still able to play overtones with the same fingering they generally do not as they can use fingerings to reach any note in our 12 note scale.
+
 ## Instrument Examples
+
+* Flute
+* Clarinte
+* Saxophone
+* Oboe
+* Bassoon
+* English Horn (like Oboe)
 
 
 # Vocal Instruments
@@ -63,6 +92,13 @@ Voiced means vocal chords are involved
 
 # String Instruments
 
+* Violin
+* Viola
+* Cello
+* Upright bass
+* Harp
+* Guitar and its variants
+
 ## Parts of a Violin
 
 ```{r, out.width = "400px", echo=FALSE}
@@ -76,6 +112,24 @@ knitr::include_graphics("./ViolinDireciton.PNG")
 ```
 
 # Percussion Instruments
+
+* Bass Drum
+* Timbales - metal drums
+* Conga drum - natural skin head, big bongos
+* Bongos - small congas
+* Gongs - long sutain
+* Wood block - has a resonating chamber
+* Claves - must be held properly
+* Maracas - cha cha cha
+* Castinet - wood around plastic head
+* Glockenspiel - small metallic keyboard
+* Chimes - hit with hammer, hanging
+* Vibraphone - has a pedal and is metal
+* Crotales - tuned discs
+* Toms
+* Timpani
+* Xylophone
+* Marimba - size of wooden bars change
 
 # Room Acoustics
 
@@ -148,6 +202,8 @@ Just Intonation is a tuning system that focuses on tuning to intervals. Given a 
 Equal temperament is a tuning system that attempts to solve the issue of being able to play in more than one key. The idea behind equal temperament is that each half note step in our 12 note scale will have the same distance from each other. Since we want to keep the octave as a doubling in frequency we use the twelfth root of 2 as a the distance between each half note. We then based everything off a certain pitch in the scale. Today it is often A=440.
 
 # Electrophones
+
+Electrophones are electronic instruments whether analog or digital. They are able to manipulate sound waves in a variety of ways. A synthesizer can have any number of oscillators, which can usually be manipulated individually. They also usually have the ability to change attack, decay, sustain, release, and glide rate. Glide rate is the time it takes the instrument to change from one pitch played to another.
 
 ## Compressor
 
